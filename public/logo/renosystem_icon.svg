@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <!-- Platzhalter-Icon, nachgebaut aus der gelieferten PNG-Vorschau (renosystem_logo_preview.png). -->
+  <!-- TODO: durch offizielle Vektordatei ersetzen, sobald verfügbar. -->
+  <path d="M6 28L18 12L30 28H24V28H12V28H6Z" fill="#B5713B" />
+  <path d="M34 14C34 11.7909 35.7909 10 38 10H50C52.2091 10 54 11.7909 54 14V28H44V18H38V28H34V14Z" fill="#B5713B" />
+</svg>

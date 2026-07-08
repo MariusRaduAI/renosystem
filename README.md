@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RENOSYSTEM ALL-IN-ONE — Website
 
-## Getting Started
+Premium One-Page-Website für RENOSYSTEM ALL-IN-ONE (Bausanierung & Komplettsanierung, Bad Rappenau / Raum Heilbronn).
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router, TypeScript)
+- Tailwind CSS v4 (Design-Tokens als CSS-Variablen in `src/app/globals.css`)
+- GSAP + ScrollTrigger für Scroll-Animationen, Lenis für Smooth Scroll
+- Supabase (Postgres) für Leads und die Projekt-Galerie
+- Vercel-Hosting vorgesehen
+
+## Projektstruktur
+
+- `src/content/de.ts` — sämtliche sichtbaren Marketing-Texte der Seite (eine Quelle der Wahrheit; für EN/RO künftig `content/en.ts` usw. ergänzen)
+- `src/content/legal.ts` — Impressum- und Datenschutztexte (separat gehalten, da lange Fließtexte)
+- `src/components/sections/*` — je eine Komponente pro Landingpage-Abschnitt
+- `supabase/schema.sql` — Tabellen `leads` und `projects` inkl. RLS-Policies
+- `src/app/actions.ts` — Server Action für das Kontaktformular (Insert in `leads`)
+
+## Lokale Entwicklung
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ohne gesetzte Supabase-Umgebungsvariablen läuft die Seite trotzdem: das Kontaktformular zeigt dann kontrolliert die Fehlermeldung mit WhatsApp-Fallback, und die Projekt-Galerie fällt auf die Platzhalterbilder aus `content/de.ts` zurück.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Vor dem Livegang zu erledigen
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Diese Punkte sind im Code als `TODO`-Kommentare markiert und müssen vor dem Launch geklärt werden:
 
-## Learn More
+1. **USt-IdNr. / Kleinunternehmer-Hinweis** — `src/content/legal.ts` (Impressum, Abschnitt „Umsatzsteuer“)
+2. **Reaktionszeit im Formular** (aktuell „innerhalb von 24 Stunden“ als Platzhalterwert) — `src/content/de.ts` (`contact.success.message`)
+3. **Konkrete Erfahrungsjahre** in der Vertrauensleiste (aktuell bewusst ohne Zahl formuliert) — `src/content/de.ts` (`trustBar`)
+4. **Einsatzgebiet final bestätigen** (Default: „Bad Rappenau und Umgebung, Raum Heilbronn“) — `src/content/de.ts` (`business.region`)
+5. **Echte Projektfotos** — ersetzen die Unsplash-Platzhalter in der `projects`-Tabelle bzw. in `portfolio.projects`
+6. **Supabase-Projekt anlegen** (Region `eu-central-1` empfohlen, siehe `supabase/schema.sql`) und `.env.local` gemäß `.env.example` befüllen
+7. **Benachrichtigungs-Hook für neue Leads** — in `src/app/actions.ts` als TODO markiert; Anbindung an E-Mail (z. B. Resend) oder WhatsApp Business API folgt, sobald Zugangsdaten vorliegen
+8. **Logo-Vektordateien** — `renosystem_logo_light.svg`, `renosystem_logo_dark.svg`, `renosystem_icon.svg` in `public/logo/` sowie `src/app/icon.svg` und `src/components/Logo.tsx` sind aus der gelieferten PNG-Vorschau nachgebaut, keine offiziellen Vektordateien lagen vor. Bei Erhalt der echten Dateien ersetzen.
+9. **Social-Media-Links** (Instagram/Facebook) im Footer ergänzen, sobald vorhanden
+10. **Analytics** — Vercel Analytics / GA4 sind bewusst nicht eingebaut; bei Bedarf env-var-gated ergänzen (dann ggf. Cookie-Consent-Banner prüfen, siehe Datenschutzerklärung Abschnitt 5)
+11. **Domain in `metadataBase`** — aktuell Platzhalter `https://www.renosystem.de` in `src/app/layout.tsx`; an die tatsächliche Produktions-Domain anpassen
 
-To learn more about Next.js, take a look at the following resources:
+## Design-Hinweis zur Bildauswahl
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Die vier Platzhalterbilder in der Projekte-Galerie wurden manuell auf sichtbare Fremdmarken/Logos geprüft (ein ursprünglich ausgewähltes Unsplash-Bild mit Markenschriftzügen auf Kissen wurde ausgetauscht). Bei zukünftigen Bildwechseln in `content/de.ts` empfiehlt sich derselbe Check.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Bekannte Einschränkung dieser Session
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Der Screenshot-Mechanismus des hier verwendeten Vorschau-Tools zeigte bei größeren (Desktop-)Viewport-Größen kombiniert mit einer gescrollten Position ein leeres Bild, obwohl DOM/Konsole fehlerfrei waren und mobile Viewports bei jeder Scroll-Position korrekt rendern. Alle Desktop-Abschnitte wurden daher zusätzlich über Computed-Style-Prüfungen verifiziert; ein erneuter manueller Check im echten Browser wird dennoch empfohlen.

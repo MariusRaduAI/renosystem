@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 150" fill="none">
+  <!-- Für helle Hintergründe. Platzhalter-Rekonstruktion aus renosystem_logo_preview.png. -->
+  <!-- TODO: durch offizielle Vektordatei ersetzen, sobald verfügbar. -->
+  <path d="M10 44L26 22L42 44H33V44H19V44H10Z" fill="#B5713B" />
+  <path d="M50 26C50 22.6863 52.6863 20 56 20H74C77.3137 20 80 22.6863 80 26V44H68V33H60V44H50V26Z" fill="#B5713B" />
+  <text x="100" y="52" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="46" letter-spacing="0" fill="#0E0D0C">RENOSYSTEM</text>
+  <text x="100" y="86" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="22" letter-spacing="4" fill="#B5713B">ALL-IN-ONE</text>
+  <text x="100" y="112" font-family="Arial, Helvetica, sans-serif" font-weight="400" font-size="20" fill="#4A453D">Ihr Partner für komplette Renovierungen</text>
+</svg>
