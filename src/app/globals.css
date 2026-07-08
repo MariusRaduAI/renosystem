@@ -139,9 +139,16 @@ h1, h2, h3, h4, .font-display {
 }
 
 /* Custom cursor — desktop only, disabled on touch + reduced motion */
+.cursor-dot {
+  display: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .custom-cursor-active {
     cursor: none;
+  }
+  body.custom-cursor-active .cursor-dot {
+    display: block;
   }
 }
 

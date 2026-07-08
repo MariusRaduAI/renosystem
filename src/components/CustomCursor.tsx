@@ -1,28 +1,28 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { gsap, prefersReducedMotion } from "@/lib/gsap";
+import { useEffect, useRef } from "react";
+import { prefersReducedMotion } from "@/lib/gsap";
 
+// Bewusst ohne mix-blend-mode: das führte in Safari/macOS bei manchen Nutzern
+// dazu, dass der Cursor unsichtbar wurde (bekanntes Rendering-Problem von
+// mix-blend-mode auf fixed/transform-animierten Elementen). Stattdessen ein
+// eigenständig kontrastierendes Design (Akzentfarbe + Schatten), das auf
+// jedem Hintergrund sichtbar bleibt, und eine reine CSS-Transition statt GSAP
+// für die Bewegung — unabhängig von jedem Animations-Ticker.
 export default function CustomCursor() {
-  const dotRef = useRef<HTMLDivElement>(null);
-  const [active, setActive] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
     if (!canHover || prefersReducedMotion()) return;
 
-    setActive(true);
     document.body.classList.add("custom-cursor-active");
 
-    const el = dotRef.current;
+    const el = wrapperRef.current;
     if (!el) return;
 
-    const quickX = gsap.quickTo(el, "x", { duration: 0.35, ease: "power3.out" });
-    const quickY = gsap.quickTo(el, "y", { duration: 0.35, ease: "power3.out" });
-
     const onMove = (e: MouseEvent) => {
-      quickX(e.clientX);
-      quickY(e.clientY);
+      el.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
     };
 
     window.addEventListener("mousemove", onMove);
@@ -32,20 +32,16 @@ export default function CustomCursor() {
     };
   }, []);
 
-  if (!active) return null;
-
   return (
     <div
-      ref={dotRef}
+      ref={wrapperRef}
       aria-hidden="true"
-      className="pointer-events-none fixed left-0 top-0 z-[100] -translate-x-1/2 -translate-y-1/2 mix-blend-difference"
+      className="cursor-dot pointer-events-none fixed left-0 top-0 z-[100] transition-transform duration-150 ease-out"
     >
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-        <line x1="14" y1="2" x2="14" y2="10" stroke="#E8E4DC" strokeWidth="1.5" />
-        <line x1="14" y1="18" x2="14" y2="26" stroke="#E8E4DC" strokeWidth="1.5" />
-        <line x1="2" y1="14" x2="10" y2="14" stroke="#E8E4DC" strokeWidth="1.5" />
-        <line x1="18" y1="14" x2="26" y2="14" stroke="#E8E4DC" strokeWidth="1.5" />
-      </svg>
+      <div className="relative h-7 w-7 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_0_2px_rgba(14,13,12,0.6)]">
+        <span className="absolute inset-0 rounded-full border-[1.5px] border-wood-500" />
+        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-wood-500" />
+      </div>
     </div>
   );
 }
