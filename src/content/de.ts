@@ -52,6 +52,9 @@ export const hero = {
   ctaPrimary: "Kostenloses Erstgespräch",
   ctaSecondary: "Unsere Leistungen",
   trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
+  // Bauphasen, die im Hero-Hintergrund groß rotieren — Platzhalter für die
+  // spätere Higgsfield-Videoanimation (siehe README). Reihenfolge = Bauablauf.
+  stageWords: ["ENTKERNEN", "DÄMMEN", "VERPUTZEN", "FLIESEN", "ÜBERGEBEN"],
 };
 
 export const trustBar = [
@@ -247,6 +250,9 @@ export const portfolio = {
   intro:
     "Diese Galerie zeigt aktuell Platzhalterbilder im Stil unserer Projekte. Echte Vorher-Nachher-Fotos folgen, sobald abgeschlossene Projekte freigegeben sind.",
   placeholderNote: "Platzhalterbild",
+  beforeLabel: "Vorher",
+  afterLabel: "Nachher",
+  dragHint: "Regler ziehen",
   projects: [
     {
       title: "Komplettsanierung Altbauwohnung",

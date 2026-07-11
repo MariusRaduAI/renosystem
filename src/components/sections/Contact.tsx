@@ -28,12 +28,14 @@ export default function Contact() {
                 href={business.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm bg-wood-500 px-6 text-base font-semibold text-concrete-950 transition-colors hover:bg-wood-600 hover:text-concrete-100"
+                data-magnetic
+                className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm bg-wood-500 px-6 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
               >
                 💬 {contact.whatsappCta}
               </a>
               <a
                 href={business.phoneHref}
+                data-magnetic
                 className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm border border-concrete-100/25 px-6 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
               >
                 📞 {contact.callCta}
@@ -65,7 +67,7 @@ export default function Contact() {
                       key={option.value}
                       type="button"
                       onClick={() => setProjectType(option.value)}
-                      className="min-h-[48px] rounded-sm border border-concrete-600/25 bg-white px-5 text-left text-base font-medium text-concrete-950 transition-colors hover:border-wood-500"
+                      className="min-h-[48px] rounded-sm border border-concrete-600/25 bg-white px-5 text-left text-base font-medium text-concrete-950 transition-colors hover:border-safety"
                     >
                       {option.label}
                     </button>
@@ -99,7 +101,7 @@ export default function Contact() {
                       type="text"
                       required
                       placeholder={contact.step2.namePlaceholder}
-                      className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-wood-500"
+                      className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-safety"
                     />
                   </div>
 
@@ -113,7 +115,7 @@ export default function Contact() {
                         name="phone"
                         type="tel"
                         placeholder={contact.step2.phonePlaceholder}
-                        className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-wood-500"
+                        className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-safety"
                       />
                     </div>
                     <div>
@@ -125,7 +127,7 @@ export default function Contact() {
                         name="email"
                         type="email"
                         placeholder={contact.step2.emailPlaceholder}
-                        className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-wood-500"
+                        className="min-h-[48px] w-full rounded-sm border border-concrete-600/25 bg-white px-4 text-base text-concrete-950 outline-none focus:border-safety"
                       />
                     </div>
                   </div>
@@ -140,7 +142,7 @@ export default function Contact() {
                       required
                       rows={3}
                       placeholder={contact.step2.messagePlaceholder}
-                      className="w-full rounded-sm border border-concrete-600/25 bg-white px-4 py-3 text-base text-concrete-950 outline-none focus:border-wood-500"
+                      className="w-full rounded-sm border border-concrete-600/25 bg-white px-4 py-3 text-base text-concrete-950 outline-none focus:border-safety"
                     />
                   </div>
 
@@ -174,7 +176,8 @@ export default function Contact() {
                   <button
                     type="submit"
                     disabled={isPending}
-                    className="min-h-[48px] w-full rounded-sm bg-wood-500 px-6 text-base font-semibold text-concrete-950 transition-colors hover:bg-wood-600 hover:text-concrete-100 disabled:opacity-60"
+                    data-magnetic
+                    className="min-h-[48px] w-full rounded-sm bg-wood-500 px-6 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100 disabled:opacity-60"
                   >
                     {isPending ? contact.step2.submitting : contact.step2.submit}
                   </button>

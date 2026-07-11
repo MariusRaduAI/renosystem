@@ -50,7 +50,13 @@ export default async function Portfolio() {
         </div>
 
         <div className="mt-14">
-          <PortfolioGrid items={projects} placeholderNote={portfolio.placeholderNote} />
+          <PortfolioGrid
+            items={projects}
+            placeholderNote={portfolio.placeholderNote}
+            beforeLabel={portfolio.beforeLabel}
+            afterLabel={portfolio.afterLabel}
+            dragHint={portfolio.dragHint}
+          />
         </div>
       </div>
     </section>

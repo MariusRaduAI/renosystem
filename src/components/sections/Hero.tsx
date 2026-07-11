@@ -1,37 +1,62 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { gsap, ScrollTrigger, prefersReducedMotion } from "@/lib/gsap";
+import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { hero } from "@/content/de";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const layerFarRef = useRef<HTMLDivElement>(null);
-  const layerMidRef = useRef<HTMLDivElement>(null);
-  const layerNearRef = useRef<HTMLDivElement>(null);
+  const wordsRef = useRef<HTMLDivElement>(null);
+  const planRef = useRef<SVGPathElement>(null);
 
   useEffect(() => {
-    if (prefersReducedMotion()) return;
+    const reduced = prefersReducedMotion();
     const isMobile = window.innerWidth < 768;
 
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: 0.6,
-        },
-      });
+      // Floor-plan outline draws itself in on load — signature detail that
+      // sets up the "blueprint becomes real" motif carried through the site.
+      if (planRef.current && !reduced) {
+        const length = planRef.current.getTotalLength();
+        planRef.current.style.setProperty("--path-length", String(length));
+        gsap.fromTo(
+          planRef.current,
+          { strokeDashoffset: length },
+          { strokeDashoffset: 0, duration: 2.4, ease: "power2.inOut", delay: 0.3 }
+        );
+      }
 
-      if (layerFarRef.current) {
-        tl.to(layerFarRef.current, { yPercent: isMobile ? 10 : 18, ease: "none" }, 0);
+      // Rotating construction-stage words behind the headline. Standing in
+      // for the future generated video background — swap the word layer for
+      // a <video> element later without touching layout.
+      const words = gsap.utils.toArray<HTMLElement>(".hero-word");
+      if (words.length && !reduced) {
+        const wordTl = gsap.timeline({ repeat: -1, delay: 1 });
+        words.forEach((word) => {
+          wordTl
+            .to(word, { autoAlpha: 1, filter: "blur(0px)", scale: 1, duration: 1, ease: "power2.out" })
+            .to(word, { autoAlpha: 0, filter: "blur(10px)", scale: 1.04, duration: 0.9, ease: "power2.in" }, "+=1.35");
+        });
+      } else if (words[0]) {
+        gsap.set(words[0], { autoAlpha: 0.5, filter: "blur(0px)", scale: 1 });
       }
-      if (!isMobile && layerMidRef.current) {
-        tl.to(layerMidRef.current, { yPercent: 34, ease: "none" }, 0);
-      }
-      if (!isMobile && layerNearRef.current) {
-        tl.to(layerNearRef.current, { yPercent: 55, rotate: 2, ease: "none" }, 0);
+
+      if (!reduced) {
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.6,
+          },
+        });
+        if (layerFarRef.current) {
+          tl.to(layerFarRef.current, { yPercent: isMobile ? 10 : 18, ease: "none" }, 0);
+        }
+        if (wordsRef.current) {
+          tl.to(wordsRef.current, { yPercent: isMobile ? 6 : 12, ease: "none" }, 0);
+        }
       }
     }, sectionRef);
 
@@ -51,28 +76,46 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute -right-24 top-10 h-[420px] w-[420px] rounded-full bg-wood-600/10 blur-3xl"
       />
+
+      {/* Rotating stage words — huge outlined type, sits between grid and content */}
       <div
-        ref={layerMidRef}
+        ref={wordsRef}
         aria-hidden="true"
-        className="absolute inset-0 hidden md:block"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
       >
-        <svg className="absolute right-[6%] top-[12%] h-[70%] w-auto opacity-20" viewBox="0 0 200 600" fill="none">
-          <line x1="20" y1="0" x2="20" y2="600" stroke="#6B7280" strokeWidth="1" />
-          <line x1="100" y1="0" x2="100" y2="600" stroke="#6B7280" strokeWidth="1" />
-          <line x1="180" y1="0" x2="180" y2="600" stroke="#6B7280" strokeWidth="1" />
-          <line x1="0" y1="120" x2="200" y2="120" stroke="#6B7280" strokeWidth="1" />
-          <line x1="0" y1="340" x2="200" y2="340" stroke="#6B7280" strokeWidth="1" />
-        </svg>
-      </div>
-      <div ref={layerNearRef} aria-hidden="true" className="absolute inset-0 hidden md:block">
-        <svg className="absolute left-[8%] top-[20%] h-[55%] w-auto opacity-25" viewBox="0 0 160 400" fill="none">
-          <path d="M10 390L80 10L150 390" stroke="#B5713B" strokeWidth="1.5" />
-          <line x1="45" y1="200" x2="115" y2="200" stroke="#B5713B" strokeWidth="1.5" />
-        </svg>
+        <div className="relative flex h-[40vw] max-h-[420px] w-full items-center justify-center sm:h-[26vw]">
+          {hero.stageWords.map((word) => (
+            <span
+              key={word}
+              className="hero-word text-outline invisible absolute whitespace-nowrap font-display text-[16vw] font-black uppercase leading-none tracking-tight opacity-0 sm:text-[9vw]"
+              style={{ filter: "blur(10px)", transform: "scale(1.04)" }}
+            >
+              {word}
+            </span>
+          ))}
+        </div>
       </div>
 
+      {/* Floor-plan line drawing — decorative, draws itself on load */}
+      <svg
+        aria-hidden="true"
+        className="pointer-events-none absolute right-[4%] top-[14%] hidden h-[62%] w-auto opacity-30 md:block"
+        viewBox="0 0 220 420"
+        fill="none"
+      >
+        <path
+          ref={planRef}
+          className="line-draw"
+          d="M10 10H150V70H210V180H150V410H10V260H60V180H10V70H80V10"
+          stroke="var(--color-wood-500)"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+      </svg>
+
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
-        <p className="mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-wood-500 animate-fade-up">
+        <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-wood-500 animate-fade-up">
+          <span className="inline-block h-1.5 w-1.5 rounded-full bg-safety" aria-hidden="true" />
           {hero.eyebrow}
         </p>
         <h1 className="max-w-4xl text-balance font-display text-[2.6rem] font-extrabold leading-[1.03] tracking-tight text-concrete-100 sm:text-6xl lg:text-[6rem] animate-fade-up">
@@ -91,13 +134,18 @@ export default function Hero() {
         >
           <a
             href="#kontakt"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-sm bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-wood-600 hover:text-concrete-100"
+            data-magnetic
+            className="group inline-flex min-h-[52px] items-center justify-center gap-2 rounded-sm bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
           >
             {hero.ctaPrimary}
+            <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
+              →
+            </span>
           </a>
           <a
             href="#leistungen"
-            className="inline-flex min-h-[48px] items-center justify-center rounded-sm border border-concrete-100/25 px-7 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
+            data-magnetic
+            className="inline-flex min-h-[52px] items-center justify-center rounded-sm border border-concrete-100/25 px-7 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
           >
             {hero.ctaSecondary}
           </a>
@@ -110,6 +158,13 @@ export default function Hero() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-wood-500" aria-hidden="true" />
           {hero.trustSignal}
         </p>
+      </div>
+
+      <div className="absolute inset-x-0 bottom-8 z-10 hidden justify-center sm:flex">
+        <div className="flex flex-col items-center gap-2 text-concrete-300">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">Scrollen</span>
+          <span className="h-10 w-px animate-pulse bg-gradient-to-b from-wood-500 to-transparent" aria-hidden="true" />
+        </div>
       </div>
     </section>
   );

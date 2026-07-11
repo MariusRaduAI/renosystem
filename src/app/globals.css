@@ -38,6 +38,9 @@
 
   --animate-fade-up: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   --animate-marquee: marquee 32s linear infinite;
+  --animate-marquee-slow: marquee 46s linear infinite;
+  --animate-word-cycle: word-cycle 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  --animate-ticker: ticker 22s linear infinite;
 
   @keyframes fade-up {
     from {
@@ -56,6 +59,28 @@
     }
     to {
       transform: translateX(-50%);
+    }
+  }
+
+  @keyframes ticker {
+    from {
+      background-position: 0 0;
+    }
+    to {
+      background-position: -80px 0;
+    }
+  }
+
+  @keyframes word-cycle {
+    0%, 20% {
+      opacity: 1;
+      filter: blur(0px);
+      transform: translateY(0) scale(1);
+    }
+    23%, 100% {
+      opacity: 0;
+      filter: blur(6px);
+      transform: translateY(-1.5%) scale(1.02);
     }
   }
 }
@@ -138,6 +163,49 @@ h1, h2, h3, h4, .font-display {
   color: var(--color-concrete-100);
 }
 
+/* Hazard stripe — construction-tape motif, used sparingly as a real accent */
+.stripe-safety {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-safety) 0,
+    var(--color-safety) 10px,
+    var(--color-concrete-950) 10px,
+    var(--color-concrete-950) 20px
+  );
+  background-size: 80px 80px;
+}
+
+.ticker-track {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--color-safety) 0,
+    var(--color-safety) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+  animation: var(--animate-ticker);
+}
+
+/* Hide scrollbars on horizontal scroll-jacked sections without removing scroll */
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Outlined "ghost" type — ink-only lettering for the hero word-cycle layer */
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-concrete-100) 45%, transparent);
+}
+
+.line-draw {
+  stroke-dasharray: var(--path-length, 1000);
+  stroke-dashoffset: var(--path-length, 1000);
+}
+
 /* Custom cursor — desktop only, disabled on touch + reduced motion */
 .cursor-dot {
   display: none;
@@ -149,6 +217,10 @@ h1, h2, h3, h4, .font-display {
   }
   body.custom-cursor-active .cursor-dot {
     display: block;
+  }
+  .custom-cursor-active a,
+  .custom-cursor-active button {
+    cursor: none;
   }
 }
 
