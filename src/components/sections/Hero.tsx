@@ -7,6 +7,8 @@ import { hero } from "@/content/de";
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const introRef = useRef<HTMLDivElement>(null);
+  const stageGroupRef = useRef<HTMLDivElement>(null);
   const stageLabelRef = useRef<HTMLSpanElement>(null);
   const stageIndexRef = useRef<HTMLSpanElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
@@ -15,9 +17,19 @@ export default function Hero() {
     const reduced = prefersReducedMotion();
     const video = videoRef.current;
 
+    let lastStage = -1;
     const setStage = (i: number) => {
       const clamped = Math.max(0, Math.min(hero.stageWords.length - 1, i));
-      if (stageLabelRef.current) stageLabelRef.current.textContent = hero.stageWords[clamped];
+      if (clamped === lastStage) return;
+      lastStage = clamped;
+      if (stageLabelRef.current) {
+        gsap.fromTo(
+          stageLabelRef.current,
+          { autoAlpha: 0, y: 14 },
+          { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out" }
+        );
+        stageLabelRef.current.textContent = hero.stageWords[clamped];
+      }
       if (stageIndexRef.current) stageIndexRef.current.textContent = String(clamped + 1).padStart(2, "0");
       if (dotsRef.current) {
         Array.from(dotsRef.current.children).forEach((dot, idx) => {
@@ -34,21 +46,11 @@ export default function Hero() {
 
     const ctx = gsap.context(() => {
       const mm = gsap.matchMedia();
-      let lastStage = -1;
 
-      const onVideoProgress = (t: number, duration: number) => {
-        const segment = duration / hero.stageWords.length;
-        const stage = Math.min(hero.stageWords.length - 1, Math.floor(t / segment));
-        if (stage !== lastStage) {
-          lastStage = stage;
-          setStage(stage);
-        }
-      };
-
-      // Desktop/tablet: video playback is fully driven by scroll position —
-      // the room only "renovates" as far as the visitor has scrolled.
+      // Desktop/tablet: hero pins in place for a long, deliberate scroll —
+      // the intro copy hands off to a big centered stage title, the video
+      // scrubs through all 4 renovation stages, with a slow Ken Burns zoom.
       mm.add("(min-width: 768px)", () => {
-        // iOS Safari needs a primed play/pause before currentTime scrubbing works.
         video.muted = true;
         video.play().then(() => video.pause()).catch(() => {});
 
@@ -56,26 +58,34 @@ export default function Hero() {
           const duration = video.duration || 0;
           if (!duration) return;
 
-          // Pin the hero in place — the page only continues once the
-          // renovation video has fully played through via scroll.
-          const tween = gsap.to(video, {
-            currentTime: duration,
-            ease: "none",
+          const tl = gsap.timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top top",
-              end: () => `+=${window.innerHeight * 1.6}`,
-              scrub: 0.4,
+              end: () => `+=${window.innerHeight * 4.5}`,
+              scrub: 0.5,
               pin: true,
               anticipatePin: 1,
               invalidateOnRefresh: true,
-              onUpdate: () => onVideoProgress(video.currentTime, duration),
+              onUpdate: (self) => {
+                const stage = Math.min(hero.stageWords.length - 1, Math.floor(self.progress * hero.stageWords.length));
+                setStage(stage);
+              },
             },
           });
 
+          tl.to(video, { currentTime: duration, ease: "none", duration: 1 }, 0)
+            .to(video, { scale: 1.07, ease: "none", duration: 1 }, 0)
+            .to(
+              introRef.current,
+              { autoAlpha: 0, y: -28, scale: 0.97, duration: 0.12, ease: "power1.out" },
+              0
+            )
+            .to(stageGroupRef.current, { autoAlpha: 1, duration: 0.12, ease: "power1.in" }, 0);
+
           return () => {
-            tween.scrollTrigger?.kill();
-            tween.kill();
+            tl.scrollTrigger?.kill();
+            tl.kill();
           };
         };
 
@@ -87,20 +97,11 @@ export default function Hero() {
         return () => video.removeEventListener("loadedmetadata", onLoaded);
       });
 
-      // Mobile: scroll-scrubbing feels janky on touch momentum scrolling and
-      // is heavier on battery — just loop the video and cycle labels on a timer.
+      // Mobile: no scroll-jacking (touch momentum makes pins feel broken) —
+      // the marketing copy stays put and the video just loops behind it.
       mm.add("(max-width: 767px)", () => {
         video.loop = true;
         video.play().catch(() => {});
-
-        const labelTl = gsap.timeline({ repeat: -1 });
-        hero.stageWords.forEach((_, i) => {
-          labelTl.call(() => setStage(i), [], `+=${i === 0 ? 0 : 2.6}`);
-        });
-
-        return () => {
-          labelTl.kill();
-        };
       });
     }, sectionRef);
 
@@ -126,17 +127,21 @@ export default function Hero() {
         <source src="/video/hero-renovation.mp4" type="video/mp4" />
       </video>
       <div
-        className="absolute inset-0 bg-gradient-to-t from-concrete-950 via-concrete-950/60 to-concrete-950/45"
+        className="absolute inset-0 bg-gradient-to-t from-concrete-950 via-concrete-950/55 to-concrete-950/45"
         aria-hidden="true"
       />
       <div className="absolute inset-0 blueprint-grid opacity-[0.08]" aria-hidden="true" />
 
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
+      {/* Intro: marketing headline + CTAs — hands off to the stage title once scrolling starts */}
+      <div
+        ref={introRef}
+        className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-4 text-center sm:px-6"
+      >
         <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-wood-500 animate-fade-up">
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-safety" aria-hidden="true" />
           {hero.eyebrow}
         </p>
-        <h1 className="max-w-4xl text-balance font-display text-[2.6rem] font-extrabold leading-[1.03] tracking-tight text-concrete-100 sm:text-6xl lg:text-[6rem] animate-fade-up">
+        <h1 className="text-balance font-display text-[2.4rem] font-extrabold leading-[1.05] tracking-tight text-concrete-100 sm:text-6xl lg:text-[5.5rem] animate-fade-up">
           {hero.headline}
         </h1>
         <p
@@ -176,34 +181,36 @@ export default function Hero() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-wood-500" aria-hidden="true" />
           {hero.trustSignal}
         </p>
+
+        <div className="mt-12 hidden flex-col items-center gap-2 text-concrete-300 sm:flex">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">Scrollen</span>
+          <span className="h-10 w-px animate-pulse bg-gradient-to-b from-wood-500 to-transparent" aria-hidden="true" />
+        </div>
       </div>
 
-      {/* Centered stage title — tracks the renovation video as the visitor scrolls */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-32 z-10 hidden flex-col items-center gap-3 sm:flex">
-        <div className="flex items-baseline gap-2 font-display text-concrete-100">
-          <span ref={stageIndexRef} className="text-sm font-bold text-wood-500">
-            01
-          </span>
-          <span ref={stageLabelRef} className="text-lg font-bold uppercase tracking-[0.15em]">
-            {hero.stageWords[0]}
-          </span>
-        </div>
-        <div ref={dotsRef} className="flex items-center gap-1.5" aria-hidden="true">
+      {/* Big centered stage title — takes over once the visitor starts scrolling */}
+      <div
+        ref={stageGroupRef}
+        className="pointer-events-none invisible absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 px-4 opacity-0"
+      >
+        <span ref={stageIndexRef} className="font-display text-sm font-bold tracking-[0.3em] text-wood-500">
+          01
+        </span>
+        <span
+          ref={stageLabelRef}
+          className="text-balance text-center font-display text-5xl font-black uppercase leading-[0.95] tracking-tight text-concrete-100 sm:text-7xl lg:text-8xl"
+        >
+          {hero.stageWords[0]}
+        </span>
+        <div ref={dotsRef} className="flex items-center gap-2" aria-hidden="true">
           {hero.stageWords.map((word, i) => (
             <span
               key={word}
-              className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
+              className={`h-1.5 w-8 rounded-full transition-colors duration-300 ${
                 i === 0 ? "bg-wood-500" : "bg-concrete-100/20"
               }`}
             />
           ))}
-        </div>
-      </div>
-
-      <div className="absolute inset-x-0 bottom-8 z-10 hidden justify-center sm:flex">
-        <div className="flex flex-col items-center gap-2 text-concrete-300">
-          <span className="text-[10px] font-semibold uppercase tracking-[0.3em]">Scrollen</span>
-          <span className="h-10 w-px animate-pulse bg-gradient-to-b from-wood-500 to-transparent" aria-hidden="true" />
         </div>
       </div>
     </section>
