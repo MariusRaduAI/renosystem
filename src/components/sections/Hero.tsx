@@ -56,14 +56,19 @@ export default function Hero() {
           const duration = video.duration || 0;
           if (!duration) return;
 
+          // Pin the hero in place — the page only continues once the
+          // renovation video has fully played through via scroll.
           const tween = gsap.to(video, {
             currentTime: duration,
             ease: "none",
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top top",
-              end: "bottom top",
+              end: () => `+=${window.innerHeight * 1.6}`,
               scrub: 0.4,
+              pin: true,
+              anticipatePin: 1,
+              invalidateOnRefresh: true,
               onUpdate: () => onVideoProgress(video.currentTime, duration),
             },
           });
