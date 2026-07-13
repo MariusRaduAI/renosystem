@@ -54,7 +54,24 @@ export const hero = {
   trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
   // Bauphasen des Hero-Hintergrundvideos (Higgsfield-generiert aus 4 echten
   // Baustellenfotos). Reihenfolge = Bauablauf, synchron zu den 3 Videosegmenten.
-  stageWords: ["ENTKERNEN", "ROHINSTALLATION", "VERPUTZT", "ÜBERGEBEN"],
+  stages: [
+    {
+      word: "ENTKERNEN",
+      description: "Rückbau bis auf den Rohbau — der Ausgangspunkt jeder Sanierung.",
+    },
+    {
+      word: "ROHINSTALLATION",
+      description: "Elektrik und Leitungen werden neu verlegt und sauber geordnet.",
+    },
+    {
+      word: "VERPUTZT",
+      description: "Wände und Böden sind verputzt — bereit für den Bodenbelag.",
+    },
+    {
+      word: "ÜBERGEBEN",
+      description: "Parkett verlegt, Feinschliff fertig — schlüsselfertig übergeben.",
+    },
+  ],
 };
 
 export const trustBar = [

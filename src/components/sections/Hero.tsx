@@ -4,12 +4,20 @@ import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { hero } from "@/content/de";
 
+// Fractions of the overall scroll timeline (0..1). The video itself only
+// scrubs between INTRO_END and SCRUB_END — before and after that it holds
+// still, so visitors get real time to read the intro and admire the final,
+// fully renovated frame instead of it flashing by right before unpinning.
+const INTRO_END = 0.22;
+const SCRUB_END = 0.82;
+
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const stageGroupRef = useRef<HTMLDivElement>(null);
   const stageLabelRef = useRef<HTMLSpanElement>(null);
+  const stageDescRef = useRef<HTMLParagraphElement>(null);
   const stageIndexRef = useRef<HTMLSpanElement>(null);
   const dotsRef = useRef<HTMLDivElement>(null);
 
@@ -19,16 +27,25 @@ export default function Hero() {
 
     let lastStage = -1;
     const setStage = (i: number) => {
-      const clamped = Math.max(0, Math.min(hero.stageWords.length - 1, i));
+      const clamped = Math.max(0, Math.min(hero.stages.length - 1, i));
       if (clamped === lastStage) return;
       lastStage = clamped;
+      const stage = hero.stages[clamped];
       if (stageLabelRef.current) {
         gsap.fromTo(
           stageLabelRef.current,
           { autoAlpha: 0, y: 14 },
           { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out" }
         );
-        stageLabelRef.current.textContent = hero.stageWords[clamped];
+        stageLabelRef.current.textContent = stage.word;
+      }
+      if (stageDescRef.current) {
+        gsap.fromTo(
+          stageDescRef.current,
+          { autoAlpha: 0, y: 10 },
+          { autoAlpha: 1, y: 0, duration: 0.45, ease: "power2.out", delay: 0.05 }
+        );
+        stageDescRef.current.textContent = stage.description;
       }
       if (stageIndexRef.current) stageIndexRef.current.textContent = String(clamped + 1).padStart(2, "0");
       if (dotsRef.current) {
@@ -48,8 +65,9 @@ export default function Hero() {
       const mm = gsap.matchMedia();
 
       // Desktop/tablet: hero pins in place for a long, deliberate scroll —
-      // the intro copy hands off to a big centered stage title, the video
-      // scrubs through all 4 renovation stages, with a slow Ken Burns zoom.
+      // intro copy holds, then hands off to a big centered stage title
+      // synced to the video's actual keyframes, then holds again on the
+      // finished frame before releasing the pin.
       mm.add("(min-width: 768px)", () => {
         video.muted = true;
         video.play().then(() => video.pause()).catch(() => {});
@@ -58,30 +76,35 @@ export default function Hero() {
           const duration = video.duration || 0;
           if (!duration) return;
 
+          // Video has 3 morph segments between 4 source photos: label each
+          // stage by whichever keyframe the current frame is closest to,
+          // instead of splitting progress into even quarters.
+          const segLen = duration / (hero.stages.length - 1);
+
           const tl = gsap.timeline({
             scrollTrigger: {
               trigger: sectionRef.current,
               start: "top top",
-              end: () => `+=${window.innerHeight * 4.5}`,
+              end: () => `+=${window.innerHeight * 5.5}`,
               scrub: 0.5,
               pin: true,
               anticipatePin: 1,
               invalidateOnRefresh: true,
-              onUpdate: (self) => {
-                const stage = Math.min(hero.stageWords.length - 1, Math.floor(self.progress * hero.stageWords.length));
+              onUpdate: () => {
+                const stage = Math.round(video.currentTime / segLen);
                 setStage(stage);
               },
             },
           });
 
-          tl.to(video, { currentTime: duration, ease: "none", duration: 1 }, 0)
+          tl.to(video, { currentTime: duration, ease: "none", duration: SCRUB_END - INTRO_END }, INTRO_END)
             .to(video, { scale: 1.07, ease: "none", duration: 1 }, 0)
             .to(
               introRef.current,
-              { autoAlpha: 0, y: -28, scale: 0.97, duration: 0.12, ease: "power1.out" },
-              0
+              { autoAlpha: 0, y: -28, scale: 0.97, duration: 0.1, ease: "power1.out" },
+              INTRO_END - 0.1
             )
-            .to(stageGroupRef.current, { autoAlpha: 1, duration: 0.12, ease: "power1.in" }, 0);
+            .to(stageGroupRef.current, { autoAlpha: 1, duration: 0.1, ease: "power1.in" }, INTRO_END - 0.1);
 
           return () => {
             tl.scrollTrigger?.kill();
@@ -191,7 +214,7 @@ export default function Hero() {
       {/* Big centered stage title — takes over once the visitor starts scrolling */}
       <div
         ref={stageGroupRef}
-        className="pointer-events-none invisible absolute inset-0 z-10 flex flex-col items-center justify-center gap-6 px-4 opacity-0"
+        className="pointer-events-none invisible absolute inset-0 z-10 flex flex-col items-center justify-center gap-5 px-4 opacity-0"
       >
         <span ref={stageIndexRef} className="font-display text-sm font-bold tracking-[0.3em] text-wood-500">
           01
@@ -200,12 +223,18 @@ export default function Hero() {
           ref={stageLabelRef}
           className="text-balance text-center font-display text-5xl font-black uppercase leading-[0.95] tracking-tight text-concrete-100 sm:text-7xl lg:text-8xl"
         >
-          {hero.stageWords[0]}
+          {hero.stages[0].word}
         </span>
-        <div ref={dotsRef} className="flex items-center gap-2" aria-hidden="true">
-          {hero.stageWords.map((word, i) => (
+        <p
+          ref={stageDescRef}
+          className="max-w-md text-balance text-center text-base leading-relaxed text-concrete-300 sm:text-lg"
+        >
+          {hero.stages[0].description}
+        </p>
+        <div ref={dotsRef} className="mt-2 flex items-center gap-2" aria-hidden="true">
+          {hero.stages.map((stage, i) => (
             <span
-              key={word}
+              key={stage.word}
               className={`h-1.5 w-8 rounded-full transition-colors duration-300 ${
                 i === 0 ? "bg-wood-500" : "bg-concrete-100/20"
               }`}
