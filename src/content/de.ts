@@ -52,9 +52,9 @@ export const hero = {
   ctaPrimary: "Kostenloses Erstgespräch",
   ctaSecondary: "Unsere Leistungen",
   trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
-  // Bauphasen, die im Hero-Hintergrund groß rotieren — Platzhalter für die
-  // spätere Higgsfield-Videoanimation (siehe README). Reihenfolge = Bauablauf.
-  stageWords: ["ENTKERNEN", "DÄMMEN", "VERPUTZEN", "FLIESEN", "ÜBERGEBEN"],
+  // Bauphasen des Hero-Hintergrundvideos (Higgsfield-generiert aus 4 echten
+  // Baustellenfotos). Reihenfolge = Bauablauf, synchron zu den 3 Videosegmenten.
+  stageWords: ["ENTKERNEN", "ROHINSTALLATION", "VERPUTZT", "ÜBERGEBEN"],
 };
 
 export const trustBar = [

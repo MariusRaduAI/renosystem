@@ -6,58 +6,97 @@ import { hero } from "@/content/de";
 
 export default function Hero() {
   const sectionRef = useRef<HTMLElement>(null);
-  const layerFarRef = useRef<HTMLDivElement>(null);
-  const wordsRef = useRef<HTMLDivElement>(null);
-  const planRef = useRef<SVGPathElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const stageLabelRef = useRef<HTMLSpanElement>(null);
+  const stageIndexRef = useRef<HTMLSpanElement>(null);
+  const dotsRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const reduced = prefersReducedMotion();
-    const isMobile = window.innerWidth < 768;
+    const video = videoRef.current;
+
+    const setStage = (i: number) => {
+      const clamped = Math.max(0, Math.min(hero.stageWords.length - 1, i));
+      if (stageLabelRef.current) stageLabelRef.current.textContent = hero.stageWords[clamped];
+      if (stageIndexRef.current) stageIndexRef.current.textContent = String(clamped + 1).padStart(2, "0");
+      if (dotsRef.current) {
+        Array.from(dotsRef.current.children).forEach((dot, idx) => {
+          dot.classList.toggle("bg-wood-500", idx <= clamped);
+          dot.classList.toggle("bg-concrete-100/20", idx > clamped);
+        });
+      }
+    };
+
+    if (reduced || !video) {
+      setStage(0);
+      return;
+    }
 
     const ctx = gsap.context(() => {
-      // Floor-plan outline draws itself in on load — signature detail that
-      // sets up the "blueprint becomes real" motif carried through the site.
-      if (planRef.current && !reduced) {
-        const length = planRef.current.getTotalLength();
-        planRef.current.style.setProperty("--path-length", String(length));
-        gsap.fromTo(
-          planRef.current,
-          { strokeDashoffset: length },
-          { strokeDashoffset: 0, duration: 2.4, ease: "power2.inOut", delay: 0.3 }
-        );
-      }
+      const mm = gsap.matchMedia();
+      let lastStage = -1;
 
-      // Rotating construction-stage words behind the headline. Standing in
-      // for the future generated video background — swap the word layer for
-      // a <video> element later without touching layout.
-      const words = gsap.utils.toArray<HTMLElement>(".hero-word");
-      if (words.length && !reduced) {
-        const wordTl = gsap.timeline({ repeat: -1, delay: 1 });
-        words.forEach((word) => {
-          wordTl
-            .to(word, { autoAlpha: 1, filter: "blur(0px)", scale: 1, duration: 1, ease: "power2.out" })
-            .to(word, { autoAlpha: 0, filter: "blur(10px)", scale: 1.04, duration: 0.9, ease: "power2.in" }, "+=1.35");
-        });
-      } else if (words[0]) {
-        gsap.set(words[0], { autoAlpha: 0.5, filter: "blur(0px)", scale: 1 });
-      }
+      const onVideoProgress = (t: number, duration: number) => {
+        const segment = duration / hero.stageWords.length;
+        const stage = Math.min(hero.stageWords.length - 1, Math.floor(t / segment));
+        if (stage !== lastStage) {
+          lastStage = stage;
+          setStage(stage);
+        }
+      };
 
-      if (!reduced) {
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top top",
-            end: "bottom top",
-            scrub: 0.6,
-          },
+      // Desktop/tablet: video playback is fully driven by scroll position —
+      // the room only "renovates" as far as the visitor has scrolled.
+      mm.add("(min-width: 768px)", () => {
+        // iOS Safari needs a primed play/pause before currentTime scrubbing works.
+        video.muted = true;
+        video.play().then(() => video.pause()).catch(() => {});
+
+        const start = () => {
+          const duration = video.duration || 0;
+          if (!duration) return;
+
+          const tween = gsap.to(video, {
+            currentTime: duration,
+            ease: "none",
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: "top top",
+              end: "bottom top",
+              scrub: 0.4,
+              onUpdate: () => onVideoProgress(video.currentTime, duration),
+            },
+          });
+
+          return () => {
+            tween.scrollTrigger?.kill();
+            tween.kill();
+          };
+        };
+
+        if (video.readyState >= 1) {
+          return start();
+        }
+        const onLoaded = () => start();
+        video.addEventListener("loadedmetadata", onLoaded, { once: true });
+        return () => video.removeEventListener("loadedmetadata", onLoaded);
+      });
+
+      // Mobile: scroll-scrubbing feels janky on touch momentum scrolling and
+      // is heavier on battery — just loop the video and cycle labels on a timer.
+      mm.add("(max-width: 767px)", () => {
+        video.loop = true;
+        video.play().catch(() => {});
+
+        const labelTl = gsap.timeline({ repeat: -1 });
+        hero.stageWords.forEach((_, i) => {
+          labelTl.call(() => setStage(i), [], `+=${i === 0 ? 0 : 2.6}`);
         });
-        if (layerFarRef.current) {
-          tl.to(layerFarRef.current, { yPercent: isMobile ? 10 : 18, ease: "none" }, 0);
-        }
-        if (wordsRef.current) {
-          tl.to(wordsRef.current, { yPercent: isMobile ? 6 : 12, ease: "none" }, 0);
-        }
-      }
+
+        return () => {
+          labelTl.kill();
+        };
+      });
     }, sectionRef);
 
     return () => ctx.revert();
@@ -67,51 +106,25 @@ export default function Hero() {
     <section
       id="top"
       ref={sectionRef}
-      className="relative flex min-h-[100svh] items-center overflow-hidden bg-concrete-950 noise-texture"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-concrete-950"
     >
-      <div className="absolute inset-0 blueprint-grid opacity-40" />
-
-      <div
-        ref={layerFarRef}
+      <video
+        ref={videoRef}
+        className="absolute inset-0 h-full w-full object-cover"
+        muted
+        playsInline
+        preload="auto"
+        poster="/video/hero-poster.jpg"
         aria-hidden="true"
-        className="absolute -right-24 top-10 h-[420px] w-[420px] rounded-full bg-wood-600/10 blur-3xl"
+      >
+        <source src="/video/hero-renovation.webm" type="video/webm" />
+        <source src="/video/hero-renovation.mp4" type="video/mp4" />
+      </video>
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-concrete-950 via-concrete-950/60 to-concrete-950/45"
+        aria-hidden="true"
       />
-
-      {/* Rotating stage words — huge outlined type, sits between grid and content */}
-      <div
-        ref={wordsRef}
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
-      >
-        <div className="relative flex h-[40vw] max-h-[420px] w-full items-center justify-center sm:h-[26vw]">
-          {hero.stageWords.map((word) => (
-            <span
-              key={word}
-              className="hero-word text-outline invisible absolute whitespace-nowrap font-display text-[16vw] font-black uppercase leading-none tracking-tight opacity-0 sm:text-[9vw]"
-              style={{ filter: "blur(10px)", transform: "scale(1.04)" }}
-            >
-              {word}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Floor-plan line drawing — decorative, draws itself on load */}
-      <svg
-        aria-hidden="true"
-        className="pointer-events-none absolute right-[4%] top-[14%] hidden h-[62%] w-auto opacity-30 md:block"
-        viewBox="0 0 220 420"
-        fill="none"
-      >
-        <path
-          ref={planRef}
-          className="line-draw"
-          d="M10 10H150V70H210V180H150V410H10V260H60V180H10V70H80V10"
-          stroke="var(--color-wood-500)"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-      </svg>
+      <div className="absolute inset-0 blueprint-grid opacity-[0.08]" aria-hidden="true" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pt-20 sm:px-6 lg:px-8">
         <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-wood-500 animate-fade-up">
@@ -158,6 +171,28 @@ export default function Hero() {
           <span className="inline-block h-1.5 w-1.5 rounded-full bg-wood-500" aria-hidden="true" />
           {hero.trustSignal}
         </p>
+      </div>
+
+      {/* Centered stage title — tracks the renovation video as the visitor scrolls */}
+      <div className="pointer-events-none absolute inset-x-0 bottom-32 z-10 hidden flex-col items-center gap-3 sm:flex">
+        <div className="flex items-baseline gap-2 font-display text-concrete-100">
+          <span ref={stageIndexRef} className="text-sm font-bold text-wood-500">
+            01
+          </span>
+          <span ref={stageLabelRef} className="text-lg font-bold uppercase tracking-[0.15em]">
+            {hero.stageWords[0]}
+          </span>
+        </div>
+        <div ref={dotsRef} className="flex items-center gap-1.5" aria-hidden="true">
+          {hero.stageWords.map((word, i) => (
+            <span
+              key={word}
+              className={`h-1.5 w-1.5 rounded-full transition-colors duration-300 ${
+                i === 0 ? "bg-wood-500" : "bg-concrete-100/20"
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="absolute inset-x-0 bottom-8 z-10 hidden justify-center sm:flex">
