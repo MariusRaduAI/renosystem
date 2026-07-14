@@ -21,7 +21,7 @@ export default function PageCta({
           <Link
             href="/#kontakt"
             data-magnetic
-            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-sm bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
           >
             Kostenloses Erstgespräch
           </Link>
@@ -30,7 +30,7 @@ export default function PageCta({
             target="_blank"
             rel="noopener noreferrer"
             data-magnetic
-            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-sm border border-concrete-100/25 px-7 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
+            className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-concrete-100/25 px-7 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
           >
             💬 Direkt per WhatsApp
           </a>

@@ -88,14 +88,14 @@ export default async function ServiceDetailPage({
             </div>
 
             <aside className="space-y-8">
-              <div className="blueprint-corners rounded-sm bg-concrete-950 p-6 noise-texture">
+              <div className="rounded-2xl bg-concrete-950 p-6 noise-texture">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-500">
                   Ideal für
                 </p>
                 <p className="mt-3 text-sm leading-relaxed text-concrete-300">{service.idealFor}</p>
               </div>
 
-              <div className="rounded-sm bg-white/60 p-6 ring-1 ring-concrete-600/10">
+              <div className="rounded-2xl bg-white/60 p-6 ring-1 ring-concrete-600/10">
                 <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
                   {processSection.eyebrow}
                 </p>

@@ -23,7 +23,7 @@ export default function Footer() {
           <Link
             href="/#kontakt"
             data-magnetic
-            className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-sm bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
+            className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
           >
             Jetzt Erstgespräch anfragen →
           </Link>

@@ -46,7 +46,7 @@ export default function LeistungenPage() {
                         key={service.slug}
                         href={`/leistungen/${service.slug}`}
                         data-magnetic
-                        className="group blueprint-corners flex flex-col justify-between rounded-sm bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
+                        className="group flex flex-col justify-between rounded-2xl bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
                       >
                         <div>
                           <h3 className="font-display text-lg font-bold text-concrete-950">{service.name}</h3>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { hero, business, contact } from "@/content/de";
 import LeadForm from "@/components/LeadForm";
@@ -5,7 +6,20 @@ import LeadForm from "@/components/LeadForm";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-concrete-950 noise-texture">
-      <div className="absolute inset-0 blueprint-grid opacity-30" aria-hidden="true" />
+      <Image
+        src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1600&auto=format&fit=crop"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-45"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-r from-concrete-950 via-concrete-950/85 to-concrete-950/40"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 blueprint-grid opacity-15" aria-hidden="true" />
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:pt-40">
         <div>
           <p className="mb-5 flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.25em] text-wood-500 animate-fade-up">
@@ -39,14 +53,14 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               data-magnetic
-              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm border border-concrete-100/25 px-6 text-sm font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-concrete-100/25 px-6 text-sm font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
             >
               💬 {contact.whatsappCta}
             </a>
             <a
               href={business.phoneHref}
               data-magnetic
-              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-sm border border-concrete-100/25 px-6 text-sm font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-concrete-100/25 px-6 text-sm font-semibold text-concrete-100 transition-colors hover:border-concrete-100/60"
             >
               📞 {business.phoneDisplay}
             </a>

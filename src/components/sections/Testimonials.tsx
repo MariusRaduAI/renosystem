@@ -37,7 +37,7 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-sm border border-dashed border-concrete-950/25 bg-concrete-950 noise-texture">
+        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-3xl border border-dashed border-concrete-950/25 bg-concrete-950 noise-texture">
           <div className="h-1.5 w-full stripe-safety" aria-hidden="true" />
           <div className="flex flex-col items-center gap-6 px-6 py-16 text-center sm:py-20">
             <span className="font-display text-6xl text-wood-500/40" aria-hidden="true">

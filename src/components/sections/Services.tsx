@@ -73,7 +73,7 @@ export default function Services() {
                       key={service.slug}
                       href={`/leistungen/${service.slug}`}
                       data-magnetic
-                      className="service-tile group flex items-start justify-between gap-4 rounded-sm border border-concrete-950/10 bg-white p-5 transition-colors hover:border-wood-500 hover:bg-concrete-950"
+                      className="service-tile group flex items-start justify-between gap-4 rounded-2xl border border-concrete-950/10 bg-white p-5 shadow-sm transition-colors hover:border-wood-500 hover:bg-concrete-950 hover:shadow-md"
                     >
                       <div>
                         <h4 className="font-display text-base font-bold text-concrete-950 group-hover:text-concrete-100">

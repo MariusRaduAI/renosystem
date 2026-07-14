@@ -87,7 +87,7 @@ export default function CustomCursor() {
         <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-wood-500" />
         <span
           ref={labelRef}
-          className="absolute left-1/2 top-8 -translate-x-1/2 whitespace-nowrap rounded-sm bg-concrete-950 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100 opacity-0 transition-opacity duration-200"
+          className="absolute left-1/2 top-8 -translate-x-1/2 whitespace-nowrap rounded-full bg-concrete-950 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100 opacity-0 transition-opacity duration-200"
         />
       </div>
     </div>

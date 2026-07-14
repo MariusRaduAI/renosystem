@@ -52,7 +52,7 @@ export default function Nav() {
             <Link
               href="/#kontakt"
               data-magnetic
-              className="inline-flex items-center rounded-sm bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
+              className="inline-flex items-center rounded-full bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-950 shadow-sm shadow-wood-900/20 transition-colors hover:bg-safety hover:text-concrete-100"
             >
               {nav.cta}
             </Link>

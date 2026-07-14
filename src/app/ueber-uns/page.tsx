@@ -39,7 +39,7 @@ export default function UeberUnsPage() {
             </h2>
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {about.principles.map((principle, i) => (
-                <div key={principle.title} className="blueprint-corners rounded-sm bg-concrete-900 p-6">
+                <div key={principle.title} className="rounded-2xl bg-concrete-900 p-6">
                   <span className="font-display text-2xl font-extrabold text-wood-500">
                     0{i + 1}
                   </span>

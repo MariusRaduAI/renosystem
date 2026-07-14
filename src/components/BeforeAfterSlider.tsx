@@ -34,7 +34,7 @@ export default function BeforeAfterSlider({
     <div
       ref={containerRef}
       data-cursor-label="Ziehen"
-      className="group relative aspect-[4/5] w-full touch-none select-none overflow-hidden rounded-sm bg-concrete-900"
+      className="group relative aspect-[4/5] w-full touch-none select-none overflow-hidden rounded-2xl bg-concrete-900"
       onPointerDown={(e) => {
         dragging.current = true;
         (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -55,7 +55,7 @@ export default function BeforeAfterSlider({
         sizes="(min-width: 1024px) 45vw, (min-width: 640px) 50vw, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <span className="absolute bottom-3 right-3 z-10 rounded-sm bg-concrete-950/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100">
+      <span className="absolute bottom-3 right-3 z-10 rounded-full bg-concrete-950/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100">
         {afterLabel}
       </span>
 
@@ -70,7 +70,7 @@ export default function BeforeAfterSlider({
           aria-hidden="true"
         />
         <div className="absolute inset-0 blueprint-grid opacity-70 mix-blend-overlay" aria-hidden="true" />
-        <span className="absolute bottom-3 left-3 z-10 rounded-sm bg-concrete-100/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-950">
+        <span className="absolute bottom-3 left-3 z-10 rounded-full bg-concrete-100/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-950">
           {beforeLabel}
         </span>
       </div>

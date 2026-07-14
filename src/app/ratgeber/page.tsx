@@ -27,7 +27,7 @@ export default function RatgeberPage() {
                   key={article.slug}
                   href={`/ratgeber/${article.slug}`}
                   data-magnetic
-                  className="group flex flex-col justify-between rounded-sm bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
+                  className="group flex flex-col justify-between rounded-2xl bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
                 >
                   <div>
                     <p className="text-xs font-semibold uppercase tracking-wide text-wood-600">

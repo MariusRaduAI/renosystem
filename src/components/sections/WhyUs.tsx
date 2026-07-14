@@ -46,7 +46,7 @@ export default function WhyUs() {
             {whyUs.points.map((point, i) => (
               <div
                 key={point}
-                className="point-card blueprint-corners flex flex-col justify-between gap-6 rounded-sm bg-concrete-950 p-6 noise-texture"
+                className="point-card flex flex-col justify-between gap-6 rounded-2xl bg-concrete-950 p-6 noise-texture"
               >
                 <span className="font-display text-3xl font-extrabold text-wood-500">
                   0{i + 1}
