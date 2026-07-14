@@ -50,29 +50,8 @@ export const hero = {
   headline: "Sanierung, die keine Fragen offen lässt.",
   subline:
     "Kein Kostenvoranschlag, der später explodiert. Kein Hin- und Herschieben zwischen Handwerkern. Sie bekommen einen Festpreis nach persönlicher Besichtigung — und einen Ansprechpartner, der von der Entkernung bis zur Übergabe an Ihrer Seite bleibt.",
-  ctaPrimary: "Kostenloses Erstgespräch",
   ctaSecondary: "Unsere Leistungen",
   trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
-  // Bauphasen des Hero-Hintergrundvideos (Higgsfield-generiert aus 4 echten
-  // Baustellenfotos). Reihenfolge = Bauablauf, synchron zu den 3 Videosegmenten.
-  stages: [
-    {
-      word: "ENTKERNEN",
-      description: "Rückbau bis auf den Rohbau — der Ausgangspunkt jeder Sanierung.",
-    },
-    {
-      word: "ROHINSTALLATION",
-      description: "Elektrik und Leitungen werden neu verlegt und sauber geordnet.",
-    },
-    {
-      word: "VERPUTZT",
-      description: "Wände und Böden sind verputzt — bereit für den Bodenbelag.",
-    },
-    {
-      word: "ÜBERGEBEN",
-      description: "Parkett verlegt, Feinschliff fertig — schlüsselfertig übergeben.",
-    },
-  ],
 };
 
 export const trustBar = [

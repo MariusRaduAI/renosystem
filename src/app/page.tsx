@@ -7,7 +7,6 @@ import Process from "@/components/sections/Process";
 import WhyUs from "@/components/sections/WhyUs";
 import Portfolio from "@/components/sections/Portfolio";
 import Testimonials from "@/components/sections/Testimonials";
-import Contact from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -21,7 +20,6 @@ export default function Home() {
         <WhyUs />
         <Portfolio />
         <Testimonials />
-        <Contact />
       </main>
       <Footer />
     </>
