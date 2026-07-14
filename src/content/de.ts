@@ -28,11 +28,12 @@ export const site = {
 
 export const nav = {
   links: [
-    { label: "Leistungen", href: "#leistungen" },
-    { label: "Ablauf", href: "#ablauf" },
-    { label: "Warum RENOSYSTEM", href: "#warum-wir" },
-    { label: "Projekte", href: "#projekte" },
-    { label: "Kontakt", href: "#kontakt" },
+    { label: "Leistungen", href: "/leistungen" },
+    { label: "Ablauf", href: "/#ablauf" },
+    { label: "Warum RENOSYSTEM", href: "/#warum-wir" },
+    { label: "Häufige Fragen", href: "/haeufige-fragen" },
+    { label: "Ratgeber", href: "/ratgeber" },
+    { label: "Kontakt", href: "/#kontakt" },
   ],
   cta: "Erstgespräch anfragen",
 };
@@ -48,7 +49,7 @@ export const hero = {
   ],
   headline: "Sanierung, die keine Fragen offen lässt.",
   subline:
-    "Wir übernehmen Komplettsanierungen und Bausanierungen für Eigentümer, die Struktur, Qualität und einen verbindlichen Festpreis erwarten — von der ersten Besichtigung bis zur Übergabe.",
+    "Kein Kostenvoranschlag, der später explodiert. Kein Hin- und Herschieben zwischen Handwerkern. Sie bekommen einen Festpreis nach persönlicher Besichtigung — und einen Ansprechpartner, der von der Entkernung bis zur Übergabe an Ihrer Seite bleibt.",
   ctaPrimary: "Kostenloses Erstgespräch",
   ctaSecondary: "Unsere Leistungen",
   trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
@@ -99,7 +100,9 @@ export const servicesSection = {
   eyebrow: "Leistungen",
   headline: "Ein Team. Alle Gewerke. Ein Plan.",
   intro:
-    "Wir bündeln 14 Leistungen in vier klaren Bereichen — damit Sie einen Partner haben, keine Baustelle voller Einzelvergaben.",
+    "Von der Entkernung bis zur letzten Fliese: 14 Leistungen aus einer Hand, damit Sie nie selbst zwischen Handwerkern vermitteln müssen — und nie den Überblick verlieren, wer gerade wofür verantwortlich ist.",
+  allServicesLink: "Alle Leistungen im Detail",
+  allServicesHref: "/leistungen",
 };
 
 export const serviceGroups: ServiceGroup[] = [
@@ -237,22 +240,8 @@ export const process: ProcessStep[] = [
 
 export const whyUs = {
   eyebrow: "Warum RENOSYSTEM",
-  headline: "Drei Qualitätsstufen. Eine klare Empfehlung.",
-  body: "Nicht jedes Projekt braucht dieselbe Ausstattung. Deshalb arbeiten wir mit drei Qualitätsstufen — Standard, Gehoben und Premium. Nach Fragebogen und Besichtigung empfehlen wir Ihnen die Stufe, die zu Ihrem Objekt, Ihrem Anspruch und Ihrem Budget passt.",
-  tiers: [
-    {
-      name: "Standard",
-      description: "Solide Ausführung, geprüfte Materialien, klare Funktionalität.",
-    },
-    {
-      name: "Gehoben",
-      description: "Hochwertigere Materialien und Details für gesteigerten Wohnkomfort.",
-    },
-    {
-      name: "Premium",
-      description: "Höchster Anspruch an Materialien, Verarbeitung und Gestaltung.",
-    },
-  ],
+  headline: "Ein Standard. Kein Kompromiss.",
+  body: "Wir verkaufen Ihnen nicht die teuerste Variante, die Ihr Budget hergibt, und auch keine Billig-Ausführung, die in zwei Jahren wieder Thema wird. Jedes Projekt bekommt dieselbe sorgfältige Ausführung und dieselbe Qualität bei Material und Verarbeitung — unabhängig davon, wie groß der Auftrag ist.",
   points: [
     "Festpreis statt Stundenlohn",
     "Ein Ansprechpartner — vom ersten Anruf bis zur Übergabe",
@@ -372,6 +361,13 @@ export const contact = {
 export const footer = {
   description: site.tagline,
   servicesTitle: "Leistungen",
+  companyTitle: "Unternehmen",
+  companyLinks: [
+    { label: "Über uns", href: "/ueber-uns" },
+    { label: "Projekte", href: "/#projekte" },
+    { label: "Häufige Fragen", href: "/haeufige-fragen" },
+    { label: "Ratgeber", href: "/ratgeber" },
+  ],
   contactTitle: "Kontakt",
   legalTitle: "Rechtliches",
   legalLinks: [

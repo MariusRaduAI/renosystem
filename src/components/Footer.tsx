@@ -1,16 +1,17 @@
 import Link from "next/link";
 import Logo from "./Logo";
-import { footer, business, serviceGroups } from "@/content/de";
+import { footer, business } from "@/content/de";
+import { serviceDetails } from "@/content/services";
 
 export default function Footer() {
-  const leadServices = serviceGroups.flatMap((group) => group.services).slice(0, 6);
+  const leadServices = serviceDetails.slice(0, 6);
 
   return (
     <footer className="bg-concrete-950 pt-16 noise-texture">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 border-b border-concrete-100/10 pb-14 lg:flex-row lg:items-end lg:justify-between">
-          <a
-            href="#kontakt"
+          <Link
+            href="/#kontakt"
             data-magnetic
             className="group block"
             aria-label="Zum Kontaktformular"
@@ -18,17 +19,17 @@ export default function Footer() {
             <span className="font-display block text-[13vw] font-black uppercase leading-[0.85] tracking-tighter text-outline transition-colors group-hover:[-webkit-text-stroke-color:var(--color-wood-500)] sm:text-8xl lg:text-9xl">
               Bauen wir.
             </span>
-          </a>
-          <a
-            href="#kontakt"
+          </Link>
+          <Link
+            href="/#kontakt"
             data-magnetic
             className="inline-flex min-h-[52px] shrink-0 items-center justify-center gap-2 rounded-sm bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
           >
             Jetzt Erstgespräch anfragen →
-          </a>
+          </Link>
         </div>
 
-        <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
           <div>
             <Logo variant="dark" />
             <p className="mt-4 max-w-xs text-sm text-concrete-300">{footer.description}</p>
@@ -41,10 +42,33 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-2">
               {leadServices.map((service) => (
-                <li key={service.name}>
-                  <a href="#leistungen" className="text-sm text-concrete-300 hover:text-concrete-100">
+                <li key={service.slug}>
+                  <Link
+                    href={`/leistungen/${service.slug}`}
+                    className="text-sm text-concrete-300 hover:text-concrete-100"
+                  >
                     {service.name}
-                  </a>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <Link href="/leistungen" className="text-sm font-semibold text-wood-500 hover:text-wood-600">
+                  Alle Leistungen →
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-display text-sm font-bold uppercase tracking-wide text-concrete-100">
+              {footer.companyTitle}
+            </h3>
+            <ul className="mt-4 space-y-2">
+              {footer.companyLinks.map((link) => (
+                <li key={link.href}>
+                  <Link href={link.href} className="text-sm text-concrete-300 hover:text-concrete-100">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
