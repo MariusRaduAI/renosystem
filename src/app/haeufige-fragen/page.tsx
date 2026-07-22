@@ -35,11 +35,11 @@ export default function FaqPage() {
       <main>
         <PageHeader eyebrow={faqIntro.eyebrow} headline={faqIntro.headline} intro={faqIntro.intro} />
 
-        <section className="bg-concrete-100 py-16 sm:py-20">
+        <section className="bg-ink-100 py-16 sm:py-20">
           <div className="mx-auto max-w-4xl space-y-16 px-4 sm:px-6 lg:px-8">
             {faqCategories.map((category) => (
               <div key={category.id}>
-                <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
+                <h2 className="font-display text-2xl font-bold text-ink-950 sm:text-3xl">
                   {category.title}
                 </h2>
                 <div className="mt-4">

@@ -64,7 +64,7 @@ export default function PortfolioGrid({
               afterLabel={afterLabel}
             />
             {item.isPlaceholder && (
-              <span className="absolute right-2 top-2 z-10 rounded-sm bg-concrete-950/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-300">
+              <span className="absolute right-2 top-2 z-10 rounded-full bg-ink-950/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-300">
                 {placeholderNote}
               </span>
             )}
@@ -72,11 +72,11 @@ export default function PortfolioGrid({
           <div className="mt-3 flex items-baseline justify-between gap-3">
             <div>
               {item.category && (
-                <p className="text-xs font-semibold uppercase tracking-wide text-wood-500">{item.category}</p>
+                <p className="text-xs font-semibold uppercase tracking-wide text-clay-500">{item.category}</p>
               )}
-              <h3 className="mt-1 font-display text-base font-bold text-concrete-100">{item.title}</h3>
+              <h3 className="mt-1 font-display text-base font-bold text-ink-100">{item.title}</h3>
             </div>
-            <span className="hidden shrink-0 text-xs text-concrete-300 sm:inline">{dragHint} →</span>
+            <span className="hidden shrink-0 text-xs text-ink-300 sm:inline">{dragHint} →</span>
           </div>
         </div>
       ))}

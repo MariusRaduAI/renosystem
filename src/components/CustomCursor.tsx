@@ -82,12 +82,12 @@ export default function CustomCursor() {
       <div className="relative h-7 w-7 -translate-x-1/2 -translate-y-1/2 drop-shadow-[0_0_2px_rgba(14,13,12,0.6)]">
         <div
           ref={ringRef}
-          className="absolute inset-0 rounded-full border-[1.5px] border-wood-500 transition-transform duration-300 ease-out"
+          className="absolute inset-0 rounded-full border-[1.5px] border-clay-500 transition-transform duration-300 ease-out"
         />
-        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-wood-500" />
+        <span className="absolute left-1/2 top-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-clay-500" />
         <span
           ref={labelRef}
-          className="absolute left-1/2 top-8 -translate-x-1/2 whitespace-nowrap rounded-sm bg-concrete-950 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100 opacity-0 transition-opacity duration-200"
+          className="absolute left-1/2 top-8 -translate-x-1/2 whitespace-nowrap rounded-full bg-ink-950 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-100 opacity-0 transition-opacity duration-200"
         />
       </div>
     </div>

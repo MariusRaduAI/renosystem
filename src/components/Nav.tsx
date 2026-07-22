@@ -30,18 +30,18 @@ export default function Nav() {
 
   return (
     <>
-      <header className="fixed inset-x-0 top-0 z-40 border-b border-concrete-100/10 bg-concrete-950/80 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 sm:pt-4">
+        <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-ink-100/10 bg-ink-950/85 pl-5 pr-3 shadow-lg shadow-black/20 backdrop-blur-md sm:pl-6 sm:pr-4">
           <Link href="/" aria-label="RENOSYSTEM Startseite" className="relative z-50">
             <Logo variant="dark" />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden items-center gap-1 rounded-full bg-ink-100/5 p-1 md:flex">
             {nav.links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="whitespace-nowrap text-sm font-medium text-concrete-300 transition-colors hover:text-concrete-100"
+                className="whitespace-nowrap rounded-full px-4 py-2 text-sm font-medium text-ink-300 transition-colors hover:bg-ink-100/10 hover:text-ink-100"
               >
                 {link.label}
               </Link>
@@ -52,19 +52,19 @@ export default function Nav() {
             <Link
               href="/#kontakt"
               data-magnetic
-              className="inline-flex items-center rounded-sm bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100"
+              className="inline-flex items-center rounded-full bg-clay-500 px-5 py-2.5 text-sm font-semibold text-ink-100 transition-colors hover:bg-gold hover:text-ink-950"
             >
               {nav.cta}
             </Link>
           </div>
 
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-2 md:hidden">
             <a
               href={business.whatsappHref}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Per WhatsApp schreiben"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-wood-600 text-lg"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-clay-600 text-lg"
             >
               💬
             </a>
@@ -73,23 +73,23 @@ export default function Nav() {
               aria-label={open ? "Menü schließen" : "Menü öffnen"}
               aria-expanded={open}
               onClick={() => setOpen((v) => !v)}
-              className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full transition-colors active:bg-concrete-100/10"
+              className="relative z-50 flex h-10 w-10 flex-col items-center justify-center gap-1.5 rounded-full transition-colors active:bg-ink-100/10"
             >
               <span
-                className={`h-px w-6 rounded-full bg-concrete-100 transition-transform duration-300 ${open ? "translate-y-2 rotate-45" : ""}`}
+                className={`h-px w-6 rounded-full bg-ink-100 transition-transform duration-300 ${open ? "translate-y-2 rotate-45" : ""}`}
               />
               <span
-                className={`h-px w-6 rounded-full bg-concrete-100 transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
+                className={`h-px w-6 rounded-full bg-ink-100 transition-opacity duration-200 ${open ? "opacity-0" : ""}`}
               />
               <span
-                className={`h-px w-6 rounded-full bg-concrete-100 transition-transform duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`}
+                className={`h-px w-6 rounded-full bg-ink-100 transition-transform duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`}
               />
             </button>
           </div>
         </div>
 
-        <div className="absolute inset-x-0 bottom-0 h-0.5 bg-concrete-100/5" aria-hidden="true">
-          <div ref={progressRef} className="h-full w-0 bg-safety transition-[width] duration-100 ease-out" />
+        <div className="mx-auto mt-1.5 h-0.5 max-w-7xl overflow-hidden rounded-full bg-ink-950/5" aria-hidden="true">
+          <div ref={progressRef} className="h-full w-0 rounded-full bg-gold transition-[width] duration-100 ease-out" />
         </div>
       </header>
 
@@ -97,14 +97,14 @@ export default function Nav() {
           so it isn't drawn through the header's backdrop-blur compositing
           layer (which otherwise let the page behind it bleed into view). */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-concrete-950 md:hidden">
+        <div className="fixed inset-0 z-40 bg-ink-950 md:hidden">
           <div
             aria-hidden="true"
-            className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-wood-600/25 blur-3xl"
+            className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-clay-600/25 blur-3xl"
           />
           <div
             aria-hidden="true"
-            className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-safety/15 blur-3xl"
+            className="absolute -bottom-32 -left-16 h-80 w-80 rounded-full bg-gold/15 blur-3xl"
           />
 
           <div className="relative flex h-16 items-center justify-between px-4 sm:px-6">
@@ -113,7 +113,7 @@ export default function Nav() {
               type="button"
               aria-label="Menü schließen"
               onClick={() => setOpen(false)}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-2xl leading-none text-concrete-100 active:bg-concrete-100/10"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-2xl leading-none text-ink-100 active:bg-ink-100/10"
             >
               ✕
             </button>
@@ -126,7 +126,7 @@ export default function Nav() {
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
-                    className="block rounded-3xl px-5 py-4 font-display text-3xl font-extrabold text-concrete-100 transition-colors active:bg-concrete-100/10"
+                    className="block rounded-3xl px-5 py-4 font-display text-3xl font-extrabold text-ink-100 transition-colors active:bg-ink-100/10"
                   >
                     {link.label}
                   </Link>
@@ -141,13 +141,13 @@ export default function Nav() {
               <Link
                 href="/#kontakt"
                 onClick={() => setOpen(false)}
-                className="flex min-h-[56px] items-center justify-center rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-950 transition-colors active:bg-safety"
+                className="flex min-h-[56px] items-center justify-center rounded-full bg-clay-500 px-7 text-base font-semibold text-ink-950 transition-colors active:bg-gold"
               >
                 {nav.cta}
               </Link>
               <a
                 href={business.phoneHref}
-                className="flex min-h-[56px] items-center justify-center gap-2 rounded-full border border-concrete-100/20 px-7 text-base font-semibold text-concrete-100"
+                className="flex min-h-[56px] items-center justify-center gap-2 rounded-full border border-ink-100/20 px-7 text-base font-semibold text-ink-100"
               >
                 📞 {business.phoneDisplay}
               </a>

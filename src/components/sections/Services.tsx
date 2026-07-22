@@ -33,22 +33,22 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="leistungen" ref={containerRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section id="leistungen" ref={containerRef} className="bg-ink-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">
               {servicesSection.eyebrow}
             </p>
-            <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-concrete-950 sm:text-5xl">
+            <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-ink-950 sm:text-5xl">
               {servicesSection.headline}
             </h2>
           </div>
           <div className="max-w-sm">
-            <p className="text-base leading-relaxed text-concrete-600">{servicesSection.intro}</p>
+            <p className="text-base leading-relaxed text-ink-600">{servicesSection.intro}</p>
             <Link
               href={servicesSection.allServicesHref}
-              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-wood-600 hover:text-wood-500"
+              className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-clay-600 hover:text-clay-500"
             >
               {servicesSection.allServicesLink}
               <span aria-hidden="true">→</span>
@@ -63,8 +63,8 @@ export default function Services() {
             return (
               <div key={group.id}>
                 <div className="mb-5 flex items-baseline gap-3">
-                  <span className="font-display text-2xl font-extrabold text-wood-600">{group.number}</span>
-                  <h3 className="font-display text-xl font-bold text-concrete-950 sm:text-2xl">{group.title}</h3>
+                  <span className="font-display text-2xl font-extrabold text-clay-600">{group.number}</span>
+                  <h3 className="font-display text-xl font-bold text-ink-950 sm:text-2xl">{group.title}</h3>
                 </div>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -73,18 +73,18 @@ export default function Services() {
                       key={service.slug}
                       href={`/leistungen/${service.slug}`}
                       data-magnetic
-                      className="service-tile group flex items-start justify-between gap-4 rounded-sm border border-concrete-950/10 bg-white p-5 transition-colors hover:border-wood-500 hover:bg-concrete-950"
+                      className="service-tile group flex items-start justify-between gap-4 rounded-2xl border-2 border-ink-950/10 bg-white p-5 transition-colors hover:border-clay-500 hover:bg-ink-950"
                     >
                       <div>
-                        <h4 className="font-display text-base font-bold text-concrete-950 group-hover:text-concrete-100">
+                        <h4 className="font-display text-base font-bold text-ink-950 group-hover:text-ink-100">
                           {service.name}
                         </h4>
-                        <p className="mt-1.5 text-sm leading-relaxed text-concrete-600 group-hover:text-concrete-300">
+                        <p className="mt-1.5 text-sm leading-relaxed text-ink-600 group-hover:text-ink-300">
                           {service.shortDescription}
                         </p>
                       </div>
                       <span
-                        className="mt-1 shrink-0 text-lg text-concrete-600/50 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-wood-500"
+                        className="mt-1 shrink-0 text-lg text-ink-600/50 transition-transform duration-200 group-hover:translate-x-1 group-hover:text-clay-500"
                         aria-hidden="true"
                       >
                         →
