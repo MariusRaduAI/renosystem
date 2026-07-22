@@ -5,6 +5,7 @@ import { site } from "@/content/de";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import CustomCursor from "@/components/CustomCursor";
 import MobileActionBar from "@/components/MobileActionBar";
+import IntroOverlay from "@/components/IntroOverlay";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -60,6 +61,7 @@ export default function RootLayout({
     <html lang="de" className={`${archivo.variable} ${inter.variable} h-full`}>
       <body className="min-h-full flex flex-col antialiased bg-concrete-100 text-concrete-950">
         <SmoothScrollProvider>
+          <IntroOverlay />
           <CustomCursor />
           {children}
           <MobileActionBar />
