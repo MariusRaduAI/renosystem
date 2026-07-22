@@ -19,7 +19,7 @@ export default function RatgeberPage() {
       <main>
         <PageHeader eyebrow={ratgeberIntro.eyebrow} headline={ratgeberIntro.headline} intro={ratgeberIntro.intro} />
 
-        <section className="bg-concrete-100 py-16 sm:py-20">
+        <section className="bg-ink-100 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {articles.map((article) => (
@@ -27,18 +27,18 @@ export default function RatgeberPage() {
                   key={article.slug}
                   href={`/ratgeber/${article.slug}`}
                   data-magnetic
-                  className="group flex flex-col justify-between rounded-sm bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
+                  className="group flex flex-col justify-between rounded-2xl bg-white/60 p-6 shadow-sm ring-1 ring-ink-600/10 transition-colors hover:ring-clay-500/40"
                 >
                   <div>
-                    <p className="text-xs font-semibold uppercase tracking-wide text-wood-600">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-clay-600">
                       {article.category}
                     </p>
-                    <h2 className="mt-3 font-display text-xl font-bold text-concrete-950">{article.title}</h2>
-                    <p className="mt-3 text-sm leading-relaxed text-concrete-600">{article.excerpt}</p>
+                    <h2 className="mt-3 font-display text-xl font-bold text-ink-950">{article.title}</h2>
+                    <p className="mt-3 text-sm leading-relaxed text-ink-600">{article.excerpt}</p>
                   </div>
-                  <div className="mt-6 flex items-center justify-between text-xs text-concrete-600">
+                  <div className="mt-6 flex items-center justify-between text-xs text-ink-600">
                     <span>{article.publishedDate}</span>
-                    <span className="inline-flex items-center gap-1.5 font-semibold text-wood-600">
+                    <span className="inline-flex items-center gap-1.5 font-semibold text-clay-600">
                       Lesen
                       <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
                         →

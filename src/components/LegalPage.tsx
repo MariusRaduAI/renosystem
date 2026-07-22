@@ -18,20 +18,20 @@ export default function LegalPage({
   return (
     <>
       <Nav />
-      <main className="bg-concrete-100 pb-24 pt-32">
+      <main className="bg-ink-100 pb-24 pt-32">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <h1 className="text-balance font-display text-3xl font-extrabold tracking-tight text-concrete-950 sm:text-4xl">
+          <h1 className="text-balance font-display text-3xl font-extrabold tracking-tight text-ink-950 sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-2 text-sm text-concrete-600">{updated}</p>
+          <p className="mt-2 text-sm text-ink-600">{updated}</p>
 
           <div className="mt-10 space-y-10">
             {sections.map((section) => (
               <div key={section.heading}>
-                <h2 className="font-display text-xl font-bold text-concrete-950">{section.heading}</h2>
+                <h2 className="font-display text-xl font-bold text-ink-950">{section.heading}</h2>
                 <div className="mt-3 space-y-3">
                   {section.paragraphs.map((paragraph, i) => (
-                    <p key={i} className="text-base leading-relaxed text-concrete-600">
+                    <p key={i} className="text-base leading-relaxed text-ink-600">
                       {paragraph}
                     </p>
                   ))}

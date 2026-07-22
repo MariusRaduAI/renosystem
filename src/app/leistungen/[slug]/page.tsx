@@ -51,35 +51,35 @@ export default async function ServiceDetailPage({
           breadcrumbs={[{ label: "Leistungen", href: "/leistungen" }, { label: service.name }]}
         />
 
-        <section className="bg-concrete-100 py-16 sm:py-20">
+        <section className="bg-ink-100 py-16 sm:py-20">
           <div className="mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 sm:px-6 lg:grid-cols-[1fr_22rem] lg:gap-16 lg:px-8">
             <div>
-              <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
+              <h2 className="font-display text-2xl font-bold text-ink-950 sm:text-3xl">
                 Ihre Vorteile im Detail
               </h2>
               <ul className="mt-6 space-y-4">
                 {service.highlights.map((point) => (
-                  <li key={point} className="flex items-start gap-3 border-b border-concrete-950/10 pb-4">
-                    <span className="mt-1 text-wood-600" aria-hidden="true">
+                  <li key={point} className="flex items-start gap-3 border-b border-ink-950/10 pb-4">
+                    <span className="mt-1 text-clay-600" aria-hidden="true">
                       ✓
                     </span>
-                    <span className="text-base leading-relaxed text-concrete-950">{point}</span>
+                    <span className="text-base leading-relaxed text-ink-950">{point}</span>
                   </li>
                 ))}
               </ul>
 
               {service.faq.length > 0 && (
                 <div className="mt-14">
-                  <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
+                  <h2 className="font-display text-2xl font-bold text-ink-950 sm:text-3xl">
                     Fragen zu {service.name}
                   </h2>
                   <div className="mt-6 space-y-8">
                     {service.faq.map((item) => (
                       <div key={item.question}>
-                        <h3 className="font-display text-base font-bold text-concrete-950">
+                        <h3 className="font-display text-base font-bold text-ink-950">
                           {item.question}
                         </h3>
-                        <p className="mt-2 text-base leading-relaxed text-concrete-600">{item.answer}</p>
+                        <p className="mt-2 text-base leading-relaxed text-ink-600">{item.answer}</p>
                       </div>
                     ))}
                   </div>
@@ -88,22 +88,22 @@ export default async function ServiceDetailPage({
             </div>
 
             <aside className="space-y-8">
-              <div className="blueprint-corners rounded-sm bg-concrete-950 p-6 noise-texture">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-500">
+              <div className="rounded-[1.75rem] bg-ink-950 p-6 noise-texture">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-500">
                   Ideal für
                 </p>
-                <p className="mt-3 text-sm leading-relaxed text-concrete-300">{service.idealFor}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-300">{service.idealFor}</p>
               </div>
 
-              <div className="rounded-sm bg-white/60 p-6 ring-1 ring-concrete-600/10">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
+              <div className="rounded-2xl bg-white/60 p-6 ring-1 ring-ink-600/10">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">
                   {processSection.eyebrow}
                 </p>
                 <ol className="mt-4 space-y-3">
                   {process.map((step) => (
                     <li key={step.number} className="flex items-baseline gap-3">
-                      <span className="font-display text-sm font-bold text-wood-500">{step.number}</span>
-                      <span className="text-sm font-medium text-concrete-950">{step.title}</span>
+                      <span className="font-display text-sm font-bold text-clay-500">{step.number}</span>
+                      <span className="text-sm font-medium text-ink-950">{step.title}</span>
                     </li>
                   ))}
                 </ol>
@@ -111,7 +111,7 @@ export default async function ServiceDetailPage({
 
               {related.length > 0 && (
                 <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
+                  <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">
                     Verwandte Leistungen
                   </p>
                   <ul className="mt-4 space-y-2">
@@ -119,7 +119,7 @@ export default async function ServiceDetailPage({
                       <li key={rel.slug}>
                         <Link
                           href={`/leistungen/${rel.slug}`}
-                          className="text-sm font-medium text-concrete-950 underline decoration-concrete-600/30 underline-offset-4 hover:decoration-wood-500"
+                          className="text-sm font-medium text-ink-950 underline decoration-ink-600/30 underline-offset-4 hover:decoration-clay-500"
                         >
                           {rel.name}
                         </Link>

@@ -68,20 +68,20 @@ export default function Process() {
   }, []);
 
   return (
-    <section id="ablauf" ref={sectionRef} className="relative overflow-hidden bg-concrete-950 noise-texture">
+    <section id="ablauf" ref={sectionRef} className="relative overflow-hidden bg-ink-950 noise-texture">
       <div className="flex min-h-[100svh] flex-col justify-center py-24 lg:h-[100svh] lg:min-h-0 lg:justify-start lg:py-0">
         <div className="mx-auto w-full max-w-7xl px-4 pt-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between gap-6">
             <div className="max-w-2xl">
-              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-500">
+              <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-500">
                 {processSection.eyebrow}
               </p>
-              <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-concrete-100 sm:text-5xl">
+              <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-ink-100 sm:text-5xl">
                 {processSection.headline}
               </h2>
             </div>
-            <div className="hidden shrink-0 items-baseline gap-1 font-display text-concrete-300 lg:flex">
-              <span ref={counterRef} className="text-2xl font-bold text-wood-500">
+            <div className="hidden shrink-0 items-baseline gap-1 font-display text-ink-300 lg:flex">
+              <span ref={counterRef} className="text-2xl font-bold text-clay-500">
                 01
               </span>
               <span className="text-sm">/ {String(process.length).padStart(2, "0")}</span>
@@ -97,20 +97,20 @@ export default function Process() {
             {process.map((step, i) => (
               <div
                 key={step.number}
-                className="process-step relative shrink-0 border-t border-concrete-600/30 pt-6 lg:h-full lg:w-[70vw] lg:max-w-xl lg:border-t-0 lg:border-l lg:pl-12 lg:pt-0 lg:flex lg:flex-col lg:justify-center"
+                className="process-step relative shrink-0 border-t border-ink-600/30 pt-6 lg:h-full lg:w-[70vw] lg:max-w-xl lg:border-t-0 lg:border-l lg:pl-12 lg:pt-0 lg:flex lg:flex-col lg:justify-center"
               >
-                <span className="font-display text-6xl font-black text-wood-500/25 lg:text-8xl">
+                <span className="font-display text-6xl font-black text-clay-500/25 lg:text-8xl">
                   {step.number}
                 </span>
-                <h3 className="mt-3 font-display text-2xl font-bold text-concrete-100 lg:text-4xl">
+                <h3 className="mt-3 font-display text-2xl font-bold text-ink-100 lg:text-4xl">
                   {step.title}
                 </h3>
-                <p className="mt-4 max-w-md text-base leading-relaxed text-concrete-300">
+                <p className="mt-4 max-w-md text-base leading-relaxed text-ink-300">
                   {step.description}
                 </p>
                 {i === process.length - 1 && (
-                  <span className="mt-6 hidden w-fit items-center gap-2 rounded-full border border-safety/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-safety lg:inline-flex">
-                    <span className="h-1.5 w-1.5 rounded-full bg-safety" />
+                  <span className="mt-6 hidden w-fit items-center gap-2 rounded-full border border-gold/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-gold lg:inline-flex">
+                    <span className="h-1.5 w-1.5 rounded-full bg-gold" />
                     Übergabe
                   </span>
                 )}

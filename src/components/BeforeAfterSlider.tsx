@@ -4,9 +4,9 @@ import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
 // Vorher/Nachher-Regler: solange keine echten Baustellenfotos vorliegen,
-// simuliert die "Vorher"-Seite eine Blueprint-Rohbauphase (Graustufen +
-// Rasterlinien) über demselben Platzhalterbild. Sobald echte Vorher-Fotos
-// vorliegen, `beforeSrc` ergänzen und die Simulation entfernen.
+// simuliert die "Vorher"-Seite eine Rohbauphase (Graustufen + Punktraster)
+// über demselben Platzhalterbild. Sobald echte Vorher-Fotos vorliegen,
+// `beforeSrc` ergänzen und die Simulation entfernen.
 export default function BeforeAfterSlider({
   src,
   alt,
@@ -34,7 +34,7 @@ export default function BeforeAfterSlider({
     <div
       ref={containerRef}
       data-cursor-label="Ziehen"
-      className="group relative aspect-[4/5] w-full touch-none select-none overflow-hidden rounded-sm bg-concrete-900"
+      className="group relative aspect-[4/5] w-full touch-none select-none overflow-hidden rounded-[1.75rem] bg-ink-900"
       onPointerDown={(e) => {
         dragging.current = true;
         (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -55,7 +55,7 @@ export default function BeforeAfterSlider({
         sizes="(min-width: 1024px) 45vw, (min-width: 640px) 50vw, 100vw"
         className="object-cover transition-transform duration-500 group-hover:scale-105"
       />
-      <span className="absolute bottom-3 right-3 z-10 rounded-sm bg-concrete-950/80 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-100">
+      <span className="absolute bottom-3 right-3 z-10 rounded-full bg-ink-950/80 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-100">
         {afterLabel}
       </span>
 
@@ -69,18 +69,18 @@ export default function BeforeAfterSlider({
           style={{ filter: "grayscale(1) contrast(1.1) brightness(0.7)" }}
           aria-hidden="true"
         />
-        <div className="absolute inset-0 blueprint-grid opacity-70 mix-blend-overlay" aria-hidden="true" />
-        <span className="absolute bottom-3 left-3 z-10 rounded-sm bg-concrete-100/90 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-950">
+        <div className="dot-grid absolute inset-0 opacity-70 mix-blend-overlay" aria-hidden="true" />
+        <span className="absolute bottom-3 left-3 z-10 rounded-full bg-ink-100/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-ink-950">
           {beforeLabel}
         </span>
       </div>
 
       <div
-        className="pointer-events-none absolute inset-y-0 w-0.5 bg-concrete-100/90"
+        className="pointer-events-none absolute inset-y-0 w-0.5 bg-ink-100/90"
         style={{ left: `${pos}%` }}
         aria-hidden="true"
       >
-        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-wood-500 text-sm font-bold text-concrete-950 shadow-lg">
+        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-clay-500 text-sm font-bold text-ink-950 shadow-lg">
           ↔
         </div>
       </div>

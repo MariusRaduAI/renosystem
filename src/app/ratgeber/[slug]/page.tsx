@@ -49,19 +49,19 @@ export default async function ArticlePage({
           breadcrumbs={[{ label: "Ratgeber", href: "/ratgeber" }, { label: article.title }]}
         />
 
-        <article className="bg-concrete-100 py-16 sm:py-20">
+        <article className="bg-ink-100 py-16 sm:py-20">
           <div className="mx-auto max-w-3xl space-y-10 px-4 sm:px-6 lg:px-8">
             {article.sections.map((section, i) => (
               <div key={i}>
                 {section.heading && (
-                  <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
+                  <h2 className="font-display text-2xl font-bold text-ink-950 sm:text-3xl">
                     {section.heading}
                   </h2>
                 )}
                 {section.paragraphs?.map((paragraph, j) => (
                   <p
                     key={j}
-                    className={`text-balance text-base leading-relaxed text-concrete-600 sm:text-lg ${
+                    className={`text-balance text-base leading-relaxed text-ink-600 sm:text-lg ${
                       section.heading ? "mt-4" : ""
                     } ${j > 0 ? "mt-4" : ""}`}
                   >
@@ -72,10 +72,10 @@ export default async function ArticlePage({
                   <ul className="mt-4 space-y-3">
                     {section.list.map((point) => (
                       <li key={point} className="flex items-start gap-3">
-                        <span className="mt-1 text-wood-600" aria-hidden="true">
+                        <span className="mt-1 text-clay-600" aria-hidden="true">
                           ✓
                         </span>
-                        <span className="text-base leading-relaxed text-concrete-950">{point}</span>
+                        <span className="text-base leading-relaxed text-ink-950">{point}</span>
                       </li>
                     ))}
                   </ul>
@@ -84,8 +84,8 @@ export default async function ArticlePage({
             ))}
 
             {related.length > 0 && (
-              <div className="border-t border-concrete-950/10 pt-10">
-                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
+              <div className="border-t border-ink-950/10 pt-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">
                   Weiterlesen
                 </p>
                 <ul className="mt-4 space-y-2">
@@ -93,7 +93,7 @@ export default async function ArticlePage({
                     <li key={rel.slug}>
                       <Link
                         href={`/ratgeber/${rel.slug}`}
-                        className="text-base font-medium text-concrete-950 underline decoration-concrete-600/30 underline-offset-4 hover:decoration-wood-500"
+                        className="text-base font-medium text-ink-950 underline decoration-ink-600/30 underline-offset-4 hover:decoration-clay-500"
                       >
                         {rel.title}
                       </Link>

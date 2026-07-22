@@ -31,27 +31,27 @@ export default function WhyUs() {
   }, []);
 
   return (
-    <section id="warum-wir" ref={sectionRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section id="warum-wir" ref={sectionRef} className="bg-ink-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">{whyUs.eyebrow}</p>
-            <h2 className="mt-4 text-balance font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-concrete-950 sm:text-6xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">{whyUs.eyebrow}</p>
+            <h2 className="mt-4 text-balance font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-ink-950 sm:text-6xl">
               {whyUs.headline}
             </h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-concrete-600">{whyUs.body}</p>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-ink-600">{whyUs.body}</p>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
             {whyUs.points.map((point, i) => (
               <div
                 key={point}
-                className="point-card blueprint-corners flex flex-col justify-between gap-6 rounded-sm bg-concrete-950 p-6 noise-texture"
+                className="point-card flex flex-col justify-between gap-6 rounded-[1.75rem] bg-ink-950 p-6 noise-texture"
               >
-                <span className="font-display text-3xl font-extrabold text-wood-500">
+                <span className="font-display text-3xl font-extrabold text-clay-500">
                   0{i + 1}
                 </span>
-                <span className="font-display text-lg font-bold leading-snug text-concrete-100">
+                <span className="font-display text-lg font-bold leading-snug text-ink-100">
                   {point}
                 </span>
               </div>

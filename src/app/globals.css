@@ -1,34 +1,34 @@
 @import "tailwindcss";
 
 :root {
-  /* Industrial Premium palette */
-  --color-concrete-950: #0e0d0c;
-  --color-concrete-900: #171513;
-  --color-concrete-800: #232019;
-  --color-concrete-600: #4a453d;
-  --color-concrete-300: #9c968a;
-  --color-concrete-100: #e8e4dc;
+  /* Warm craft palette — paper, charcoal, terracotta, ochre, sage */
+  --color-ink-950: #1b1712;
+  --color-ink-900: #241f19;
+  --color-ink-800: #362e24;
+  --color-ink-600: #5c5346;
+  --color-ink-300: #a89d8c;
+  --color-ink-100: #f6f1e7;
 
-  --color-steel-500: #6b7280;
-  --color-wood-500: #b5713b;
-  --color-wood-600: #97551f;
-  --color-safety: #d6541f;
+  --color-sage-500: #5c6b4f;
+  --color-clay-500: #c1552e;
+  --color-clay-600: #9c4322;
+  --color-gold: #d9a441;
 
-  --background: var(--color-concrete-100);
-  --foreground: var(--color-concrete-950);
+  --background: var(--color-ink-100);
+  --foreground: var(--color-ink-950);
 }
 
 @theme inline {
-  --color-concrete-950: var(--color-concrete-950);
-  --color-concrete-900: var(--color-concrete-900);
-  --color-concrete-800: var(--color-concrete-800);
-  --color-concrete-600: var(--color-concrete-600);
-  --color-concrete-300: var(--color-concrete-300);
-  --color-concrete-100: var(--color-concrete-100);
-  --color-steel-500: var(--color-steel-500);
-  --color-wood-500: var(--color-wood-500);
-  --color-wood-600: var(--color-wood-600);
-  --color-safety: var(--color-safety);
+  --color-ink-950: var(--color-ink-950);
+  --color-ink-900: var(--color-ink-900);
+  --color-ink-800: var(--color-ink-800);
+  --color-ink-600: var(--color-ink-600);
+  --color-ink-300: var(--color-ink-300);
+  --color-ink-100: var(--color-ink-100);
+  --color-sage-500: var(--color-sage-500);
+  --color-clay-500: var(--color-clay-500);
+  --color-clay-600: var(--color-clay-600);
+  --color-gold: var(--color-gold);
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -40,7 +40,7 @@
   --animate-marquee: marquee 32s linear infinite;
   --animate-marquee-slow: marquee 46s linear infinite;
   --animate-word-cycle: word-cycle 8s cubic-bezier(0.65, 0, 0.35, 1) infinite;
-  --animate-ticker: ticker 22s linear infinite;
+  --animate-blob: blob 14s ease-in-out infinite;
 
   @keyframes fade-up {
     from {
@@ -62,12 +62,15 @@
     }
   }
 
-  @keyframes ticker {
-    from {
-      background-position: 0 0;
+  @keyframes blob {
+    0%, 100% {
+      border-radius: 42% 58% 65% 35% / 45% 40% 60% 55%;
     }
-    to {
-      background-position: -80px 0;
+    34% {
+      border-radius: 65% 35% 40% 60% / 55% 65% 35% 45%;
+    }
+    67% {
+      border-radius: 35% 65% 55% 45% / 40% 55% 45% 60%;
     }
   }
 
@@ -105,7 +108,7 @@ h1, h2, h3, h4, .font-display {
   letter-spacing: -0.02em;
 }
 
-/* Concrete noise texture — pure CSS, no image request */
+/* Paper grain texture — pure CSS, no image request */
 .noise-texture {
   position: relative;
   isolation: isolate;
@@ -121,37 +124,10 @@ h1, h2, h3, h4, .font-display {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-/* Blueprint corner marks — decorative architectural motif */
-.blueprint-corners {
-  position: relative;
-}
-.blueprint-corners::before,
-.blueprint-corners::after {
-  content: "";
-  position: absolute;
-  width: 18px;
-  height: 18px;
-  border: 1px solid color-mix(in srgb, var(--color-wood-500) 70%, transparent);
-  opacity: 0.6;
-}
-.blueprint-corners::before {
-  top: -1px;
-  left: -1px;
-  border-right: none;
-  border-bottom: none;
-}
-.blueprint-corners::after {
-  bottom: -1px;
-  right: -1px;
-  border-left: none;
-  border-top: none;
-}
-
-.blueprint-grid {
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--color-steel-500) 14%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-steel-500) 14%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
+/* Halftone dot texture — soft printmaking-style backdrop for dark sections */
+.dot-grid {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-ink-100) 22%, transparent) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
 }
 
 .text-balance {
@@ -159,31 +135,25 @@ h1, h2, h3, h4, .font-display {
 }
 
 ::selection {
-  background: var(--color-wood-500);
-  color: var(--color-concrete-100);
+  background: var(--color-clay-500);
+  color: var(--color-ink-100);
 }
 
-/* Hazard stripe — construction-tape motif, used sparingly as a real accent */
-.stripe-safety {
+/* Diagonal accent stripe, used sparingly as a real divider */
+.stripe-gold {
   background-image: repeating-linear-gradient(
     -45deg,
-    var(--color-safety) 0,
-    var(--color-safety) 10px,
-    var(--color-concrete-950) 10px,
-    var(--color-concrete-950) 20px
+    var(--color-gold) 0,
+    var(--color-gold) 10px,
+    var(--color-ink-950) 10px,
+    var(--color-ink-950) 20px
   );
   background-size: 80px 80px;
 }
 
-.ticker-track {
-  background-image: repeating-linear-gradient(
-    -45deg,
-    var(--color-safety) 0,
-    var(--color-safety) 8px,
-    transparent 8px,
-    transparent 16px
-  );
-  animation: var(--animate-ticker);
+/* Organic morphing blob — soft decorative shape behind photography/cards */
+.blob-shape {
+  animation: var(--animate-blob);
 }
 
 /* Hide scrollbars on horizontal scroll-jacked sections without removing scroll */
@@ -195,15 +165,10 @@ h1, h2, h3, h4, .font-display {
   display: none;
 }
 
-/* Outlined "ghost" type — ink-only lettering for the hero word-cycle layer */
+/* Outlined "ghost" type — ink-only lettering for big display headlines */
 .text-outline {
   color: transparent;
-  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-concrete-100) 45%, transparent);
-}
-
-.line-draw {
-  stroke-dasharray: var(--path-length, 1000);
-  stroke-dashoffset: var(--path-length, 1000);
+  -webkit-text-stroke: 1.5px color-mix(in srgb, var(--color-ink-100) 45%, transparent);
 }
 
 /* Custom cursor — desktop only, disabled on touch + reduced motion */

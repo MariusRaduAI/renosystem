@@ -58,7 +58,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="de" className={`${archivo.variable} ${inter.variable} h-full`}>
-      <body className="min-h-full flex flex-col antialiased bg-concrete-100 text-concrete-950">
+      <body className="min-h-full flex flex-col antialiased bg-ink-100 text-ink-950">
         <SmoothScrollProvider>
           <CustomCursor />
           {children}

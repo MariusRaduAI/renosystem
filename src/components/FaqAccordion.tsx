@@ -7,7 +7,7 @@ export default function FaqAccordion({ items, idPrefix }: { items: FaqItem[]; id
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <div className="divide-y divide-concrete-950/10 border-t border-concrete-950/10">
+    <div className="divide-y divide-ink-950/10 border-t border-ink-950/10">
       {items.map((item, i) => {
         const isOpen = openIndex === i;
         const panelId = `${idPrefix}-panel-${i}`;
@@ -22,12 +22,12 @@ export default function FaqAccordion({ items, idPrefix }: { items: FaqItem[]; id
               onClick={() => setOpenIndex(isOpen ? null : i)}
               className="flex w-full items-center justify-between gap-4 py-5 text-left"
             >
-              <span className="font-display text-base font-bold text-concrete-950 sm:text-lg">
+              <span className="font-display text-base font-bold text-ink-950 sm:text-lg">
                 {item.question}
               </span>
               <span
                 aria-hidden="true"
-                className={`shrink-0 text-xl font-bold text-wood-500 transition-transform duration-300 ${
+                className={`shrink-0 text-xl font-bold text-clay-500 transition-transform duration-300 ${
                   isOpen ? "rotate-45" : ""
                 }`}
               >
@@ -43,7 +43,7 @@ export default function FaqAccordion({ items, idPrefix }: { items: FaqItem[]; id
               }`}
             >
               <div className="min-h-0">
-                <p className="max-w-2xl text-base leading-relaxed text-concrete-600">{item.answer}</p>
+                <p className="max-w-2xl text-base leading-relaxed text-ink-600">{item.answer}</p>
               </div>
             </div>
           </div>

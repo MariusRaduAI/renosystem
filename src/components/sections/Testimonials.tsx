@@ -26,30 +26,30 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section ref={sectionRef} className="bg-ink-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-clay-600">
             {testimonials.eyebrow}
           </p>
-          <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-concrete-950 sm:text-5xl">
+          <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-ink-950 sm:text-5xl">
             {testimonials.headline}
           </h2>
         </div>
 
-        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-sm border border-dashed border-concrete-950/25 bg-concrete-950 noise-texture">
-          <div className="h-1.5 w-full stripe-safety" aria-hidden="true" />
+        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-[2.5rem] border-2 border-dashed border-clay-500/25 bg-ink-950 noise-texture">
+          <div className="h-1.5 w-full stripe-gold" aria-hidden="true" />
           <div className="flex flex-col items-center gap-6 px-6 py-16 text-center sm:py-20">
-            <span className="font-display text-6xl text-wood-500/40" aria-hidden="true">
+            <span className="font-display text-6xl text-clay-500/40" aria-hidden="true">
               &ldquo;
             </span>
-            <p className="max-w-xl text-balance text-lg leading-relaxed text-concrete-300">{testimonials.intro}</p>
+            <p className="max-w-xl text-balance text-lg leading-relaxed text-ink-300">{testimonials.intro}</p>
             <div className="mt-2 flex items-center gap-1" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className="h-2 w-2 rounded-full border border-wood-500/60" />
+                <span key={i} className="h-2 w-2 rounded-full border border-clay-500/60" />
               ))}
             </div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-concrete-300">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-ink-300">
               {testimonials.placeholders[0]?.label}
             </p>
           </div>
