@@ -6,30 +6,39 @@ type LogoProps = {
   className?: string;
 };
 
-// Nachgebaut aus der gelieferten Logo-Vorschau (renosystem_logo_preview.png).
+// Nachgebaut aus der gelieferten Logo-Vorschau: "reno" in Markenblau,
+// "system" in Markengrün, verbunden durch ein zweigeteiltes Dach-Icon
+// als Sinnbild für Haus + Aufbau.
 // TODO: Icon-Pfade durch offizielle Vektordatei ersetzen, sobald verfügbar.
 export default function Logo({ variant = "dark", showTagline = false, className }: LogoProps) {
-  const textColor = variant === "dark" ? "text-concrete-100" : "text-concrete-950";
   const subColor = variant === "dark" ? "text-concrete-300" : "text-concrete-600";
 
   return (
-    <div className={clsx("flex items-center gap-3", className)}>
+    <div className={clsx("flex items-center gap-2", className)}>
       <svg viewBox="0 0 64 64" className="h-8 w-8 shrink-0" fill="none" aria-hidden="true">
-        <path d="M6 28L18 12L30 28H24V28H12V28H6Z" fill="var(--color-wood-500)" />
+        <defs>
+          <linearGradient id="logoRoofGrad" x1="6" y1="34" x2="54" y2="8" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stopColor="var(--color-wood-500)" />
+            <stop offset="1" stopColor="var(--color-safety)" />
+          </linearGradient>
+        </defs>
         <path
-          d="M34 14C34 11.7909 35.7909 10 38 10H50C52.2091 10 54 11.7909 54 14V28H44V18H38V28H34V14Z"
-          fill="var(--color-wood-500)"
+          d="M34 8L54 32H45V32H23V32H14L34 8Z"
+          stroke="url(#logoRoofGrad)"
+          strokeWidth="3"
+          strokeLinejoin="round"
         />
+        <path d="M20 16L34 32H6L20 16Z" fill="url(#logoRoofGrad)" />
       </svg>
       <div className="leading-none">
-        <div className={clsx("whitespace-nowrap font-display font-extrabold tracking-tight text-base sm:text-lg", textColor)}>
-          RENOSYSTEM
-          <span className="ml-1.5 hidden text-wood-500 text-[0.65em] font-bold tracking-[0.2em] align-middle sm:inline">
-            ALL-IN-ONE
-          </span>
+        <div className="whitespace-nowrap font-display text-base font-extrabold lowercase tracking-tight sm:text-lg">
+          <span className="text-wood-500">reno</span>
+          <span className="text-safety">system</span>
         </div>
         {showTagline && (
-          <div className={clsx("mt-1 text-xs", subColor)}>Ihr Partner für komplette Renovierungen</div>
+          <div className={clsx("mt-1 text-xs normal-case", subColor)}>
+            Ihr Partner für komplette Renovierungen
+          </div>
         )}
       </div>
     </div>

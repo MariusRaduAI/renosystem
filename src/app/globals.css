@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  /* Industrial Premium palette */
-  --color-concrete-950: #0e0d0c;
-  --color-concrete-900: #171513;
-  --color-concrete-800: #232019;
-  --color-concrete-600: #4a453d;
-  --color-concrete-300: #9c968a;
-  --color-concrete-100: #e8e4dc;
+  /* RENOSYSTEM brand palette — friendly off-white, soft ink, blue + green */
+  --color-concrete-950: #1a1c1e;
+  --color-concrete-900: #24272a;
+  --color-concrete-800: #34383c;
+  --color-concrete-600: #5a6066;
+  --color-concrete-300: #9ba1a6;
+  --color-concrete-100: #faf8f3;
 
   --color-steel-500: #6b7280;
-  --color-wood-500: #b5713b;
-  --color-wood-600: #97551f;
-  --color-safety: #d6541f;
+  --color-wood-500: #105395;
+  --color-wood-600: #0c3f73;
+  --color-safety: #248243;
 
   --background: var(--color-concrete-100);
   --foreground: var(--color-concrete-950);
