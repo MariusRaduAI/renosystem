@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 
 const SEEN_KEY = "renosystem-intro-seen";
@@ -12,10 +13,8 @@ const SEEN_KEY = "renosystem-intro-seen";
 export default function IntroOverlay() {
   const [visible, setVisible] = useState(true);
   const overlayRef = useRef<HTMLDivElement>(null);
-  const peakARef = useRef<SVGPathElement>(null);
-  const peakBRef = useRef<SVGPathElement>(null);
-  const renRef = useRef<HTMLSpanElement>(null);
-  const systemRef = useRef<HTMLSpanElement>(null);
+  const markRef = useRef<HTMLDivElement>(null);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (prefersReducedMotion() || sessionStorage.getItem(SEEN_KEY)) {
@@ -38,24 +37,18 @@ export default function IntroOverlay() {
     });
 
     tl.fromTo(
-      peakARef.current,
-      { opacity: 0, y: 14, scale: 0.7 },
-      { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)", transformOrigin: "50% 100%" }
+      markRef.current,
+      { opacity: 0, scale: 0.5, rotate: -8 },
+      { opacity: 1, scale: 1, rotate: 0, duration: 0.55, ease: "back.out(2.2)" }
     )
+      .to(markRef.current, { opacity: 0, scale: 0.85, duration: 0.3, ease: "power2.in" }, "+=0.25")
       .fromTo(
-        peakBRef.current,
-        { opacity: 0, y: 14, scale: 0.7 },
-        { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)", transformOrigin: "50% 100%" },
-        "-=0.35"
-      )
-      .fromTo(renRef.current, { opacity: 0, x: -10 }, { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" }, "-=0.25")
-      .fromTo(
-        systemRef.current,
-        { opacity: 0, x: 10 },
-        { opacity: 1, x: 0, duration: 0.35, ease: "power2.out" },
+        logoRef.current,
+        { opacity: 0, y: 10, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "power2.out" },
         "<"
       )
-      .to({}, { duration: 0.4 })
+      .to({}, { duration: 0.45 })
       .to(overlayRef.current, { yPercent: -100, duration: 0.65, ease: "power3.inOut" });
 
     return () => {
@@ -72,17 +65,11 @@ export default function IntroOverlay() {
       className="fixed inset-0 z-[100] flex items-center justify-center bg-concrete-950"
       aria-hidden="true"
     >
-      <div className="inline-flex items-baseline whitespace-nowrap font-display text-4xl font-extrabold lowercase tracking-tight sm:text-6xl">
-        <span ref={renRef} className="text-wood-500" style={{ opacity: 0 }}>
-          ren
-        </span>
-        <svg viewBox="0 0 40 32" className="mx-[0.03em] h-[0.72em] w-[0.9em] translate-y-[0.08em] shrink-0" fill="var(--color-wood-500)">
-          <path ref={peakARef} d="M26 4L38 28H14L26 4Z" style={{ opacity: 0 }} />
-          <path ref={peakBRef} d="M14 12L24 28H4L14 12Z" style={{ opacity: 0 }} />
-        </svg>
-        <span ref={systemRef} className="text-safety" style={{ opacity: 0 }}>
-          system
-        </span>
+      <div ref={markRef} className="absolute" style={{ opacity: 0 }}>
+        <Image src="/logo/renosystem-mark.png" alt="" width={122} height={122} priority className="h-20 w-20 sm:h-28 sm:w-28" />
+      </div>
+      <div ref={logoRef} className="absolute" style={{ opacity: 0 }}>
+        <Image src="/logo/renosystem-logo.png" alt="RENOSYSTEM" width={800} height={150} priority className="h-10 w-auto sm:h-14" />
       </div>
     </div>
   );
