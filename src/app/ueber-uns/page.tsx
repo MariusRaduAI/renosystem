@@ -32,21 +32,24 @@ export default function UeberUnsPage() {
           </div>
         </section>
 
-        <section className="bg-concrete-950 py-16 noise-texture sm:py-20">
+        <section className="bg-concrete-100 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-2xl font-bold text-concrete-100 sm:text-3xl">
+            <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
               {about.principlesHeading}
             </h2>
             <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
               {about.principles.map((principle, i) => (
-                <div key={principle.title} className="rounded-2xl bg-concrete-900 p-6">
-                  <span className="font-display text-2xl font-extrabold text-wood-500">
+                <div
+                  key={principle.title}
+                  className={`rounded-2xl p-6 ${i % 2 === 0 ? "bg-wood-500" : "bg-safety"}`}
+                >
+                  <span className="font-display text-2xl font-extrabold text-concrete-100/60">
                     0{i + 1}
                   </span>
                   <h3 className="mt-2 font-display text-lg font-bold text-concrete-100">
                     {principle.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-concrete-300">{principle.description}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-concrete-100/85">{principle.description}</p>
                 </div>
               ))}
             </div>

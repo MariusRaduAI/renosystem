@@ -37,19 +37,18 @@ export default function Testimonials() {
           </h2>
         </div>
 
-        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-3xl border border-dashed border-concrete-950/25 bg-concrete-950 noise-texture">
-          <div className="h-1.5 w-full stripe-safety" aria-hidden="true" />
+        <div className="testimonial-panel relative mt-14 overflow-hidden rounded-3xl bg-gradient-to-br from-wood-500 to-safety">
           <div className="flex flex-col items-center gap-6 px-6 py-16 text-center sm:py-20">
-            <span className="font-display text-6xl text-wood-500/40" aria-hidden="true">
+            <span className="font-display text-6xl text-concrete-100/50" aria-hidden="true">
               &ldquo;
             </span>
-            <p className="max-w-xl text-balance text-lg leading-relaxed text-concrete-300">{testimonials.intro}</p>
+            <p className="max-w-xl text-balance text-lg leading-relaxed text-concrete-100">{testimonials.intro}</p>
             <div className="mt-2 flex items-center gap-1" aria-hidden="true">
               {Array.from({ length: 5 }).map((_, i) => (
-                <span key={i} className="h-2 w-2 rounded-full border border-wood-500/60" />
+                <span key={i} className="h-2 w-2 rounded-full border border-concrete-100/70" />
               ))}
             </div>
-            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-concrete-300">
+            <p className="text-xs font-semibold uppercase tracking-[0.3em] text-concrete-100/80">
               {testimonials.placeholders[0]?.label}
             </p>
           </div>

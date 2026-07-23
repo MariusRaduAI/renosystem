@@ -37,16 +37,16 @@ export default async function Portfolio() {
   const projects = await getProjects();
 
   return (
-    <section id="projekte" className="bg-concrete-950 py-24 sm:py-32 noise-texture">
+    <section id="projekte" className="bg-concrete-100 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-500">
+          <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">
             {portfolio.eyebrow}
           </p>
-          <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-concrete-100 sm:text-5xl">
+          <h2 className="mt-4 text-balance font-display text-4xl font-extrabold tracking-tight text-concrete-950 sm:text-5xl">
             {portfolio.headline}
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-concrete-300">{portfolio.intro}</p>
+          <p className="mt-5 text-lg leading-relaxed text-concrete-600">{portfolio.intro}</p>
         </div>
 
         <div className="mt-14">

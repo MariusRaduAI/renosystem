@@ -74,9 +74,9 @@ export default function PortfolioGrid({
               {item.category && (
                 <p className="text-xs font-semibold uppercase tracking-wide text-wood-500">{item.category}</p>
               )}
-              <h3 className="mt-1 font-display text-base font-bold text-concrete-100">{item.title}</h3>
+              <h3 className="mt-1 font-display text-base font-bold text-concrete-950">{item.title}</h3>
             </div>
-            <span className="hidden shrink-0 text-xs text-concrete-300 sm:inline">{dragHint} →</span>
+            <span className="hidden shrink-0 text-xs text-concrete-600 sm:inline">{dragHint} →</span>
           </div>
         </div>
       ))}

@@ -80,7 +80,7 @@ export default function BeforeAfterSlider({
         style={{ left: `${pos}%` }}
         aria-hidden="true"
       >
-        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-wood-500 text-sm font-bold text-concrete-950 shadow-lg">
+        <div className="absolute left-1/2 top-1/2 flex h-10 w-10 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-wood-500 text-sm font-bold text-concrete-100 shadow-lg">
           ↔
         </div>
       </div>

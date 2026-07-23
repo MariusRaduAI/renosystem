@@ -24,7 +24,7 @@ export default function MobileActionBar() {
     >
       <a
         href={business.phoneHref}
-        className="flex-1 flex items-center justify-center gap-2 bg-concrete-950 py-4 text-base font-semibold text-concrete-100 active:bg-concrete-800"
+        className="flex-1 flex items-center justify-center gap-2 bg-wood-500 py-4 text-base font-semibold text-concrete-100 active:bg-wood-600"
         aria-label={`Anrufen: ${business.phoneDisplay}`}
       >
         <span aria-hidden="true">📞</span> Anrufen
@@ -33,7 +33,7 @@ export default function MobileActionBar() {
         href={business.whatsappHref}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex-1 flex items-center justify-center gap-2 bg-wood-600 py-4 text-base font-semibold text-concrete-100 active:bg-wood-500"
+        className="flex-1 flex items-center justify-center gap-2 bg-safety py-4 text-base font-semibold text-concrete-100 active:bg-wood-500"
         aria-label="Per WhatsApp schreiben"
       >
         <span aria-hidden="true">💬</span> WhatsApp

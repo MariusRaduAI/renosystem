@@ -11,7 +11,7 @@ export default function LeadForm() {
   const [state, formAction, isPending] = useActionState(submitLead, initialState);
 
   return (
-    <div className="rounded-3xl bg-concrete-100 p-6 shadow-2xl shadow-black/30 sm:p-8">
+    <div className="rounded-3xl bg-white p-6 shadow-2xl shadow-concrete-950/10 ring-1 ring-concrete-950/5 sm:p-8">
       {state.status === "success" ? (
         <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
           <span className="text-3xl text-wood-600" aria-hidden="true">
@@ -135,7 +135,7 @@ export default function LeadForm() {
               type="submit"
               disabled={isPending}
               data-magnetic
-              className="min-h-[48px] w-full rounded-full bg-wood-500 px-6 text-base font-semibold text-concrete-950 transition-colors hover:bg-safety hover:text-concrete-100 disabled:opacity-60"
+              className="min-h-[48px] w-full rounded-full bg-wood-500 px-6 text-base font-semibold text-concrete-100 transition-colors hover:bg-safety disabled:opacity-60"
             >
               {isPending ? contact.step2.submitting : contact.step2.submit}
             </button>
