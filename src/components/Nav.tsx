@@ -36,7 +36,7 @@ export default function Nav() {
             <Logo variant="light" />
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
             {nav.links.map((link) => (
               <Link
                 key={link.href}
@@ -48,7 +48,7 @@ export default function Nav() {
             ))}
           </nav>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Link
               href="/#kontakt"
               data-magnetic
@@ -58,7 +58,7 @@ export default function Nav() {
             </Link>
           </div>
 
-          <div className="flex items-center gap-3 md:hidden">
+          <div className="flex items-center gap-3 lg:hidden">
             <a
               href={business.whatsappHref}
               target="_blank"
@@ -97,7 +97,7 @@ export default function Nav() {
           so it isn't drawn through the header's backdrop-blur compositing
           layer (which otherwise let the page behind it bleed into view). */}
       {open && (
-        <div className="fixed inset-0 z-40 bg-concrete-100 md:hidden">
+        <div className="fixed inset-0 z-40 bg-concrete-100 lg:hidden">
           <div
             aria-hidden="true"
             className="absolute -right-24 -top-24 h-72 w-72 rounded-full bg-wood-500/20 blur-3xl"

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { hero, business, contact } from "@/content/de";
 import LeadForm from "@/components/LeadForm";
@@ -14,20 +13,6 @@ export default function Hero() {
         aria-hidden="true"
         className="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-safety/15 blur-3xl"
       />
-      <div
-        aria-hidden="true"
-        className="absolute right-8 top-28 hidden h-64 w-52 overflow-hidden rounded-[2rem] shadow-2xl shadow-concrete-950/10 lg:block xl:right-20"
-      >
-        <Image
-          src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=800&auto=format&fit=crop"
-          alt=""
-          fill
-          priority
-          sizes="208px"
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-wood-600/20 to-transparent" />
-      </div>
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:pt-40">
         <div>
