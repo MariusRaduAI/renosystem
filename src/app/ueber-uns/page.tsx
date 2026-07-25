@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
@@ -18,16 +19,27 @@ export default function UeberUnsPage() {
         <PageHeader eyebrow={about.eyebrow} headline={about.headline} intro={about.intro} />
 
         <section className="bg-concrete-100 py-16 sm:py-20">
-          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-            <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
-              {about.storyHeading}
-            </h2>
-            <div className="mt-5 space-y-4">
-              {about.story.map((paragraph, i) => (
-                <p key={i} className="text-balance text-base leading-relaxed text-concrete-600 sm:text-lg">
-                  {paragraph}
-                </p>
-              ))}
+          <div className="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16 lg:px-8">
+            <div>
+              <h2 className="font-display text-2xl font-bold text-concrete-950 sm:text-3xl">
+                {about.storyHeading}
+              </h2>
+              <div className="mt-5 space-y-4">
+                {about.story.map((paragraph, i) => (
+                  <p key={i} className="text-balance text-base leading-relaxed text-concrete-600 sm:text-lg">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+            </div>
+            <div className="relative hidden aspect-[4/5] overflow-hidden rounded-2xl lg:block">
+              <Image
+                src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1000&auto=format&fit=crop"
+                alt=""
+                fill
+                sizes="28rem"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>

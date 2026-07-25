@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 type Crumb = { label: string; href?: string };
@@ -15,6 +16,15 @@ export default function PageHeader({
 }) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-wood-500 to-safety pb-16 pt-32 sm:pb-20 sm:pt-36">
+      <Image
+        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover opacity-25 mix-blend-overlay"
+        aria-hidden="true"
+      />
       <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
         {breadcrumbs && breadcrumbs.length > 0 && (
           <nav aria-label="Breadcrumb" className="mb-6 flex flex-wrap items-center gap-2 text-xs text-concrete-100/70">

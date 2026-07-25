@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { whyUs } from "@/content/de";
 
@@ -40,6 +41,15 @@ export default function WhyUs() {
               {whyUs.headline}
             </h2>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-concrete-600">{whyUs.body}</p>
+            <div className="relative mt-8 hidden aspect-[4/3] max-w-md overflow-hidden rounded-2xl sm:block">
+              <Image
+                src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=1000&auto=format&fit=crop"
+                alt=""
+                fill
+                sizes="(min-width: 1024px) 28rem, 50vw"
+                className="object-cover"
+              />
+            </div>
           </div>
 
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">

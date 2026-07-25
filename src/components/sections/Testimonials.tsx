@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { testimonials } from "@/content/de";
 
@@ -38,7 +39,15 @@ export default function Testimonials() {
         </div>
 
         <div className="testimonial-panel relative mt-14 overflow-hidden rounded-3xl bg-gradient-to-br from-wood-500 to-safety">
-          <div className="flex flex-col items-center gap-6 px-6 py-16 text-center sm:py-20">
+          <Image
+            src="https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1600&auto=format&fit=crop"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover opacity-20 mix-blend-overlay"
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col items-center gap-6 px-6 py-16 text-center sm:py-20">
             <span className="font-display text-6xl text-concrete-100/50" aria-hidden="true">
               &ldquo;
             </span>
