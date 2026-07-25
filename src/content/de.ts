@@ -30,12 +30,12 @@ export const nav = {
   links: [
     { label: "Leistungen", href: "/leistungen" },
     { label: "Ablauf", href: "/#ablauf" },
-    { label: "Warum RENOSYSTEM", href: "/#warum-wir" },
-    { label: "Häufige Fragen", href: "/haeufige-fragen" },
+    { label: "Warum wir", href: "/#warum-wir" },
+    { label: "FAQ", href: "/haeufige-fragen" },
     { label: "Ratgeber", href: "/ratgeber" },
     { label: "Kontakt", href: "/#kontakt" },
   ],
-  cta: "Erstgespräch anfragen",
+  cta: "Anfragen",
 };
 
 export const hero = {

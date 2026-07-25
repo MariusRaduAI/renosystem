@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { hero, business, contact } from "@/content/de";
 import LeadForm from "@/components/LeadForm";
@@ -5,13 +6,22 @@ import LeadForm from "@/components/LeadForm";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-concrete-100">
-      <div
+      <Image
+        src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2000&auto=format&fit=crop"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
         aria-hidden="true"
-        className="absolute -right-40 -top-32 h-[34rem] w-[34rem] rounded-full bg-gradient-to-br from-wood-500/25 via-wood-500/10 to-safety/20 blur-3xl"
       />
       <div
+        className="absolute inset-0 bg-gradient-to-r from-concrete-100 via-concrete-100/92 to-concrete-100/55"
         aria-hidden="true"
-        className="absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-safety/15 blur-3xl"
+      />
+      <div
+        className="absolute inset-0 bg-gradient-to-t from-concrete-100 via-transparent to-concrete-100/30"
+        aria-hidden="true"
       />
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:pt-40">
