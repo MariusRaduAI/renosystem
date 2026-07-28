@@ -2,6 +2,19 @@
 
 import { z } from "zod";
 import { getSupabaseClient } from "@/lib/supabase";
+import { getResendClient } from "@/lib/resend";
+
+const PROJECT_TYPE_LABELS: Record<string, string> = {
+  komplettsanierung: "Komplettsanierung",
+  einzelleistung: "Einzelne Leistung",
+  sonstiges: "Sonstiges",
+};
+
+const PREFERRED_CONTACT_LABELS: Record<string, string> = {
+  telefon: "Telefon",
+  whatsapp: "WhatsApp",
+  email: "E-Mail",
+};
 
 const leadSchema = z
   .object({
@@ -36,32 +49,67 @@ export async function submitLead(_prevState: LeadFormState, formData: FormData):
     return { status: "error", message: "invalid" };
   }
 
-  const supabase = getSupabaseClient();
+  let saved = false;
 
-  if (!supabase) {
-    // Kein Supabase-Projekt konfiguriert (z. B. lokale Entwicklung ohne Zugangsdaten).
-    console.warn("[submitLead] Supabase ist nicht konfiguriert — Lead wurde nicht gespeichert:", parsed.data);
+  const supabase = getSupabaseClient();
+  if (supabase) {
+    const { error } = await supabase.from("leads").insert({
+      project_type: parsed.data.projectType,
+      name: parsed.data.name,
+      phone: parsed.data.phone || null,
+      email: parsed.data.email || null,
+      message: parsed.data.message,
+      preferred_contact: parsed.data.preferredContact,
+      source: "website",
+    });
+
+    if (error) {
+      console.error("[submitLead] Supabase insert error:", error);
+    } else {
+      saved = true;
+    }
+  } else {
+    console.warn("[submitLead] Supabase ist nicht konfiguriert — Lead wird nicht gespeichert.");
+  }
+
+  let notified = false;
+
+  const resend = getResendClient();
+  const notifyTo = process.env.LEAD_NOTIFICATION_EMAIL;
+  if (resend && notifyTo) {
+    const { name, phone, email, message, projectType, preferredContact } = parsed.data;
+    const { error } = await resend.emails.send({
+      from: process.env.RESEND_FROM_EMAIL || "RENOSYSTEM Website <onboarding@resend.dev>",
+      to: notifyTo,
+      replyTo: email || undefined,
+      subject: `Neue Anfrage über die Website — ${name}`,
+      text: [
+        `Name: ${name}`,
+        `Projektart: ${PROJECT_TYPE_LABELS[projectType] ?? projectType}`,
+        `Bevorzugter Kontakt: ${PREFERRED_CONTACT_LABELS[preferredContact] ?? preferredContact}`,
+        `Telefon: ${phone || "—"}`,
+        `E-Mail: ${email || "—"}`,
+        "",
+        "Nachricht:",
+        message,
+      ].join("\n"),
+    });
+
+    if (error) {
+      console.error("[submitLead] Resend send error:", error);
+    } else {
+      notified = true;
+    }
+  } else {
+    console.warn(
+      "[submitLead] Resend ist nicht konfiguriert (RESEND_API_KEY / LEAD_NOTIFICATION_EMAIL) — keine Benachrichtigung versendet."
+    );
+  }
+
+  if (!saved && !notified) {
+    console.warn("[submitLead] Lead konnte weder gespeichert noch zugestellt werden:", parsed.data);
     return { status: "error", message: "unavailable" };
   }
-
-  const { error } = await supabase.from("leads").insert({
-    project_type: parsed.data.projectType,
-    name: parsed.data.name,
-    phone: parsed.data.phone || null,
-    email: parsed.data.email || null,
-    message: parsed.data.message,
-    preferred_contact: parsed.data.preferredContact,
-    source: "website",
-  });
-
-  if (error) {
-    console.error("[submitLead] Supabase insert error:", error);
-    return { status: "error", message: "insert" };
-  }
-
-  // TODO: Benachrichtigung anbinden, sobald Zugangsdaten des Kunden vorliegen —
-  // z. B. per Resend (E-Mail) oder einer Supabase Edge Function, die eine
-  // WhatsApp-Business-API-Nachricht auslöst. Absichtlich noch nicht verdrahtet.
 
   return { status: "success" };
 }
