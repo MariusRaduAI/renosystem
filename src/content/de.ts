@@ -213,9 +213,21 @@ export const process: ProcessStep[] = [
     number: "04",
     title: "Pauschal-Angebot",
     description:
-      "Sie erhalten ein verbindliches Festpreisangebot — transparent, nachvollziehbar, ohne Stundensätze.",
+      "Sie erhalten ein verbindliches Festpreisangebot — transparent, nachvollziehbar, ohne Überraschungen auf der Schlussrechnung.",
   },
 ];
+
+export const pricing = {
+  eyebrow: "Preise",
+  headline: "Transparent von Anfang an.",
+  body: "Kein Preis am Telefon, kein Rätselraten. Unser Stundensatz ist die Kalkulationsgrundlage — abgerechnet wird bei Ihrem Projekt aber immer der Festpreis, den wir gemeinsam nach einer kostenlosen Besichtigung vor Ort festlegen.",
+  priceFrom: "ab",
+  priceValue: "48 €",
+  priceUnit: "pro Stunde",
+  priceVat: "zzgl. MwSt.",
+  note: "Dieser Stundensatz dient zur Orientierung. Der finale Festpreis für Ihr Projekt wird individuell im Rahmen einer kostenlosen Besichtigung vor Ort ermittelt.",
+  cta: "Besichtigungstermin anfragen",
+};
 
 export const whyUs = {
   eyebrow: "Warum RENOSYSTEM",
@@ -270,16 +282,43 @@ export const portfolio = {
   ],
 };
 
+export type GoogleReview = {
+  name: string;
+  initials: string;
+  reviewCount: string;
+  timeAgo: string;
+  rating: number;
+  service: string;
+  text: string;
+};
+
 export const testimonials = {
   eyebrow: "Kundenstimmen",
-  headline: "Was zufriedene Kunden über uns sagen — bald hier.",
-  intro:
-    "Wir veröffentlichen ausschließlich echte Bewertungen unserer Kunden. Sobald erste Projekte abgeschlossen und Rückmeldungen freigegeben sind, erscheinen sie an dieser Stelle.",
-  placeholders: [
-    { label: "Kundenstimme folgt in Kürze" },
-    { label: "Kundenstimme folgt in Kürze" },
-    { label: "Kundenstimme folgt in Kürze" },
-  ],
+  headline: "Was unsere Kunden bei Google sagen.",
+  intro: "Echte Bewertungen unserer Kunden — unbearbeitet, direkt von Google.",
+  googleRatingLabel: "5,0",
+  googleReviewCountLabel: "5 Bewertungen bei Google",
+  googleProfileUrl: "",
+  reviews: [
+    {
+      name: "Petra Lang",
+      initials: "PL",
+      reviewCount: "2 Rezensionen",
+      timeAgo: "vor 2 Wochen",
+      rating: 5,
+      service: "Hausrenovierungen",
+      text: "RenoSystem gefunden zu haben ist ein Segen und fast ein Wunder! Ob innen oder außen am Haus — alles wird professionell, mit Können und großer Sorgfalt im Detail saniert! Der Inhaber hat ein hervorragendes Verhältnis zu seinen Mitarbeitern und arbeitet strukturiert. Bei jedem Problem ist er sofort zur Stelle. Ich kann dieses Team von ganzem Herzen empfehlen! Sie sind schnell, zuverlässig und verwenden hochwertige Materialien.",
+    },
+    {
+      name: "Helena Lang",
+      initials: "HL",
+      reviewCount: "9 Rezensionen",
+      timeAgo: "vor 2 Wochen",
+      rating: 5,
+      service: "Hausrenovierungen",
+      text: "Wir sind sehr zufrieden mit dem Renosystem-Team; sie sind pünktlich, schnell, hilfsbereit und sehr freundlich! Ihre Ideen, Materialien und Verarbeitung sind erstklassig! Wenn wir Handwerker brauchen, wissen wir genau, auf wen wir uns verlassen können! Sehr empfehlenswert!",
+    },
+  ] as GoogleReview[],
 };
 
 export const contact = {
