@@ -46,7 +46,7 @@ export default async function ArticlePage({
         <PageHeader
           eyebrow={`${article.category} · ${article.publishedDate} · ${article.readTime}`}
           headline={article.title}
-          breadcrumbs={[{ label: "Ratgeber", href: "/ratgeber" }, { label: article.title }]}
+          breadcrumbs={[{ label: "Artikel", href: "/artikel" }, { label: article.title }]}
         />
 
         <article className="bg-concrete-100 py-16 sm:py-20">
@@ -92,7 +92,7 @@ export default async function ArticlePage({
                   {related.map((rel) => (
                     <li key={rel.slug}>
                       <Link
-                        href={`/ratgeber/${rel.slug}`}
+                        href={`/artikel/${rel.slug}`}
                         className="text-base font-medium text-concrete-950 underline decoration-concrete-600/30 underline-offset-4 hover:decoration-wood-500"
                       >
                         {rel.title}

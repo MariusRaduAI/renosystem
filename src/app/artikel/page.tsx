@@ -4,20 +4,20 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import PageCta from "@/components/PageCta";
-import { ratgeberIntro, articles } from "@/content/articles";
+import { articlesIntro, articles } from "@/content/articles";
 
 export const metadata: Metadata = {
-  title: "Ratgeber",
+  title: "Artikel",
   description:
-    "Ehrliche Einordnung zu Kosten, Ablauf und Planung Ihrer Sanierung — der Ratgeber von RENOSYSTEM ALL-IN-ONE.",
+    "Ehrliche Einordnung zu Kosten, Ablauf und Planung Ihrer Sanierung — die Artikel von RENOSYSTEM ALL-IN-ONE.",
 };
 
-export default function RatgeberPage() {
+export default function ArtikelPage() {
   return (
     <>
       <Nav />
       <main>
-        <PageHeader eyebrow={ratgeberIntro.eyebrow} headline={ratgeberIntro.headline} intro={ratgeberIntro.intro} />
+        <PageHeader eyebrow={articlesIntro.eyebrow} headline={articlesIntro.headline} intro={articlesIntro.intro} />
 
         <section className="bg-concrete-100 py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -25,7 +25,7 @@ export default function RatgeberPage() {
               {articles.map((article) => (
                 <Link
                   key={article.slug}
-                  href={`/ratgeber/${article.slug}`}
+                  href={`/artikel/${article.slug}`}
                   data-magnetic
                   className="group flex flex-col justify-between rounded-2xl bg-white/60 p-6 shadow-sm ring-1 ring-concrete-600/10 transition-colors hover:ring-wood-500/40"
                 >
