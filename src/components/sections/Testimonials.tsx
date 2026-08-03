@@ -55,7 +55,7 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {testimonials.reviews.map((review) => (
             <div
               key={review.name}
@@ -81,7 +81,9 @@ export default function Testimonials() {
                 ))}
               </div>
 
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-concrete-600">{review.text}</p>
+              <p className="mt-3 flex-1 whitespace-pre-line text-sm leading-relaxed text-concrete-600">
+                {review.text}
+              </p>
 
               <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-wood-600">
                 {review.service}
