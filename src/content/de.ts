@@ -232,12 +232,12 @@ export const pricing = {
 export const whyUs = {
   eyebrow: "Warum RENOSYSTEM",
   headline: "Ein Standard. Kein Kompromiss.",
-  body: "Wir verkaufen Ihnen nicht die teuerste Variante, die Ihr Budget hergibt, und auch keine Billig-Ausführung, die in zwei Jahren wieder Thema wird. Jedes Projekt bekommt dieselbe sorgfältige Ausführung und dieselbe Qualität bei Material und Verarbeitung — unabhängig davon, wie groß der Auftrag ist.",
+  body: "Jedes Projekt bekommt dieselbe sorgfältige Ausführung und dieselbe Qualität bei Material und Verarbeitung — unabhängig davon, wie groß der Auftrag ist. Das ist kein Werbespruch: Es ist das, was unsere Kunden nach Abschluss ihres Projekts tatsächlich über uns sagen.",
   points: [
     "Festpreis statt Stundenlohn",
     "Ein Ansprechpartner — vom ersten Anruf bis zur Übergabe",
     "Klarer Ablauf statt Chaos auf der Baustelle",
-    "Wir arbeiten selektiv, um Qualität zu sichern",
+    "Pünktlich, zuverlässig, sauber — bestätigt durch echte Kundenbewertungen",
   ],
 };
 
