@@ -55,11 +55,11 @@ export default function Testimonials() {
           </div>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 columns-1 gap-6 sm:columns-2 lg:columns-3">
           {testimonials.reviews.map((review) => (
             <div
               key={review.name}
-              className="testimonial-card flex flex-col rounded-2xl border border-concrete-950/8 bg-white p-6 shadow-sm shadow-concrete-950/5 sm:p-8"
+              className="testimonial-card mb-6 flex flex-col break-inside-avoid rounded-2xl border border-concrete-950/8 bg-white p-6 shadow-sm shadow-concrete-950/5 sm:p-8"
             >
               <div className="flex items-center gap-3">
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wood-500 font-display text-sm font-bold text-concrete-100">
