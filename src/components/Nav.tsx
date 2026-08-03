@@ -51,9 +51,9 @@ export default function Nav() {
           <div className="hidden lg:block">
             <a
               href={business.phoneHref}
-              className="inline-flex items-center gap-1.5 rounded-full bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-100 shadow-sm shadow-wood-900/20 transition-colors hover:bg-safety"
+              className="inline-flex items-center rounded-full bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-100 shadow-sm shadow-wood-900/20 transition-colors hover:bg-safety"
             >
-              📞 Anrufen
+              Anrufen
             </a>
           </div>
 
