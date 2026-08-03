@@ -225,7 +225,7 @@ export const whyUs = {
     "Festpreis statt Stundenlohn",
     "Ein Ansprechpartner — vom ersten Anruf bis zur Übergabe",
     "Klarer Ablauf statt Chaos auf der Baustelle",
-    "Wir arbeiten selektiv, nicht mit jedem Auftrag",
+    "Wir arbeiten selektiv, um Qualität zu sichern",
   ],
 };
 

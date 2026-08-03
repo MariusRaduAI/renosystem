@@ -68,6 +68,12 @@ export default function Hero() {
             >
               📞 {business.phoneDisplay}
             </a>
+            <a
+              href={`mailto:${business.email}`}
+              className="inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full border border-concrete-950/15 px-6 text-sm font-semibold text-concrete-950 transition-colors hover:border-wood-500 hover:text-wood-600"
+            >
+              ✉️ E-Mail schreiben
+            </a>
             <Link
               href="/leistungen"
               className="inline-flex min-h-[48px] items-center gap-1.5 px-2 text-sm font-semibold text-wood-600 hover:text-safety"
