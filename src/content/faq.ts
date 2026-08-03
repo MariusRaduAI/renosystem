@@ -114,7 +114,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         question: "In welchem Gebiet sind Sie tätig?",
-        answer: "Bad Rappenau und Umgebung, Raum Heilbronn. Bei Projekten außerhalb fragen Sie uns einfach an.",
+        answer: "Bad Rappenau und im Umkreis von 60 km. Bei Projekten außerhalb fragen Sie uns einfach an.",
       },
       {
         question: "Wie schnell erhalte ich eine Rückmeldung auf meine Anfrage?",

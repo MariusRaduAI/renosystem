@@ -22,7 +22,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Komplettsanierung",
     shortDescription: "Alle Gewerke aus einer Hand — von der Entkernung bis zur schlüsselfertigen Übergabe.",
     metaDescription:
-      "Komplettsanierung aus einer Hand in Bad Rappenau und Raum Heilbronn: ein Ansprechpartner, ein Festpreis, keine Koordination zwischen Einzelgewerken. Jetzt Erstgespräch vereinbaren.",
+      "Komplettsanierung aus einer Hand in Bad Rappenau und im Umkreis von 60 km: ein Ansprechpartner, ein Festpreis, keine Koordination zwischen Einzelgewerken. Jetzt Erstgespräch vereinbaren.",
     heroIntro:
       "Eine Komplettsanierung scheitert selten am Handwerk — sie scheitert an der Koordination. Zehn Gewerke, zehn Zeitpläne, zehn Ansprechpartner, und Sie mittendrin. Wir übernehmen genau das: Planung, Reihenfolge, Qualitätskontrolle und Kommunikation, damit Sie einen Termin im Kalender haben statt zehn.",
     highlights: [
@@ -59,7 +59,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Haussanierung",
     shortDescription: "Umfassende Sanierung von Ein- und Mehrfamilienhäusern, innen wie außen.",
     metaDescription:
-      "Haussanierung für Ein- und Mehrfamilienhäuser im Raum Heilbronn: energetische und optische Modernisierung innen und außen, mit Festpreis und einem festen Ansprechpartner.",
+      "Haussanierung für Ein- und Mehrfamilienhäuser in Bad Rappenau und im Umkreis von 60 km: energetische und optische Modernisierung innen und außen, mit Festpreis und einem festen Ansprechpartner.",
     heroIntro:
       "Ein Haus altert nie an einer einzigen Stelle. Dach, Fassade, Grundriss, Haustechnik — irgendwann kommt vieles gleichzeitig zusammen. Wir sanieren Ein- und Mehrfamilienhäuser innen wie außen als zusammenhängendes Projekt, statt jede Baustelle einzeln zu beauftragen.",
     highlights: [
@@ -91,7 +91,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Wohnungsrenovierung",
     shortDescription: "Renovierung einzelner Wohnungen für Eigennutzung, Vermietung oder Verkauf.",
     metaDescription:
-      "Wohnungsrenovierung in Bad Rappenau und Raum Heilbronn — für Eigennutzung, Vermietung oder Verkauf. Fester Ablauf, Festpreis, ein Ansprechpartner.",
+      "Wohnungsrenovierung in Bad Rappenau und im Umkreis von 60 km — für Eigennutzung, Vermietung oder Verkauf. Fester Ablauf, Festpreis, ein Ansprechpartner.",
     heroIntro:
       "Nicht jede Wohnung braucht eine Kernsanierung. Manchmal reicht ein gezielter, sauber ausgeführter Umbau — neue Böden, frische Wände, ein modernisiertes Bad —, um aus einer abgewohnten Wohnung wieder ein attraktives Zuhause zu machen.",
     highlights: [
@@ -123,7 +123,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Innenausbau",
     shortDescription: "Wände, Decken, Böden und Details — hochwertig ausgeführt bis ins Detail.",
     metaDescription:
-      "Innenausbau in Bad Rappenau und Raum Heilbronn: Wände, Decken, Böden und Details hochwertig umgesetzt — als Teil einer Sanierung oder als eigenständiges Projekt.",
+      "Innenausbau in Bad Rappenau und im Umkreis von 60 km: Wände, Decken, Böden und Details hochwertig umgesetzt — als Teil einer Sanierung oder als eigenständiges Projekt.",
     heroIntro:
       "Am Innenausbau entscheidet sich, ob eine Sanierung nach Handwerk oder nach Zuhause aussieht. Saubere Kanten, plane Wände, stimmige Übergänge — die Details, die man nicht bewusst wahrnimmt, wenn sie richtig gemacht sind.",
     highlights: [
@@ -150,7 +150,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Trockenbau",
     shortDescription: "Wände, Decken und Vorsatzschalen — präzise geplant und sauber verarbeitet.",
     metaDescription:
-      "Trockenbau in Bad Rappenau und Raum Heilbronn: Wände, Decken und Vorsatzschalen präzise geplant und verarbeitet — als Einzelleistung oder Teil einer Komplettsanierung.",
+      "Trockenbau in Bad Rappenau und im Umkreis von 60 km: Wände, Decken und Vorsatzschalen präzise geplant und verarbeitet — als Einzelleistung oder Teil einer Komplettsanierung.",
     heroIntro:
       "Trockenbau ist schnell erklärt und schwer richtig gemacht: gerade Kanten, saubere Verspachtelung, keine sichtbaren Übergänge. Genau daran erkennt man am Ende, ob sauber gearbeitet wurde.",
     highlights: [
@@ -182,7 +182,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Abbruch- und Entkernungsarbeiten",
     shortDescription: "Fachgerechter Rückbau als solide Grundlage für jede Sanierung.",
     metaDescription:
-      "Abbruch- und Entkernungsarbeiten in Bad Rappenau und Raum Heilbronn: fachgerechter, sauberer Rückbau als Grundlage für Ihre Sanierung — inklusive Entsorgung.",
+      "Abbruch- und Entkernungsarbeiten in Bad Rappenau und im Umkreis von 60 km: fachgerechter, sauberer Rückbau als Grundlage für Ihre Sanierung — inklusive Entsorgung.",
     heroIntro:
       "Jede gute Sanierung beginnt mit einem sauberen Rückbau. Wer hier improvisiert, trägt das Risiko bis zum letzten Gewerk mit sich — von unerwarteten Leitungen bis zu beschädigter Bausubstanz, die eigentlich stehen bleiben sollte.",
     highlights: [
@@ -209,7 +209,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Bodenverlegung",
     shortDescription: "Verlegung von Parkett, Vinyl, Fliesen und weiteren Bodenbelägen.",
     metaDescription:
-      "Bodenverlegung in Bad Rappenau und Raum Heilbronn: Parkett, Vinyl und Fliesen fachgerecht verlegt — als Einzelleistung oder Teil Ihrer Sanierung.",
+      "Bodenverlegung in Bad Rappenau und im Umkreis von 60 km: Parkett, Vinyl und Fliesen fachgerecht verlegt — als Einzelleistung oder Teil Ihrer Sanierung.",
     heroIntro:
       "Der Boden ist die größte zusammenhängende Fläche jedes Raums — und die, die am wenigsten Fehler verzeiht. Ein sauber vorbereiteter Untergrund und eine präzise Verlegung entscheiden darüber, ob er in zehn Jahren noch genauso gut aussieht wie am ersten Tag.",
     highlights: [
@@ -236,7 +236,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Montage von Innentüren",
     shortDescription: "Fachgerechte Montage von Innentüren inklusive Zargen und Beschlägen.",
     metaDescription:
-      "Montage von Innentüren in Bad Rappenau und Raum Heilbronn — inklusive Zargen und Beschlägen, präzise und passgenau eingebaut.",
+      "Montage von Innentüren in Bad Rappenau und im Umkreis von 60 km — inklusive Zargen und Beschlägen, präzise und passgenau eingebaut.",
     heroIntro:
       "Eine schief eingebaute Tür fällt jeden Tag auf — auch wenn der Rest der Renovierung perfekt gelungen ist. Wir montieren Innentüren inklusive Zargen und Beschlägen so, dass sie leichtgängig schließen und sauber im Rahmen sitzen.",
     highlights: [
@@ -256,7 +256,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Montage genormter Bauelemente",
     shortDescription: "Einbau standardisierter Bauelemente nach geltenden technischen Vorgaben.",
     metaDescription:
-      "Montage genormter Bauelemente in Bad Rappenau und Raum Heilbronn — fachgerechter Einbau nach den geltenden technischen Vorgaben.",
+      "Montage genormter Bauelemente in Bad Rappenau und im Umkreis von 60 km — fachgerechter Einbau nach den geltenden technischen Vorgaben.",
     heroIntro:
       "Standardisierte Bauelemente wirken einfach — richtig eingebaut sind sie es auch nur, wenn die technischen Vorgaben eingehalten werden. Wir übernehmen den fachgerechten Einbau, damit Funktion und Dichtigkeit dauerhaft passen.",
     highlights: [
@@ -274,7 +274,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Hausmeisterservice",
     shortDescription: "Laufende Betreuung und Instandhaltung Ihres Objekts.",
     metaDescription:
-      "Hausmeisterservice in Bad Rappenau und Raum Heilbronn: laufende Betreuung und Instandhaltung Ihres Objekts — auch als Anschluss an eine Sanierung.",
+      "Hausmeisterservice in Bad Rappenau und im Umkreis von 60 km: laufende Betreuung und Instandhaltung Ihres Objekts — auch als Anschluss an eine Sanierung.",
     heroIntro:
       "Nach der Sanierung beginnt der Alltag — und mit ihm der laufende Pflegeaufwand. Wir übernehmen die kontinuierliche Betreuung Ihres Objekts, damit der frisch sanierte Zustand nicht durch fehlende Instandhaltung wieder verloren geht.",
     highlights: [
@@ -294,7 +294,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Pflasterreinigung",
     shortDescription: "Professionelle Reinigung von Hofeinfahrten, Wegen und Pflasterflächen.",
     metaDescription:
-      "Pflasterreinigung in Bad Rappenau und Raum Heilbronn: professionelle Reinigung von Hofeinfahrten, Wegen und Pflasterflächen.",
+      "Pflasterreinigung in Bad Rappenau und im Umkreis von 60 km: professionelle Reinigung von Hofeinfahrten, Wegen und Pflasterflächen.",
     heroIntro:
       "Moos, Algen und eingewaschener Schmutz lassen selbst hochwertiges Pflaster grau und ungepflegt wirken. Eine professionelle Reinigung bringt die ursprüngliche Optik zurück, ohne die Fläche zu beschädigen.",
     highlights: [
@@ -312,7 +312,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Terrassenreinigung",
     shortDescription: "Gründliche Reinigung und Pflege von Terrassenbelägen.",
     metaDescription:
-      "Terrassenreinigung in Bad Rappenau und Raum Heilbronn: gründliche, materialschonende Reinigung und Pflege Ihres Terrassenbelags.",
+      "Terrassenreinigung in Bad Rappenau und im Umkreis von 60 km: gründliche, materialschonende Reinigung und Pflege Ihres Terrassenbelags.",
     heroIntro:
       "Ob Holz, Stein oder WPC — jeder Terrassenbelag braucht eine andere Reinigungsmethode, um lange gut auszusehen. Wir reinigen materialschonend und pflegen den Belag so, dass er auch nach der Sanierung ein Aushängeschild bleibt.",
     highlights: [
@@ -330,7 +330,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Fassadenreinigung",
     shortDescription: "Schonende Reinigung von Fassaden für einen gepflegten Gesamteindruck.",
     metaDescription:
-      "Fassadenreinigung in Bad Rappenau und Raum Heilbronn: schonende Reinigung für einen gepflegten Gesamteindruck Ihrer Immobilie.",
+      "Fassadenreinigung in Bad Rappenau und im Umkreis von 60 km: schonende Reinigung für einen gepflegten Gesamteindruck Ihrer Immobilie.",
     heroIntro:
       "Die Fassade ist der erste Eindruck jeder Immobilie — bei Mietinteressenten genauso wie bei Käufern. Eine schonende, fachgerechte Reinigung sorgt dafür, dass dieser erste Eindruck stimmt.",
     highlights: [
@@ -348,7 +348,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Projektbetreuung",
     shortDescription: "Koordination von Gewerken, Terminen und Qualität über die gesamte Projektlaufzeit hinweg.",
     metaDescription:
-      "Projektbetreuung für Sanierungsvorhaben in Bad Rappenau und Raum Heilbronn: Koordination von Gewerken, Terminen und Qualität — auch ohne uns als Ausführende.",
+      "Projektbetreuung für Sanierungsvorhaben in Bad Rappenau und im Umkreis von 60 km: Koordination von Gewerken, Terminen und Qualität — auch ohne uns als Ausführende.",
     heroIntro:
       "Nicht jedes Projekt braucht uns als ausführenden Betrieb — manchmal reicht die reine Steuerung. Wir koordinieren Gewerke, Termine und Qualität über die gesamte Projektlaufzeit, damit Sie den Überblick behalten, ohne selbst jeden Handwerker einzeln zu managen.",
     highlights: [

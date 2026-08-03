@@ -1,6 +1,6 @@
 # RENOSYSTEM ALL-IN-ONE — Website
 
-Premium One-Page-Website für RENOSYSTEM ALL-IN-ONE (Bausanierung & Komplettsanierung, Bad Rappenau / Raum Heilbronn).
+Premium One-Page-Website für RENOSYSTEM ALL-IN-ONE (Bausanierung & Komplettsanierung, Bad Rappenau und 60 km Umkreis).
 
 ## Stack
 
@@ -34,7 +34,7 @@ Diese Punkte sind im Code als `TODO`-Kommentare markiert und müssen vor dem Lau
 1. **USt-IdNr. / Kleinunternehmer-Hinweis** — `src/content/legal.ts` (Impressum, Abschnitt „Umsatzsteuer“)
 2. **Reaktionszeit im Formular** (aktuell „innerhalb von 24 Stunden“ als Platzhalterwert) — `src/content/de.ts` (`contact.success.message`)
 3. **Konkrete Erfahrungsjahre** in der Vertrauensleiste (aktuell bewusst ohne Zahl formuliert) — `src/content/de.ts` (`trustBar`)
-4. **Einsatzgebiet final bestätigen** (Default: „Bad Rappenau und Umgebung, Raum Heilbronn“) — `src/content/de.ts` (`business.region`)
+4. ~~Einsatzgebiet final bestätigen~~ — erledigt: 60 km Umkreis um Bad Rappenau, `src/content/de.ts` (`business.region`)
 5. **Echte Projektfotos** — ersetzen die Unsplash-Platzhalter in der `projects`-Tabelle bzw. in `portfolio.projects`
 6. **Supabase-Projekt anlegen** (Region `eu-central-1` empfohlen, siehe `supabase/schema.sql`) und `.env.local` gemäß `.env.example` befüllen
 7. **Benachrichtigungs-Hook für neue Leads** — in `src/app/actions.ts` als TODO markiert; Anbindung an E-Mail (z. B. Resend) oder WhatsApp Business API folgt, sobald Zugangsdaten vorliegen

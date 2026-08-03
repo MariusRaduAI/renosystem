@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     "Innenausbau",
     "Trockenbau",
     "Renovierung Bad Rappenau",
-    "Renovierung Heilbronn",
+    "Sanierung 60 km Umkreis Bad Rappenau",
   ],
   authors: [{ name: site.name }],
   openGraph: {

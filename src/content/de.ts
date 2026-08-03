@@ -11,7 +11,7 @@ export const business = {
   street: "Mühlstraße 9/1",
   zip: "74906",
   city: "Bad Rappenau",
-  region: "Bad Rappenau und Umgebung, Raum Heilbronn", // TODO: Einsatzgebiet final bestätigen
+  region: "60 km rund um Bad Rappenau",
   phoneDisplay: "+49 176 60344045",
   phoneHref: "tel:+4917660344045",
   whatsappHref: "https://wa.me/4917660344045",
@@ -23,7 +23,7 @@ export const site = {
   name: business.name,
   tagline: "Ihr Partner für komplette Renovierungen",
   metaDescription:
-    "RENOSYSTEM ALL-IN-ONE plant und realisiert Komplettsanierungen, Haussanierungen und Wohnungsrenovierungen im Raum Heilbronn — mit Festpreis nach persönlicher Besichtigung.",
+    "RENOSYSTEM ALL-IN-ONE plant und realisiert Komplettsanierungen, Haussanierungen und Wohnungsrenovierungen in Bad Rappenau und im Umkreis von 60 km — mit Festpreis nach persönlicher Besichtigung.",
 };
 
 export const nav = {

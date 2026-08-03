@@ -6,7 +6,7 @@ export const about = {
   intro:
     "RENOSYSTEM ALL-IN-ONE steht für einen einfachen Grundsatz: Wer eine Sanierung beauftragt, soll genau einen Menschen haben, der dafür geradesteht — nicht ein wechselndes Callcenter, keine anonyme Projektnummer.",
   metaDescription:
-    "RENOSYSTEM ALL-IN-ONE — Bausanierung und Komplettsanierung mit einem festen Ansprechpartner, Festpreis-Garantie und Einsatzgebiet Bad Rappenau, Raum Heilbronn.",
+    "RENOSYSTEM ALL-IN-ONE — Bausanierung und Komplettsanierung mit einem festen Ansprechpartner, Festpreis-Garantie und Einsatzgebiet Bad Rappenau und 60 km Umkreis.",
   storyHeading: "Warum RENOSYSTEM entstanden ist",
   story: [
     "Sanierungen scheitern selten am Handwerk selbst. Sie scheitern daran, dass niemand die Verantwortung für das Gesamtbild übernimmt — jedes Gewerk optimiert für sich, und der Eigentümer sitzt dazwischen und muss koordinieren, was eigentlich der Betrieb koordinieren sollte.",
@@ -37,5 +37,5 @@ export const about = {
   ],
   areaHeading: "Einsatzgebiet",
   areaText:
-    "Wir sind in Bad Rappenau und der Umgebung, im Raum Heilbronn, vor Ort verwurzelt und persönlich erreichbar. Projekte außerhalb dieses Gebiets besprechen wir gerne im Einzelfall.",
+    "Wir sind in Bad Rappenau vor Ort verwurzelt und im Umkreis von 60 km persönlich erreichbar. Projekte außerhalb dieses Gebiets besprechen wir gerne im Einzelfall.",
 };
