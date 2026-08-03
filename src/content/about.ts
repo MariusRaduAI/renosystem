@@ -15,7 +15,7 @@ export const about = {
   principlesHeading: "Woran Sie uns messen können",
   principles: [
     {
-      title: "Festpreis statt Stundenlohn",
+      title: "Festpreis statt Abrechnung nach Stunden",
       description:
         "Ein Preis, den wir nach der Besichtigung nennen und an den wir uns halten — keine Stundenzettel, keine Überraschungen auf der Schlussrechnung.",
     },

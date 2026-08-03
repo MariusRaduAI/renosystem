@@ -19,7 +19,7 @@ export default function PageCta({
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
-            href="/#kontakt"
+            href="/kontakt"
             data-magnetic
             className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-concrete-100 px-7 text-base font-semibold text-concrete-950 transition-colors hover:bg-white"
           >

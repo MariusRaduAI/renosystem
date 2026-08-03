@@ -212,7 +212,7 @@ export const articles: Article[] = [
           "Telefon-Erstgespräch — Grobe Einordnung, ob Ihr Vorhaben zum Leistungsspektrum passt",
           "Fragebogen — gezielte Fragen zu Objekt, Umfang und Qualitätsanspruch",
           "Besichtigung vor Ort — die Grundlage jeder seriösen Kalkulation",
-          "Festpreisangebot — verbindlich, transparent, ohne Stundensätze",
+          "Festpreisangebot — verbindlich, transparent, ohne Überraschungen auf der Schlussrechnung",
         ],
       },
       {

@@ -32,7 +32,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Ist das Angebot wirklich ein Festpreis, oder kommen später Zusatzkosten?",
         answer:
-          "Ein echter Festpreis, kein Stundenlohn und keine vagen Pauschalen. Sollte sich während der Arbeiten ein Zusatzaufwand ergeben, der bei der Besichtigung nicht erkennbar war (etwa verdeckte Bauschäden), sprechen wir das offen an, bevor weitergearbeitet wird — nicht erst auf der Schlussrechnung.",
+          "Ein echter Festpreis, keine Abrechnung nach Stunden und keine vagen Pauschalen. Sollte sich während der Arbeiten ein Zusatzaufwand ergeben, der bei der Besichtigung nicht erkennbar war (etwa verdeckte Bauschäden), sprechen wir das offen an, bevor weitergearbeitet wird — nicht erst auf der Schlussrechnung.",
       },
       {
         question: "Was kostet eine Komplettsanierung ungefähr?",

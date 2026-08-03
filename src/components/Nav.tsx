@@ -49,13 +49,12 @@ export default function Nav() {
           </nav>
 
           <div className="hidden lg:block">
-            <Link
-              href="/#kontakt"
-              data-magnetic
-              className="inline-flex items-center rounded-full bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-100 shadow-sm shadow-wood-900/20 transition-colors hover:bg-safety"
+            <a
+              href={business.phoneHref}
+              className="inline-flex items-center gap-1.5 rounded-full bg-wood-500 px-5 py-2.5 text-sm font-semibold text-concrete-100 shadow-sm shadow-wood-900/20 transition-colors hover:bg-safety"
             >
-              {nav.cta}
-            </Link>
+              📞 Anrufen
+            </a>
           </div>
 
           <div className="flex items-center gap-3 lg:hidden">
@@ -139,7 +138,7 @@ export default function Nav() {
               style={{ animationDelay: `${80 + nav.links.length * 60}ms` }}
             >
               <Link
-                href="/#kontakt"
+                href="/kontakt"
                 onClick={() => setOpen(false)}
                 className="flex min-h-[56px] items-center justify-center rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-100 transition-colors active:bg-safety"
               >

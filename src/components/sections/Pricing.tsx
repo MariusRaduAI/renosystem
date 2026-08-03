@@ -60,7 +60,7 @@ export default function Pricing() {
               {pricing.note}
             </p>
             <Link
-              href="/#kontakt"
+              href="/kontakt"
               className="inline-flex min-h-[48px] w-fit items-center justify-center gap-2 rounded-full bg-wood-500 px-6 text-sm font-semibold text-concrete-100 transition-colors hover:bg-safety"
             >
               {pricing.cta} →

@@ -33,7 +33,7 @@ export const nav = {
     { label: "Warum wir", href: "/#warum-wir" },
     { label: "FAQ", href: "/haeufige-fragen" },
     { label: "Artikel", href: "/artikel" },
-    { label: "Kontakt", href: "/#kontakt" },
+    { label: "Kontakt", href: "/kontakt" },
   ],
   cta: "Anfragen",
 };
@@ -234,7 +234,7 @@ export const whyUs = {
   headline: "Ein Standard. Kein Kompromiss.",
   body: "Jedes Projekt bekommt dieselbe sorgfältige Ausführung und dieselbe Qualität bei Material und Verarbeitung — unabhängig davon, wie groß der Auftrag ist. Das ist kein Werbespruch: Es ist das, was unsere Kunden nach Abschluss ihres Projekts tatsächlich über uns sagen.",
   points: [
-    "Festpreis statt Stundenlohn",
+    "Festpreis statt Abrechnung nach Stunden",
     "Ein Ansprechpartner — vom ersten Anruf bis zur Übergabe",
     "Klarer Ablauf statt Chaos auf der Baustelle",
     "Pünktlich, zuverlässig, sauber — bestätigt durch echte Kundenbewertungen",
@@ -354,6 +354,7 @@ export const contact = {
     "Füllen Sie das kurze Formular aus oder schreiben Sie uns direkt per WhatsApp — beides führt zu einem persönlichen Erstgespräch.",
   whatsappCta: "Direkt per WhatsApp schreiben",
   callCta: "Direkt anrufen",
+  formIntro: "Wir melden uns in der Regel innerhalb von 24 Stunden bei Ihnen zurück.", // TODO: Reaktionszeit final bestätigen
   regionNote: `Einsatzgebiet: ${business.region}`,
   step1: {
     question: "Um welche Art von Projekt geht es?",
