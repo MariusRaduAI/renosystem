@@ -65,12 +65,7 @@ export default function Testimonials() {
                 <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-wood-500 font-display text-sm font-bold text-concrete-100">
                   {review.initials}
                 </div>
-                <div>
-                  <p className="text-sm font-semibold text-concrete-950">{review.name}</p>
-                  <p className="text-xs text-concrete-600">
-                    {review.reviewCount} · {review.timeAgo}
-                  </p>
-                </div>
+                <p className="text-sm font-semibold text-concrete-950">{review.name}</p>
               </div>
 
               <div className="mt-4 flex items-center gap-0.5 text-safety" aria-hidden="true">
@@ -83,10 +78,6 @@ export default function Testimonials() {
 
               <p className="mt-3 flex-1 whitespace-pre-line text-sm leading-relaxed text-concrete-600">
                 {review.text}
-              </p>
-
-              <p className="mt-5 text-xs font-semibold uppercase tracking-wide text-wood-600">
-                {review.service}
               </p>
             </div>
           ))}
