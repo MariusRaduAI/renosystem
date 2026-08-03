@@ -298,7 +298,6 @@ export const testimonials = {
   intro: "Echte Bewertungen unserer Kunden — unbearbeitet, direkt von Google.",
   googleRatingLabel: "5,0",
   googleReviewCountLabel: "5 Bewertungen bei Google",
-  googleProfileUrl: "",
   reviews: [
     {
       name: "Petra Lang",

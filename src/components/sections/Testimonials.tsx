@@ -91,17 +91,6 @@ export default function Testimonials() {
             </div>
           ))}
         </div>
-
-        {testimonials.googleProfileUrl && (
-          <a
-            href={testimonials.googleProfileUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-wood-600 hover:text-safety"
-          >
-            Alle Bewertungen bei Google ansehen →
-          </a>
-        )}
       </div>
     </section>
   );

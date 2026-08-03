@@ -92,6 +92,7 @@ export default function Footer() {
               <li>
                 {business.street}, {business.zip} {business.city}
               </li>
+              <li>{business.region}</li>
             </ul>
           </div>
 
