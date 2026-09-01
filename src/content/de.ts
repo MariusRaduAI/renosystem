@@ -267,6 +267,30 @@ export const portfolio = {
       alt: "Innenausbau: Rohbauraum mit verspachtelten Wänden, danach dieselbe Küche mit hochwertiger Einbauküche",
       isPlaceholder: false,
     },
+    {
+      title: "Trockenbau, Tapezierung & Malerarbeiten, Wiegelmann",
+      category: "Trockenbau & Malerarbeiten",
+      beforeImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/before.jpg",
+      afterImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/after.jpg",
+      alt: "Dachschräge im Rohzustand mit offener Unterkonstruktion, danach fertig verkleidet und gestrichen",
+      isPlaceholder: false,
+    },
+    {
+      title: "Renovierung Klinik Selzer",
+      category: "Komplettsanierung",
+      beforeImageUrl: "/portfolio/selzer-klinikum-renovierung/before.jpg",
+      afterImageUrl: "/portfolio/selzer-klinikum-renovierung/after.jpg",
+      alt: "Entkernter Raum mit freiliegender Holzkonstruktion, danach der fertige Flur mit Fliesenboden und frischem Anstrich",
+      isPlaceholder: false,
+    },
+    {
+      title: "Fenster & Haustüren, Montage",
+      category: "Fenster & Türen",
+      beforeImageUrl: "/portfolio/fenster-haustueren-montage/before.jpg",
+      afterImageUrl: "/portfolio/fenster-haustueren-montage/after.jpg",
+      alt: "Balkontür-Öffnung im Rohzustand, danach die fertig montierte neue Balkontür",
+      isPlaceholder: false,
+    },
   ],
 };
 
