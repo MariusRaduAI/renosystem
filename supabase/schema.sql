@@ -34,7 +34,8 @@ create table if not exists projects (
   created_at timestamptz not null default now(),
   title text not null,
   category text,
-  image_url text not null,
+  before_image_url text not null,
+  after_image_url text not null,
   alt_text text not null,
   is_placeholder boolean not null default true,
   sort_order int not null default 0

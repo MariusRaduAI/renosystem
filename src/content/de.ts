@@ -243,41 +243,29 @@ export const whyUs = {
 
 export const portfolio = {
   eyebrow: "Projekte",
-  headline: "Referenzen im Aufbau",
+  headline: "Echte Ergebnisse, keine Stockfotos.",
   intro:
-    "Diese Galerie zeigt aktuell Platzhalterbilder im Stil unserer Projekte. Echte Vorher-Nachher-Fotos folgen, sobald abgeschlossene Projekte freigegeben sind.",
+    "Ziehen Sie den Regler und sehen Sie selbst, was aus diesen Projekten geworden ist — echte Fotos aus unserer eigenen Baustellendokumentation.",
   placeholderNote: "Platzhalterbild",
   beforeLabel: "Vorher",
   afterLabel: "Nachher",
   dragHint: "Regler ziehen",
   projects: [
     {
-      title: "Komplettsanierung Altbauwohnung",
-      category: "Wohnungsrenovierung",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1600&auto=format&fit=crop",
-      alt: "Renoviertes Wohnzimmer mit hellem Parkettboden und moderner Einrichtung (Platzhalterbild)",
+      title: "Bad-Umbau mit neuer Fliesenverlegung",
+      category: "Fliesenverlegung",
+      beforeImageUrl: "/portfolio/fliesenverlegung-bad-umbau/before.jpg",
+      afterImageUrl: "/portfolio/fliesenverlegung-bad-umbau/after.jpg",
+      alt: "Bad-Umbau: Abdichtung und Fliesenverlegung im Rohzustand, danach der fertig verlegte Boden",
+      isPlaceholder: false,
     },
     {
-      title: "Haussanierung Einfamilienhaus",
-      category: "Haussanierung",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop",
-      alt: "Modernisiertes Hausinnere mit klaren Linien und Betonoptik (Platzhalterbild)",
-    },
-    {
-      title: "Innenausbau mit Trockenbau",
+      title: "Kompletter Innenausbau, Ludwigsburg",
       category: "Innenausbau",
-      imageUrl:
-        "https://images.unsplash.com/photo-1615873968403-89e068629265?q=80&w=1600&auto=format&fit=crop",
-      alt: "Rohbau mit sichtbarer Trockenbau-Konstruktion vor Fertigstellung (Platzhalterbild)",
-    },
-    {
-      title: "Komplettsanierung Bad & Küche",
-      category: "Komplettsanierung",
-      imageUrl:
-        "https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=1600&auto=format&fit=crop",
-      alt: "Sanierte Wohnfläche mit Blick auf offenen Küchenbereich (Platzhalterbild)",
+      beforeImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/before.jpg",
+      afterImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/after.jpg",
+      alt: "Innenausbau: Rohbauraum mit verspachtelten Wänden, danach dieselbe Küche mit hochwertiger Einbauküche",
+      isPlaceholder: false,
     },
   ],
 };

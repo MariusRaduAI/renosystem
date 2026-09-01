@@ -8,28 +8,30 @@ async function getProjects(): Promise<PortfolioItem[]> {
   if (supabase) {
     const { data, error } = await supabase
       .from("projects")
-      .select("title, category, image_url, alt_text, is_placeholder")
+      .select("title, category, before_image_url, after_image_url, alt_text, is_placeholder")
       .order("sort_order", { ascending: true });
 
     if (!error && data && data.length > 0) {
       return data.map((row) => ({
         title: row.title,
         category: row.category,
-        imageUrl: row.image_url,
+        beforeImageUrl: row.before_image_url,
+        afterImageUrl: row.after_image_url,
         alt: row.alt_text,
         isPlaceholder: row.is_placeholder,
       }));
     }
   }
 
-  // Fallback: statische Platzhalterprojekte aus der Content-Konfiguration,
+  // Fallback: statische Projekte aus der Content-Konfiguration,
   // solange kein Supabase-Projekt mit echten Daten angebunden ist.
   return portfolio.projects.map((project) => ({
     title: project.title,
     category: project.category,
-    imageUrl: project.imageUrl,
+    beforeImageUrl: project.beforeImageUrl,
+    afterImageUrl: project.afterImageUrl,
     alt: project.alt,
-    isPlaceholder: true,
+    isPlaceholder: project.isPlaceholder,
   }));
 }
 

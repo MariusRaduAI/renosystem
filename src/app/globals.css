@@ -121,13 +121,6 @@ h1, h2, h3, h4, .font-display {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-.blueprint-grid {
-  background-image:
-    linear-gradient(color-mix(in srgb, var(--color-steel-500) 14%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in srgb, var(--color-steel-500) 14%, transparent) 1px, transparent 1px);
-  background-size: 48px 48px;
-}
-
 .text-balance {
   text-wrap: balance;
 }

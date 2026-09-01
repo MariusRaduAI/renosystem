@@ -3,17 +3,15 @@
 import { useCallback, useRef, useState } from "react";
 import Image from "next/image";
 
-// Vorher/Nachher-Regler: solange keine echten Baustellenfotos vorliegen,
-// simuliert die "Vorher"-Seite eine Blueprint-Rohbauphase (Graustufen +
-// Rasterlinien) über demselben Platzhalterbild. Sobald echte Vorher-Fotos
-// vorliegen, `beforeSrc` ergänzen und die Simulation entfernen.
 export default function BeforeAfterSlider({
-  src,
+  beforeSrc,
+  afterSrc,
   alt,
   beforeLabel,
   afterLabel,
 }: {
-  src: string;
+  beforeSrc: string;
+  afterSrc: string;
   alt: string;
   beforeLabel: string;
   afterLabel: string;
@@ -49,7 +47,7 @@ export default function BeforeAfterSlider({
       }}
     >
       <Image
-        src={src}
+        src={afterSrc}
         alt={alt}
         fill
         sizes="(min-width: 1024px) 45vw, (min-width: 640px) 50vw, 100vw"
@@ -61,15 +59,13 @@ export default function BeforeAfterSlider({
 
       <div className="absolute inset-0" style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}>
         <Image
-          src={src}
+          src={beforeSrc}
           alt=""
           fill
           sizes="(min-width: 1024px) 45vw, (min-width: 640px) 50vw, 100vw"
-          className="object-cover grayscale"
-          style={{ filter: "grayscale(1) contrast(1.1) brightness(0.7)" }}
+          className="object-cover"
           aria-hidden="true"
         />
-        <div className="absolute inset-0 blueprint-grid opacity-70 mix-blend-overlay" aria-hidden="true" />
         <span className="absolute bottom-3 left-3 z-10 rounded-full bg-concrete-100/90 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-concrete-950">
           {beforeLabel}
         </span>

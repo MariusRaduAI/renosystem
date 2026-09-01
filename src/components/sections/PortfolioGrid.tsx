@@ -7,7 +7,8 @@ import BeforeAfterSlider from "@/components/BeforeAfterSlider";
 export type PortfolioItem = {
   title: string;
   category: string | null;
-  imageUrl: string;
+  beforeImageUrl: string;
+  afterImageUrl: string;
   alt: string;
   isPlaceholder: boolean;
 };
@@ -31,7 +32,7 @@ export default function PortfolioGrid({
     if (prefersReducedMotion()) return;
 
     const ctx = gsap.context(() => {
-      gsap.utils.toArray<HTMLElement>(".portfolio-card").forEach((card) => {
+      gsap.utils.toArray<HTMLElement>(".portfolio-card").forEach((card, i) => {
         gsap.fromTo(
           card,
           { autoAlpha: 0, y: 40 },
@@ -40,6 +41,7 @@ export default function PortfolioGrid({
             y: 0,
             duration: 0.65,
             ease: "power2.out",
+            delay: i * 0.08,
             scrollTrigger: { trigger: card, start: "top 90%" },
           }
         );
@@ -50,15 +52,16 @@ export default function PortfolioGrid({
   }, []);
 
   return (
-    <div ref={gridRef} className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      {items.map((item, i) => (
+    <div ref={gridRef} className="grid grid-cols-1 gap-8 lg:grid-cols-2">
+      {items.map((item) => (
         <div
           key={item.title}
-          className={`portfolio-card ${i === 0 ? "sm:col-span-2 lg:col-span-2 lg:row-span-2" : ""}`}
+          className="portfolio-card group rounded-3xl border border-concrete-950/8 bg-white p-3 shadow-sm shadow-concrete-950/5 transition-shadow hover:shadow-lg hover:shadow-concrete-950/10 sm:p-4"
         >
           <div className="relative">
             <BeforeAfterSlider
-              src={item.imageUrl}
+              beforeSrc={item.beforeImageUrl}
+              afterSrc={item.afterImageUrl}
               alt={item.alt}
               beforeLabel={beforeLabel}
               afterLabel={afterLabel}
@@ -69,14 +72,14 @@ export default function PortfolioGrid({
               </span>
             )}
           </div>
-          <div className="mt-3 flex items-baseline justify-between gap-3">
+          <div className="mt-4 flex items-baseline justify-between gap-3 px-1">
             <div>
               {item.category && (
                 <p className="text-xs font-semibold uppercase tracking-wide text-wood-500">{item.category}</p>
               )}
-              <h3 className="mt-1 font-display text-base font-bold text-concrete-950">{item.title}</h3>
+              <h3 className="mt-1 font-display text-lg font-bold text-concrete-950">{item.title}</h3>
             </div>
-            <span className="hidden shrink-0 text-xs text-concrete-600 sm:inline">{dragHint} →</span>
+            <span className="hidden shrink-0 text-xs text-concrete-600 sm:inline">{dragHint} ↔</span>
           </div>
         </div>
       ))}
