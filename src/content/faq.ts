@@ -27,12 +27,12 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Warum nennen Sie keinen Preis am Telefon?",
         answer:
-          "Weil jede seriöse Kalkulation eine Besichtigung voraussetzt. Ein Preis ohne Besichtigung ist entweder zu hoch angesetzt, um sich abzusichern, oder er wird später „nachjustiert“ — beides zu Ihren Lasten. Wir sehen uns Ihr Objekt persönlich an und legen erst danach einen Festpreis fest, an den wir uns halten.",
+          "Weil jede seriöse Kalkulation eine Besichtigung voraussetzt. Ein Preis ohne Besichtigung ist entweder zu hoch angesetzt, um sich abzusichern, oder er wird später „nachjustiert“ — beides zu Ihren Lasten. Wir sehen uns Ihr Objekt persönlich an und legen erst danach ein verbindliches Angebot vor.",
       },
       {
-        question: "Ist das Angebot wirklich ein Festpreis, oder kommen später Zusatzkosten?",
+        question: "Ist das Angebot verbindlich, oder kommen später Zusatzkosten?",
         answer:
-          "Ein echter Festpreis, keine Abrechnung nach Stunden und keine vagen Pauschalen. Sollte sich während der Arbeiten ein Zusatzaufwand ergeben, der bei der Besichtigung nicht erkennbar war (etwa verdeckte Bauschäden), sprechen wir das offen an, bevor weitergearbeitet wird — nicht erst auf der Schlussrechnung.",
+          "Das Angebot ist verbindlich kalkuliert — keine Abrechnung nach Stunden und keine vagen Pauschalen. Bei einer Sanierung lässt sich aber nicht jede Überraschung vorab ausschließen: Zeigt sich während der Arbeiten ein Zusatzaufwand, der bei der Besichtigung nicht erkennbar war (etwa verdeckte Bauschäden), sprechen wir das offen an und holen Ihre Zustimmung ein, bevor weitergearbeitet wird — nicht erst auf der Schlussrechnung.",
       },
       {
         question: "Was kostet eine Komplettsanierung ungefähr?",
@@ -53,7 +53,7 @@ export const faqCategories: FaqCategory[] = [
       {
         question: "Wie läuft die Zusammenarbeit konkret ab?",
         answer:
-          "In vier Schritten: Telefon-Erstgespräch, kurzer Fragebogen zu Ihrem Objekt, persönliche Besichtigung vor Ort, dann ein verbindliches Festpreisangebot. Erst wenn Sie zustimmen, planen wir den konkreten Bauablauf.",
+          "In vier Schritten: Telefon-Erstgespräch, kurzer Fragebogen zu Ihrem Objekt, persönliche Besichtigung vor Ort, dann ein verbindliches Angebot. Erst wenn Sie zustimmen, planen wir den konkreten Bauablauf.",
       },
       {
         question: "Wie lange dauert eine Sanierung im Durchschnitt?",

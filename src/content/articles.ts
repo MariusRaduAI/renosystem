@@ -70,7 +70,7 @@ export const articles: Article[] = [
       {
         heading: "Was eine seriöse Kalkulation stattdessen braucht",
         paragraphs: [
-          "Ein belastbarer Festpreis entsteht in drei Schritten: ein kurzes Telefongespräch zur Grobeinordnung, ein Fragebogen zu Objekt und Wünschen, und eine persönliche Besichtigung vor Ort. Erst danach lässt sich seriös kalkulieren — und genau danach richten wir uns.",
+          "Ein belastbares Angebot entsteht in drei Schritten: ein kurzes Telefongespräch zur Grobeinordnung, ein Fragebogen zu Objekt und Wünschen, und eine persönliche Besichtigung vor Ort. Erst danach lässt sich seriös kalkulieren — und genau danach richten wir uns.",
           "Diese Reihenfolge kostet Sie ein wenig mehr Zeit als ein Anruf mit sofortiger Zahl. Sie erspart Ihnen dafür eine Schlussrechnung, die nicht zum ursprünglichen Angebot passt.",
         ],
       },
@@ -142,7 +142,7 @@ export const articles: Article[] = [
       {
         heading: "1. Budget realistisch und mit Puffer einschätzen",
         paragraphs: [
-          "Legen Sie nicht nur die Zielsumme fest, sondern auch, wie viel finanzieller Spielraum tatsächlich vorhanden ist. Ein Festpreisangebot schützt Sie vor Kostenexplosionen — ersetzt aber nicht die Frage, was Sie sich grundsätzlich leisten wollen.",
+          "Legen Sie nicht nur die Zielsumme fest, sondern auch, wie viel finanzieller Spielraum tatsächlich vorhanden ist. Ein verbindliches Angebot schützt Sie vor unangekündigten Kostenexplosionen — ersetzt aber nicht die Frage, was Sie sich grundsätzlich leisten wollen, und auch bei einem soliden Angebot kann sich während der Arbeiten unvorhersehbarer Mehraufwand zeigen.",
         ],
       },
       {
@@ -212,7 +212,7 @@ export const articles: Article[] = [
           "Telefon-Erstgespräch — Grobe Einordnung, ob Ihr Vorhaben zum Leistungsspektrum passt",
           "Fragebogen — gezielte Fragen zu Objekt, Umfang und Qualitätsanspruch",
           "Besichtigung vor Ort — die Grundlage jeder seriösen Kalkulation",
-          "Festpreisangebot — verbindlich, transparent, ohne Überraschungen auf der Schlussrechnung",
+          "Verbindliches Angebot — transparent kalkuliert, mit offener Kommunikation bei unvorhersehbarem Mehraufwand",
         ],
       },
       {

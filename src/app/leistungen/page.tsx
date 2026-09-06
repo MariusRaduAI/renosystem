@@ -10,7 +10,7 @@ import { serviceDetails } from "@/content/services";
 export const metadata: Metadata = {
   title: "Leistungen",
   description:
-    "Alle Leistungen von RENOSYSTEM ALL-IN-ONE im Überblick: Sanierung & Umbau, Ausführung & Montage, Pflege & Reinigung sowie Beratung & Steuerung — aus einer Hand, mit Festpreis.",
+    "Alle Leistungen von RENOSYSTEM ALL-IN-ONE im Überblick: Sanierung & Umbau, Ausführung & Montage, Pflege & Reinigung sowie Beratung & Steuerung — aus einer Hand, mit verbindlichem Angebot nach Besichtigung.",
 };
 
 export default function LeistungenPage() {

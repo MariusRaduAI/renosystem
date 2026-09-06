@@ -6,7 +6,7 @@ export const about = {
   intro:
     "RENOSYSTEM ALL-IN-ONE steht für einen einfachen Grundsatz: Wer eine Sanierung beauftragt, soll genau einen Menschen haben, der dafür geradesteht — nicht ein wechselndes Callcenter, keine anonyme Projektnummer.",
   metaDescription:
-    "RENOSYSTEM ALL-IN-ONE — Bausanierung und Komplettsanierung mit einem festen Ansprechpartner, Festpreis-Garantie und Einsatzgebiet Bad Rappenau und 60 km Umkreis.",
+    "RENOSYSTEM ALL-IN-ONE — Bausanierung und Komplettsanierung mit einem festen Ansprechpartner, verbindlichem Angebot nach Besichtigung und Einsatzgebiet Bad Rappenau und 60 km Umkreis.",
   storyHeading: "Warum RENOSYSTEM entstanden ist",
   story: [
     "Sanierungen scheitern selten am Handwerk selbst. Sie scheitern daran, dass niemand die Verantwortung für das Gesamtbild übernimmt — jedes Gewerk optimiert für sich, und der Eigentümer sitzt dazwischen und muss koordinieren, was eigentlich der Betrieb koordinieren sollte.",
@@ -15,9 +15,9 @@ export const about = {
   principlesHeading: "Woran Sie uns messen können",
   principles: [
     {
-      title: "Festpreis statt Abrechnung nach Stunden",
+      title: "Verbindliches Angebot statt Abrechnung nach Stunden",
       description:
-        "Ein Preis, den wir nach der Besichtigung nennen und an den wir uns halten — keine Stundenzettel, keine Überraschungen auf der Schlussrechnung.",
+        "Ein Angebot, das wir nach der Besichtigung schriftlich festhalten — keine Stundenzettel, und unvorhergesehener Mehraufwand wird vorher besprochen statt auf der Schlussrechnung zu erscheinen.",
     },
     {
       title: "Ein Ansprechpartner, keine Weiterleitung",

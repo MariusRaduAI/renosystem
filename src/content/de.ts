@@ -23,7 +23,7 @@ export const site = {
   name: business.name,
   tagline: "Ihr Partner für komplette Renovierungen",
   metaDescription:
-    "RENOSYSTEM ALL-IN-ONE plant und realisiert Komplettsanierungen, Haussanierungen und Wohnungsrenovierungen in Bad Rappenau und im Umkreis von 60 km — mit Festpreis nach persönlicher Besichtigung.",
+    "RENOSYSTEM ALL-IN-ONE plant und realisiert Komplettsanierungen, Haussanierungen und Wohnungsrenovierungen in Bad Rappenau und im Umkreis von 60 km — mit verbindlichem Angebot nach persönlicher Besichtigung.",
 };
 
 export const nav = {
@@ -43,19 +43,19 @@ export const hero = {
   // Headline-Optionen (Auswahl siehe `headline`) — bei Bedarf leicht austauschbar.
   headlineOptions: [
     "Sanierung, die keine Fragen offen lässt.",
-    "Ihr Zuhause. Ein Plan. Ein Festpreis.",
+    "Ihr Zuhause. Ein Plan. Ein klares Angebot.",
     "Komplettsanierung mit Plan statt Zufall.",
     "Struktur, wo andere improvisieren.",
   ],
   headline: "Sanierung, die keine Fragen offen lässt.",
   subline:
-    "Kein Kostenvoranschlag, der später explodiert. Kein Hin- und Herschieben zwischen Handwerkern. Sie bekommen einen Festpreis nach persönlicher Besichtigung — und einen Ansprechpartner, der von der Entkernung bis zur Übergabe an Ihrer Seite bleibt.",
+    "Kein Kostenvoranschlag, der später explodiert. Kein Hin- und Herschieben zwischen Handwerkern. Sie bekommen ein verbindliches Angebot nach persönlicher Besichtigung — und einen Ansprechpartner, der von der Entkernung bis zur Übergabe an Ihrer Seite bleibt.",
   ctaSecondary: "Unsere Leistungen",
-  trustSignal: "Festpreis nach Besichtigung · Kein Preis am Telefon",
+  trustSignal: "Verbindliches Angebot nach Besichtigung · Kein Preis am Telefon",
 };
 
 export const trustBar = [
-  { label: "Festpreis-Garantie", detail: "Ein Preis. Ohne Überraschungen." },
+  { label: "Transparente Kalkulation", detail: "Verbindliches Angebot, offen kommuniziert." },
   { label: "Persönliche Betreuung", detail: "Ein Ansprechpartner, der Inhaber selbst." },
   { label: "Erfahrung am Bau", detail: "Langjährige Praxis in Sanierung & Umbau" }, // TODO: konkrete Jahreszahl ergänzen
   { label: business.region, detail: "Vor Ort verwurzelt, persönlich erreichbar" },
@@ -211,21 +211,30 @@ export const process: ProcessStep[] = [
   },
   {
     number: "04",
-    title: "Pauschal-Angebot",
+    title: "Verbindliches Angebot",
     description:
-      "Sie erhalten ein verbindliches Festpreisangebot — transparent, nachvollziehbar, ohne Überraschungen auf der Schlussrechnung.",
+      "Sie erhalten ein verbindliches, nachvollziehbar kalkuliertes Angebot. Sollte sich während der Arbeiten unvorhersehbarer Zusatzaufwand ergeben, besprechen wir das offen, bevor weitergearbeitet wird — nicht erst auf der Schlussrechnung.",
   },
 ];
 
 export const pricing = {
   eyebrow: "Preise",
-  headline: "Transparent von Anfang an.",
-  body: "Kein Preis am Telefon, kein Rätselraten. Unser Stundensatz ist die Kalkulationsgrundlage — abgerechnet wird bei Ihrem Projekt aber immer der Festpreis, den wir gemeinsam nach einer kostenlosen Besichtigung vor Ort festlegen.",
-  priceFrom: "ab",
-  priceValue: "48 €",
-  priceUnit: "pro Stunde",
-  priceVat: "zzgl. MwSt.",
-  note: "Dieser Stundensatz dient zur Orientierung. Der finale Festpreis für Ihr Projekt wird individuell im Rahmen einer kostenlosen Besichtigung vor Ort ermittelt.",
+  headline: "Transparent, aber ehrlich.",
+  body: "Eine Sanierung lässt sich nicht seriös in eine pauschale Zahl pressen — zu viele Faktoren entscheiden über den tatsächlichen Aufwand. Was Sie stattdessen bekommen: eine nachvollziehbare Kalkulation und ein verbindliches Angebot, bevor irgendetwas beauftragt wird.",
+  points: [
+    {
+      title: "Kein Preis am Telefon",
+      detail: "Eine seriöse Kalkulation setzt eine Besichtigung voraus — alles andere wäre Raten auf Ihre Kosten.",
+    },
+    {
+      title: "Verbindliches Angebot vor Baubeginn",
+      detail: "Sie erhalten ein schriftliches, nachvollziehbares Angebot — erst danach wird etwas beauftragt.",
+    },
+    {
+      title: "Offene Kommunikation bei Überraschungen",
+      detail: "Zeigt sich während der Arbeiten unvorhersehbarer Mehraufwand (z. B. verdeckte Bauschäden), sprechen wir das vorher an — nie erst auf der Schlussrechnung.",
+    },
+  ],
   cta: "Besichtigungstermin anfragen",
 };
 
@@ -234,7 +243,7 @@ export const whyUs = {
   headline: "Ein Standard. Kein Kompromiss.",
   body: "Jedes Projekt bekommt dieselbe sorgfältige Ausführung und dieselbe Qualität bei Material und Verarbeitung — unabhängig davon, wie groß der Auftrag ist. Das ist kein Werbespruch: Es ist das, was unsere Kunden nach Abschluss ihres Projekts tatsächlich über uns sagen.",
   points: [
-    "Festpreis statt Abrechnung nach Stunden",
+    "Verbindliches Angebot vor Baubeginn, offen kommuniziert",
     "Ein Ansprechpartner — vom ersten Anruf bis zur Übergabe",
     "Klarer Ablauf statt Chaos auf der Baustelle",
     "Pünktlich, zuverlässig, sauber — bestätigt durch echte Kundenbewertungen",
@@ -260,7 +269,7 @@ export const portfolio = {
       isPlaceholder: false,
     },
     {
-      title: "Kompletter Innenausbau, Ludwigsburg",
+      title: "Kompletter Innenausbau mit Einbauküche",
       category: "Innenausbau",
       beforeImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/before.jpg",
       afterImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/after.jpg",
@@ -268,7 +277,7 @@ export const portfolio = {
       isPlaceholder: false,
     },
     {
-      title: "Trockenbau, Tapezierung & Malerarbeiten, Wiegelmann",
+      title: "Trockenbau, Tapezierung & Malerarbeiten im Dachgeschoss",
       category: "Trockenbau & Malerarbeiten",
       beforeImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/before.jpg",
       afterImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/after.jpg",
@@ -276,7 +285,7 @@ export const portfolio = {
       isPlaceholder: false,
     },
     {
-      title: "Renovierung Klinik Selzer",
+      title: "Komplettsanierung eines Klinikgebäudes",
       category: "Komplettsanierung",
       beforeImageUrl: "/portfolio/selzer-klinikum-renovierung/before.jpg",
       afterImageUrl: "/portfolio/selzer-klinikum-renovierung/after.jpg",

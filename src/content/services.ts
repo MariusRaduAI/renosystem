@@ -22,11 +22,11 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Komplettsanierung",
     shortDescription: "Alle Gewerke aus einer Hand — von der Entkernung bis zur schlüsselfertigen Übergabe.",
     metaDescription:
-      "Komplettsanierung aus einer Hand in Bad Rappenau und im Umkreis von 60 km: ein Ansprechpartner, ein Festpreis, keine Koordination zwischen Einzelgewerken. Jetzt Erstgespräch vereinbaren.",
+      "Komplettsanierung aus einer Hand in Bad Rappenau und im Umkreis von 60 km: ein Ansprechpartner, ein verbindliches Angebot, keine Koordination zwischen Einzelgewerken. Jetzt Erstgespräch vereinbaren.",
     heroIntro:
       "Eine Komplettsanierung scheitert selten am Handwerk — sie scheitert an der Koordination. Zehn Gewerke, zehn Zeitpläne, zehn Ansprechpartner, und Sie mittendrin. Wir übernehmen genau das: Planung, Reihenfolge, Qualitätskontrolle und Kommunikation, damit Sie einen Termin im Kalender haben statt zehn.",
     highlights: [
-      "Ein Vertrag, ein Festpreis, ein Ansprechpartner für das gesamte Projekt",
+      "Ein Vertrag, ein verbindliches Angebot, ein Ansprechpartner für das gesamte Projekt",
       "Entkernung, Rohinstallation, Trockenbau, Boden, Türen und Feinschliff aus einer Hand koordiniert",
       "Verbindlicher Zeitplan statt vager Zusagen — Sie wissen, wann welches Gewerk dran ist",
       "Regelmäßige Baustellenfotos und Status-Updates, auch wenn Sie nicht vor Ort sind",
@@ -46,9 +46,9 @@ export const serviceDetails: ServiceDetail[] = [
           "Bei einer Komplettsanierung mit Entkernung in der Regel ja, zumindest für die staubintensive Phase — wir sprechen das konkret bei der Besichtigung durch und stimmen den Ablauf auf Ihre Situation ab.",
       },
       {
-        question: "Bekomme ich einen Festpreis oder wird nach Stunden abgerechnet?",
+        question: "Bekomme ich ein verbindliches Angebot oder wird nach Stunden abgerechnet?",
         answer:
-          "Festpreis. Nach der Besichtigung und Ihren Angaben im Fragebogen erhalten Sie ein verbindliches Pauschalangebot — keine Stundenzettel, keine Überraschungen auf der Schlussrechnung.",
+          "Ein verbindliches Angebot. Nach der Besichtigung und Ihren Angaben im Fragebogen erhalten Sie eine schriftliche Kalkulation — keine Stundenzettel. Zeigt sich während der Arbeiten unvorhersehbarer Mehraufwand, sprechen wir das vorher an, statt ihn auf der Schlussrechnung überraschend erscheinen zu lassen.",
       },
     ],
     relatedSlugs: ["haussanierung", "wohnungsrenovierung", "trockenbau"],
@@ -59,7 +59,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Haussanierung",
     shortDescription: "Umfassende Sanierung von Ein- und Mehrfamilienhäusern, innen wie außen.",
     metaDescription:
-      "Haussanierung für Ein- und Mehrfamilienhäuser in Bad Rappenau und im Umkreis von 60 km: energetische und optische Modernisierung innen und außen, mit Festpreis und einem festen Ansprechpartner.",
+      "Haussanierung für Ein- und Mehrfamilienhäuser in Bad Rappenau und im Umkreis von 60 km: energetische und optische Modernisierung innen und außen, mit verbindlichem Angebot und einem festen Ansprechpartner.",
     heroIntro:
       "Ein Haus altert nie an einer einzigen Stelle. Dach, Fassade, Grundriss, Haustechnik — irgendwann kommt vieles gleichzeitig zusammen. Wir sanieren Ein- und Mehrfamilienhäuser innen wie außen als zusammenhängendes Projekt, statt jede Baustelle einzeln zu beauftragen.",
     highlights: [
@@ -91,7 +91,7 @@ export const serviceDetails: ServiceDetail[] = [
     name: "Wohnungsrenovierung",
     shortDescription: "Renovierung einzelner Wohnungen für Eigennutzung, Vermietung oder Verkauf.",
     metaDescription:
-      "Wohnungsrenovierung in Bad Rappenau und im Umkreis von 60 km — für Eigennutzung, Vermietung oder Verkauf. Fester Ablauf, Festpreis, ein Ansprechpartner.",
+      "Wohnungsrenovierung in Bad Rappenau und im Umkreis von 60 km — für Eigennutzung, Vermietung oder Verkauf. Fester Ablauf, verbindliches Angebot, ein Ansprechpartner.",
     heroIntro:
       "Nicht jede Wohnung braucht eine Kernsanierung. Manchmal reicht ein gezielter, sauber ausgeführter Umbau — neue Böden, frische Wände, ein modernisiertes Bad —, um aus einer abgewohnten Wohnung wieder ein attraktives Zuhause zu machen.",
     highlights: [
