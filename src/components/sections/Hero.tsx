@@ -7,12 +7,12 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-concrete-100">
       <Image
-        src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=2000&auto=format&fit=crop"
+        src="/portfolio/innenausbau-aniela-ludwigsburg/after.jpg"
         alt=""
         fill
         priority
         sizes="100vw"
-        className="object-cover"
+        className="object-cover object-[75%_35%]"
         aria-hidden="true"
       />
       <div

@@ -34,8 +34,8 @@ export default function UeberUnsPage() {
             </div>
             <div className="relative hidden aspect-[4/5] overflow-hidden rounded-2xl lg:block">
               <Image
-                src="https://images.unsplash.com/photo-1600210492493-0946911123ea?q=80&w=1000&auto=format&fit=crop"
-                alt=""
+                src="/portfolio/fenster-haustueren-montage/after.jpg"
+                alt="Fertig montierte Balkontür aus einem unserer echten Projekte"
                 fill
                 sizes="28rem"
                 className="object-cover"

@@ -250,6 +250,13 @@ export const whyUs = {
   ],
 };
 
+export const photoBand = {
+  eyebrow: "Kein Fotoshooting",
+  headline: "Das ist eine echte Baustelle.",
+  body: "Staub, freiliegende Balken, Kabel, die noch verlegt werden müssen — so sieht der Weg zum Ergebnis tatsächlich aus. Scrollen Sie weiter für die fertigen Räume.",
+  imageAlt: "Entkernter Dachboden mit freiliegender Holzkonstruktion vor Beginn der Trockenbauarbeiten",
+};
+
 export const portfolio = {
   eyebrow: "Projekte",
   headline: "Echte Ergebnisse, keine Stockfotos.",

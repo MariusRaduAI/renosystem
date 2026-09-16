@@ -43,8 +43,8 @@ export default function WhyUs() {
             <p className="mt-6 max-w-md text-lg leading-relaxed text-concrete-600">{whyUs.body}</p>
             <div className="relative mt-8 hidden aspect-[4/3] max-w-md overflow-hidden rounded-2xl sm:block">
               <Image
-                src="https://images.unsplash.com/photo-1600489000022-c2086d79f9d4?q=80&w=1000&auto=format&fit=crop"
-                alt=""
+                src="/portfolio/fliesenverlegung-bad-umbau/after.jpg"
+                alt="Fertig verlegter Fliesenboden aus einem unserer echten Projekte"
                 fill
                 sizes="(min-width: 1024px) 28rem, 50vw"
                 className="object-cover"

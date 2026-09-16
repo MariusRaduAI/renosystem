@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Logo from "./Logo";
 import { footer, business } from "@/content/de";
 import { serviceDetails } from "@/content/services";
@@ -9,24 +10,38 @@ export default function Footer() {
   return (
     <footer className="bg-concrete-100 pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 border-b border-concrete-950/10 pb-14 lg:flex-row lg:items-end lg:justify-between">
-          <Link
-            href="/kontakt"
-            data-magnetic
-            className="group block"
-            aria-label="Zum Kontaktformular"
-          >
-            <span className="font-display block text-[13vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent transition-colors [-webkit-text-stroke:1.5px_var(--color-concrete-950)] group-hover:[-webkit-text-stroke-color:var(--color-wood-500)] sm:text-8xl lg:text-9xl">
-              Wir bauen für Sie.
-            </span>
-          </Link>
-          <Link
-            href="/kontakt"
-            data-magnetic
-            className="inline-flex min-h-[52px] w-fit shrink-0 self-start items-center justify-center gap-2 rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-100 transition-colors hover:bg-safety"
-          >
-            Jetzt Erstgespräch anfragen →
-          </Link>
+        <div className="relative isolate mb-14 overflow-hidden rounded-3xl">
+          <Image
+            src="/portfolio/selzer-klinikum-renovierung/after.jpg"
+            alt=""
+            fill
+            sizes="(min-width: 1280px) 1280px, 100vw"
+            className="object-cover object-[50%_30%]"
+            aria-hidden="true"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-t from-concrete-950/95 via-concrete-950/75 to-concrete-950/35"
+            aria-hidden="true"
+          />
+          <div className="relative flex flex-col gap-8 px-6 py-14 sm:px-10 sm:py-20 lg:flex-row lg:items-end lg:justify-between">
+            <Link
+              href="/kontakt"
+              data-magnetic
+              className="group block"
+              aria-label="Zum Kontaktformular"
+            >
+              <span className="font-display block text-[13vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent transition-colors [-webkit-text-stroke:1.5px_var(--color-concrete-100)] group-hover:[-webkit-text-stroke-color:var(--color-safety)] sm:text-8xl lg:text-9xl">
+                Wir bauen für Sie.
+              </span>
+            </Link>
+            <Link
+              href="/kontakt"
+              data-magnetic
+              className="inline-flex min-h-[52px] w-fit shrink-0 self-start items-center justify-center gap-2 rounded-full bg-wood-500 px-7 text-base font-semibold text-concrete-100 transition-colors hover:bg-safety"
+            >
+              Jetzt Erstgespräch anfragen →
+            </Link>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">

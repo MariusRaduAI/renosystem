@@ -17,7 +17,7 @@ export default function PageHeader({
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-wood-500 to-safety pb-16 pt-32 sm:pb-20 sm:pt-36">
       <Image
-        src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1600&auto=format&fit=crop"
+        src="/portfolio/fenster-haustueren-montage/before.jpg"
         alt=""
         fill
         priority
