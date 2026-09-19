@@ -16,7 +16,7 @@ export const business = {
   phoneHref: "tel:+4917660344045",
   whatsappHref: "https://wa.me/4917660344045",
   whatsappDisplay: "+49 176 60344045",
-  email: "contact@renosystem.com",
+  email: "info@renosystem.de",
 } as const;
 
 export const site = {

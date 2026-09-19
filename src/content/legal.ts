@@ -22,7 +22,7 @@ export const impressum = {
       paragraphs: [
         "Telefon: +49 176 60344045",
         "WhatsApp: +49 176 60344045",
-        "E-Mail: contact@renosystem.com",
+        "E-Mail: info@renosystem.de",
       ],
     },
     {
@@ -73,7 +73,7 @@ export const datenschutz = {
       heading: "1. Verantwortlicher",
       paragraphs: [
         "Verantwortlicher im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:",
-        "RENOSYSTEM ALL-IN-ONE, Panc Nicodin Ciprian, Mühlstraße 9/1, 74906 Bad Rappenau, E-Mail: contact@renosystem.com, Telefon: +49 176 60344045.",
+        "RENOSYSTEM ALL-IN-ONE, Panc Nicodin Ciprian, Mühlstraße 9/1, 74906 Bad Rappenau, E-Mail: info@renosystem.de, Telefon: +49 176 60344045.",
       ],
     },
     {

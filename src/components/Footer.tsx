@@ -31,7 +31,7 @@ export default function Footer() {
               aria-label="Zum Kontaktformular"
             >
               <span className="font-display block text-[13vw] font-black uppercase leading-[0.85] tracking-tighter text-transparent transition-colors [-webkit-text-stroke:1.5px_var(--color-concrete-100)] group-hover:[-webkit-text-stroke-color:var(--color-safety)] sm:text-8xl lg:text-9xl">
-                Wir bauen für Sie.
+                Wir sanieren für Sie.
               </span>
             </Link>
             <Link
