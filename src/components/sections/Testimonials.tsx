@@ -28,7 +28,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative isolate overflow-hidden bg-concrete-100 py-24 sm:py-32">
+    <section ref={sectionRef} className="relative isolate overflow-hidden bg-concrete-100 py-16 sm:py-24 lg:py-32">
       <Image
         src="/logo/renosystem-mark.png"
         alt=""

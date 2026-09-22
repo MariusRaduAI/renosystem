@@ -128,7 +128,7 @@ export default function Footer() {
         </div>
 
         <div className="overflow-hidden py-4 sm:py-6" aria-hidden="true">
-          <span className="font-display block whitespace-nowrap text-center text-[19vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--color-concrete-950)] opacity-[0.08] sm:text-[11rem]">
+          <span className="font-display block whitespace-nowrap text-center text-[11.8vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--color-concrete-950)] opacity-[0.08] sm:text-[11rem]">
             RENOSYSTEM
           </span>
         </div>

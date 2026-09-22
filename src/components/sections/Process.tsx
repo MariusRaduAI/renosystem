@@ -34,7 +34,7 @@ export default function Process() {
     <section
       id="ablauf"
       ref={sectionRef}
-      className="relative overflow-hidden bg-gradient-to-b from-concrete-100 via-wood-500/5 to-concrete-100 py-24 sm:py-32"
+      className="relative overflow-hidden bg-gradient-to-b from-concrete-100 via-wood-500/5 to-concrete-100 py-16 sm:py-24 lg:py-32"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">

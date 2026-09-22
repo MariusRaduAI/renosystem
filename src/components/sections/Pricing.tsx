@@ -28,7 +28,7 @@ export default function Pricing() {
   }, []);
 
   return (
-    <section id="preise" ref={sectionRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section id="preise" ref={sectionRef} className="bg-concrete-100 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">{pricing.eyebrow}</p>

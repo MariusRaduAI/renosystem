@@ -33,7 +33,7 @@ export default function Services() {
   }, []);
 
   return (
-    <section id="leistungen" ref={containerRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section id="leistungen" ref={containerRef} className="bg-concrete-100 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">

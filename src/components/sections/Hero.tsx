@@ -27,7 +27,7 @@ export default function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl grid-cols-1 gap-14 px-4 pb-20 pt-32 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8 lg:pt-40">
         <div>
-          <h1 className="max-w-xl text-balance font-display text-[2.6rem] font-extrabold leading-[1.05] tracking-tight text-concrete-950 sm:text-6xl lg:text-[3.6rem] animate-fade-up">
+          <h1 className="max-w-xl text-balance break-words font-display text-[2.1rem] font-extrabold leading-[1.1] tracking-tight text-concrete-950 sm:text-6xl lg:text-[3.6rem] animate-fade-up">
             {hero.headline}
           </h1>
           <p

@@ -32,7 +32,7 @@ export default function WhyUs() {
   }, []);
 
   return (
-    <section id="warum-wir" ref={sectionRef} className="bg-concrete-100 py-24 sm:py-32">
+    <section id="warum-wir" ref={sectionRef} className="bg-concrete-100 py-16 sm:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_0.9fr] lg:gap-16">
           <div>

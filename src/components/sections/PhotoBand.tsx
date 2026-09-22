@@ -36,7 +36,7 @@ export default function PhotoBand() {
   }, []);
 
   return (
-    <section id="baustellenalltag" ref={sectionRef} className="relative isolate overflow-hidden bg-concrete-950 py-28 sm:py-36">
+    <section id="baustellenalltag" ref={sectionRef} className="relative isolate overflow-hidden bg-concrete-950 py-20 sm:py-28 lg:py-36">
       <Image
         src="/portfolio/wiegelmann-trockenbau-malerarbeiten/before.jpg"
         alt={photoBand.imageAlt}
