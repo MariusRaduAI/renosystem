@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
 import { testimonials } from "@/content/de";
 
@@ -27,8 +28,16 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="bg-concrete-100 py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section ref={sectionRef} className="relative isolate overflow-hidden bg-concrete-100 py-24 sm:py-32">
+      <Image
+        src="/logo/renosystem-mark.png"
+        alt=""
+        width={512}
+        height={512}
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-24 -top-24 z-0 h-80 w-80 rotate-[10deg] opacity-[0.04] sm:h-[26rem] sm:w-[26rem]"
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.25em] text-wood-600">

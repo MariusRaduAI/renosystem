@@ -8,8 +8,16 @@ export default function Footer() {
   const leadServices = serviceDetails.slice(0, 6);
 
   return (
-    <footer className="bg-concrete-100 pt-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <footer className="relative isolate overflow-hidden bg-concrete-100 pt-16">
+      <Image
+        src="/logo/renosystem-mark.png"
+        alt=""
+        width={512}
+        height={512}
+        aria-hidden="true"
+        className="pointer-events-none absolute -bottom-28 -right-28 z-0 h-[26rem] w-[26rem] rotate-[-8deg] opacity-[0.05] sm:h-[34rem] sm:w-[34rem]"
+      />
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative isolate mb-14 overflow-hidden rounded-3xl">
           <Image
             src="/portfolio/selzer-klinikum-renovierung/after.jpg"
@@ -46,8 +54,8 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
           <div>
-            <Logo variant="light" />
-            <p className="mt-4 max-w-xs text-sm text-concrete-600">{footer.description}</p>
+            <Logo variant="light" size="lg" />
+            <p className="mt-5 max-w-xs text-sm text-concrete-600">{footer.description}</p>
             {/* TODO: Social-Media-Links (Instagram/Facebook) ergänzen, sobald verfügbar */}
           </div>
 

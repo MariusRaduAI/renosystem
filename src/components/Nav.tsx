@@ -7,6 +7,7 @@ import { nav, business } from "@/content/de";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -15,6 +16,7 @@ export default function Nav() {
       const max = doc.scrollHeight - doc.clientHeight;
       const pct = max > 0 ? (window.scrollY / max) * 100 : 0;
       if (progressRef.current) progressRef.current.style.width = `${pct}%`;
+      setScrolled(window.scrollY > 72);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -33,7 +35,7 @@ export default function Nav() {
       <header className="fixed inset-x-0 top-0 z-40 px-3 pt-3 sm:px-5 sm:pt-4">
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between rounded-full border border-concrete-950/8 bg-white/90 pl-5 pr-3 shadow-lg shadow-concrete-950/10 backdrop-blur-md sm:pl-6 sm:pr-4">
           <Link href="/" aria-label="RENOSYSTEM Startseite" className="relative z-50">
-            <Logo variant="light" />
+            <Logo variant="light" collapsed={scrolled} />
           </Link>
 
           <nav className="hidden items-center gap-0.5 rounded-full bg-concrete-950/5 p-1 lg:flex">
