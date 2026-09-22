@@ -331,6 +331,14 @@ export const portfolio = {
       alt: "Offener Wohnbereich mit Treppe im Rohzustand vor Spachtel- und Malerarbeiten, danach derselbe Raum mit fertiger Treppenverkleidung, glatten Wänden und verlegtem Boden",
       isPlaceholder: false,
     },
+    {
+      title: "Holzterrasse mit überdachtem Sitzbereich",
+      category: "Holzterrasse",
+      beforeImageUrl: "/portfolio/holzterrasse-mit-ueberdachung/before.jpg",
+      afterImageUrl: "/portfolio/holzterrasse-mit-ueberdachung/after.jpg",
+      alt: "Rasenfläche mit Baum vor dem Terrassenbau, danach dieselbe Stelle mit fertiger Holzterrasse, Pflasterrand und überdachtem Sitzbereich",
+      isPlaceholder: false,
+    },
   ],
 };
 
