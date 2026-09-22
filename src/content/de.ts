@@ -307,6 +307,22 @@ export const portfolio = {
       alt: "Balkontür-Öffnung im Rohzustand, danach die fertig montierte neue Balkontür",
       isPlaceholder: false,
     },
+    {
+      title: "Dachgeschoss-Ausbau mit Wärme- und Schalldämmung",
+      category: "Komplettsanierung",
+      beforeImageUrl: "/portfolio/dachgeschoss-daemmung-ausbau/before.jpg",
+      afterImageUrl: "/portfolio/dachgeschoss-daemmung-ausbau/after.jpg",
+      alt: "Dachschräge im Rohzustand mit offener Dämmung und OSB-Boden, danach der fertig ausgebaute Raum mit Holzboden und Wänden",
+      isPlaceholder: false,
+    },
+    {
+      title: "Fachwerksanierung mit freigelegter Holzstruktur",
+      category: "Komplettsanierung",
+      beforeImageUrl: "/portfolio/fachwerk-sanierung-holzstruktur/before.jpg",
+      afterImageUrl: "/portfolio/fachwerk-sanierung-holzstruktur/after.jpg",
+      alt: "Fachwerkwand im Rohzustand mit neu eingesetzten Fenstern, danach der fertige Wohnraum mit restaurierter, sichtbarer Holzkonstruktion",
+      isPlaceholder: false,
+    },
   ],
 };
 
