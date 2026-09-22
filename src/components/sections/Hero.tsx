@@ -37,14 +37,6 @@ export default function Hero() {
             {hero.subline}
           </p>
 
-          <p
-            className="mt-7 flex items-center gap-2 text-sm text-concrete-600 animate-fade-up"
-            style={{ animationDelay: "0.3s" }}
-          >
-            <span className="inline-block h-1.5 w-1.5 rounded-full bg-wood-500" aria-hidden="true" />
-            {hero.trustSignal}
-          </p>
-
           <div
             className="mt-9 flex flex-wrap items-center gap-3 animate-fade-up"
             style={{ animationDelay: "0.4s" }}
