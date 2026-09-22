@@ -339,6 +339,14 @@ export const portfolio = {
       alt: "Rasenfläche mit Baum vor dem Terrassenbau, danach dieselbe Stelle mit fertiger Holzterrasse, Pflasterrand und überdachtem Sitzbereich",
       isPlaceholder: false,
     },
+    {
+      title: "Komplettsanierung mit akustischer Decke und Lichtvouten",
+      category: "Komplettsanierung",
+      beforeImageUrl: "/portfolio/akustikdecke-komplettsanierung/before.jpg",
+      afterImageUrl: "/portfolio/akustikdecke-komplettsanierung/after.jpg",
+      alt: "Entkernter Raum mit freiliegender Deckenkonstruktion und Bauschutt, danach der fertige Raum mit akustischer Deckenverkleidung, Lichtvouten, neuem Boden und frischem Anstrich",
+      isPlaceholder: false,
+    },
   ],
 };
 
