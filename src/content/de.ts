@@ -323,6 +323,14 @@ export const portfolio = {
       alt: "Fachwerkwand im Rohzustand mit neu eingesetzten Fenstern, danach der fertige Wohnraum mit restaurierter, sichtbarer Holzkonstruktion",
       isPlaceholder: false,
     },
+    {
+      title: "Trockenbau, Trennwände und Bodenverlegung im Wohnbereich",
+      category: "Trockenbau & Malerarbeiten",
+      beforeImageUrl: "/portfolio/innenausbau-treppe-offener-wohnbereich/before.jpg",
+      afterImageUrl: "/portfolio/innenausbau-treppe-offener-wohnbereich/after.jpg",
+      alt: "Offener Wohnbereich mit Treppe im Rohzustand vor Spachtel- und Malerarbeiten, danach derselbe Raum mit fertiger Treppenverkleidung, glatten Wänden und verlegtem Boden",
+      isPlaceholder: false,
+    },
   ],
 };
 
