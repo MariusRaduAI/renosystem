@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "./Logo";
 import CookieSettingsLink from "./CookieSettingsLink";
 import { footer, business } from "@/content/de";
 import { serviceDetails } from "@/content/services";
@@ -47,7 +46,10 @@ export default function Footer() {
 
         <div className="grid grid-cols-1 gap-10 py-12 sm:grid-cols-2 lg:grid-cols-5">
           <div>
-            <Logo variant="light" size="lg" />
+            <p className="font-display text-2xl font-black uppercase tracking-tight">
+              <span className="text-wood-500">reno</span>
+              <span className="text-safety">system</span>
+            </p>
             <p className="mt-5 max-w-xs text-sm text-concrete-600">{footer.description}</p>
             {/* TODO: Social-Media-Links (Instagram/Facebook) ergänzen, sobald verfügbar */}
           </div>
