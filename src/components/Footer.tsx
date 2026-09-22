@@ -9,14 +9,6 @@ export default function Footer() {
 
   return (
     <footer className="relative isolate overflow-hidden bg-concrete-100 pt-16">
-      <Image
-        src="/logo/renosystem-mark.png"
-        alt=""
-        width={512}
-        height={512}
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-28 -right-28 z-0 h-[26rem] w-[26rem] rotate-[-8deg] opacity-[0.05] sm:h-[34rem] sm:w-[34rem]"
-      />
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative isolate mb-14 overflow-hidden rounded-3xl">
           <Image
@@ -133,6 +125,12 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+        </div>
+
+        <div className="overflow-hidden py-4 sm:py-6" aria-hidden="true">
+          <span className="font-display block whitespace-nowrap text-center text-[19vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--color-concrete-950)] opacity-[0.08] sm:text-[11rem]">
+            RENOSYSTEM
+          </span>
         </div>
 
         <div className="flex flex-col gap-2 border-t border-concrete-950/10 py-6 text-xs text-concrete-600 sm:flex-row sm:items-center sm:justify-between">

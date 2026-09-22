@@ -39,18 +39,17 @@ export const nav = {
 };
 
 export const hero = {
-  eyebrow: "RENOSYSTEM ALL-IN-ONE · Bausanierung & Komplettsanierung",
   // Headline-Optionen (Auswahl siehe `headline`) — bei Bedarf leicht austauschbar.
   headlineOptions: [
+    "Komplettsanierung und Modernisierung für Ihr Zuhause.",
     "Sanierung, die keine Fragen offen lässt.",
     "Ihr Zuhause. Ein Plan. Ein klares Angebot.",
     "Komplettsanierung mit Plan statt Zufall.",
-    "Struktur, wo andere improvisieren.",
   ],
-  headline: "Sanierung, die keine Fragen offen lässt.",
+  headline: "Komplettsanierung und Modernisierung für Ihr Zuhause.",
   subline:
     "Kein Kostenvoranschlag, der später explodiert. Kein Hin- und Herschieben zwischen Handwerkern. Sie bekommen ein verbindliches Angebot nach persönlicher Besichtigung — und einen Ansprechpartner, der von der Entkernung bis zur Übergabe an Ihrer Seite bleibt.",
-  ctaSecondary: "Unsere Leistungen",
+  ctaSecondary: "Projekte ansehen",
   trustSignal: "Verbindliches Angebot nach Besichtigung · Kein Preis am Telefon",
 };
 

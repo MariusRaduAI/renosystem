@@ -34,8 +34,8 @@ export default function UeberUnsPage() {
             </div>
             <div className="relative hidden aspect-[4/5] overflow-hidden rounded-2xl lg:block">
               <Image
-                src="/portfolio/fenster-haustueren-montage/after.jpg"
-                alt="Fertig montierte Balkontür aus einem unserer echten Projekte"
+                src="/portfolio/fachwerk-sanierung-holzstruktur/after.jpg"
+                alt="Fertig restaurierter Wohnraum mit sichtbarer Holzkonstruktion aus einem unserer echten Projekte"
                 fill
                 sizes="28rem"
                 className="object-cover"

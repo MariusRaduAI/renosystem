@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { business, contact } from "@/content/de";
+import { ChatIcon } from "@/components/icons/Icons";
 
 export default function PageCta({
   headline,
@@ -32,7 +33,7 @@ export default function PageCta({
             data-magnetic
             className="inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full border border-concrete-100/40 px-7 text-base font-semibold text-concrete-100 transition-colors hover:border-concrete-100/70"
           >
-            💬 Direkt per WhatsApp
+            <ChatIcon className="h-4 w-4" /> Direkt per WhatsApp
           </a>
         </div>
       </div>

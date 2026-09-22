@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Logo from "./Logo";
 import { nav, business } from "@/content/de";
+import { ChatIcon } from "@/components/icons/Icons";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -65,9 +66,9 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Per WhatsApp schreiben"
-              className="flex h-10 w-10 items-center justify-center rounded-full bg-wood-600 text-lg"
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-wood-600 text-concrete-100"
             >
-              💬
+              <ChatIcon className="h-5 w-5" />
             </a>
             <button
               type="button"
@@ -150,7 +151,7 @@ export default function Nav() {
                 href={business.phoneHref}
                 className="flex min-h-[56px] items-center justify-center gap-2 rounded-full border border-concrete-950/15 px-7 text-base font-semibold text-concrete-950"
               >
-                📞 {business.phoneDisplay}
+                {business.phoneDisplay}
               </a>
             </div>
           </nav>

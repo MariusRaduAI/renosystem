@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import PageHeader from "@/components/PageHeader";
 import LeadForm from "@/components/LeadForm";
-import { business, contact } from "@/content/de";
+import { business, contact, hero } from "@/content/de";
+import { PhoneIcon, ChatIcon, GalleryIcon, MapPinIcon } from "@/components/icons/Icons";
 
 export const metadata: Metadata = {
   title: "Kontakt",
@@ -37,7 +39,7 @@ export default function KontaktPage() {
                 href={business.phoneHref}
                 className="mt-7 inline-flex min-h-[52px] items-center justify-center gap-2 rounded-full bg-concrete-100 px-8 text-base font-semibold text-concrete-950 transition-colors hover:bg-white"
               >
-                📞 Jetzt anrufen
+                <PhoneIcon className="h-4 w-4" /> Jetzt anrufen
               </a>
             </div>
 
@@ -48,28 +50,22 @@ export default function KontaktPage() {
                 rel="noopener noreferrer"
                 className="rounded-2xl border border-concrete-950/8 bg-white p-6 transition-colors hover:border-safety/40"
               >
-                <span className="text-2xl" aria-hidden="true">
-                  💬
-                </span>
+                <ChatIcon className="h-7 w-7 text-safety" />
                 <p className="mt-3 font-display text-base font-bold text-concrete-950">WhatsApp</p>
                 <p className="mt-1 text-sm text-concrete-600">{business.whatsappDisplay}</p>
               </a>
 
-              <a
-                href={`mailto:${business.email}`}
+              <Link
+                href="/#projekte"
                 className="rounded-2xl border border-concrete-950/8 bg-white p-6 transition-colors hover:border-wood-500/40"
               >
-                <span className="text-2xl" aria-hidden="true">
-                  ✉️
-                </span>
-                <p className="mt-3 font-display text-base font-bold text-concrete-950">E-Mail</p>
-                <p className="mt-1 text-sm text-concrete-600">{business.email}</p>
-              </a>
+                <GalleryIcon className="h-7 w-7 text-wood-500" />
+                <p className="mt-3 font-display text-base font-bold text-concrete-950">Projekte ansehen</p>
+                <p className="mt-1 text-sm text-concrete-600">Echte Vorher-Nachher-Beispiele</p>
+              </Link>
 
               <div className="rounded-2xl border border-concrete-950/8 bg-white p-6">
-                <span className="text-2xl" aria-hidden="true">
-                  📍
-                </span>
+                <MapPinIcon className="h-7 w-7 text-concrete-600" />
                 <p className="mt-3 font-display text-base font-bold text-concrete-950">Einsatzgebiet</p>
                 <p className="mt-1 text-sm text-concrete-600">
                   {business.street}, {business.zip} {business.city}
@@ -98,7 +94,8 @@ export default function KontaktPage() {
             <div className="mt-10">
               <LeadForm />
             </div>
-            <p className="mt-4 text-center text-xs text-concrete-600">{contact.regionNote}</p>
+            <p className="mt-4 text-center text-xs font-semibold text-concrete-950">{hero.trustSignal}</p>
+            <p className="mt-1.5 text-center text-xs text-concrete-600">{contact.regionNote}</p>
           </div>
         </section>
       </main>

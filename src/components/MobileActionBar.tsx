@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { business } from "@/content/de";
+import { PhoneIcon, ChatIcon } from "@/components/icons/Icons";
 
 export default function MobileActionBar() {
   const [visible, setVisible] = useState(false);
@@ -27,7 +28,7 @@ export default function MobileActionBar() {
         className="flex-1 flex items-center justify-center gap-2 bg-wood-500 py-4 text-base font-semibold text-concrete-100 active:bg-wood-600"
         aria-label={`Anrufen: ${business.phoneDisplay}`}
       >
-        <span aria-hidden="true">📞</span> Anrufen
+        <PhoneIcon className="h-5 w-5" /> Anrufen
       </a>
       <a
         href={business.whatsappHref}
@@ -36,14 +37,7 @@ export default function MobileActionBar() {
         className="flex-1 flex items-center justify-center gap-2 bg-safety py-4 text-base font-semibold text-concrete-100 active:bg-wood-500"
         aria-label="Per WhatsApp schreiben"
       >
-        <span aria-hidden="true">💬</span> WhatsApp
-      </a>
-      <a
-        href={`mailto:${business.email}`}
-        className="flex-1 flex items-center justify-center gap-2 bg-concrete-950 py-4 text-base font-semibold text-concrete-100 active:bg-concrete-600"
-        aria-label={`E-Mail schreiben: ${business.email}`}
-      >
-        <span aria-hidden="true">✉️</span> E-Mail
+        <ChatIcon className="h-5 w-5" /> WhatsApp
       </a>
     </div>
   );
