@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Logo from "./Logo";
+import CookieSettingsLink from "./CookieSettingsLink";
 import { footer, business } from "@/content/de";
 import { serviceDetails } from "@/content/services";
 
@@ -12,11 +13,11 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="relative isolate mb-14 overflow-hidden rounded-3xl">
           <Image
-            src="/portfolio/selzer-klinikum-renovierung/after.jpg"
+            src="/portfolio/fachwerk-sanierung-holzstruktur/after.jpg"
             alt=""
             fill
             sizes="(min-width: 1280px) 1280px, 100vw"
-            className="object-cover object-[50%_30%]"
+            className="object-cover object-[50%_35%]"
             aria-hidden="true"
           />
           <div
@@ -123,20 +124,26 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <CookieSettingsLink />
+              </li>
             </ul>
           </div>
-        </div>
-
-        <div className="overflow-hidden py-4 sm:py-6" aria-hidden="true">
-          <span className="font-display block whitespace-nowrap text-center text-[11.8vw] font-black uppercase leading-none tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--color-concrete-950)] opacity-[0.08] sm:text-[11rem]">
-            RENOSYSTEM
-          </span>
         </div>
 
         <div className="flex flex-col gap-2 border-t border-concrete-950/10 py-6 text-xs text-concrete-600 sm:flex-row sm:items-center sm:justify-between">
           <p>{footer.copyright}</p>
           <p>{business.legalForm} · {business.owner}</p>
         </div>
+      </div>
+
+      <div
+        className="pointer-events-none absolute inset-x-0 bottom-0 z-0 translate-y-[30%]"
+        aria-hidden="true"
+      >
+        <span className="font-display block whitespace-nowrap text-center text-[11.8vw] font-black uppercase leading-none tracking-tighter text-wood-500/[0.12] sm:text-[11rem]">
+          RENOSYSTEM
+        </span>
       </div>
     </footer>
   );

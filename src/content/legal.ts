@@ -99,9 +99,12 @@ export const datenschutz = {
       ],
     },
     {
-      heading: "5. Cookies und Analyse-Tools",
+      heading: "5. Cookies und Google Analytics",
       paragraphs: [
-        "Diese Website verwendet nach aktuellem Stand keine Cookies für Analyse- oder Marketingzwecke. Sollten künftig datenschutzfreundliche, cookielose Analyse-Dienste (z. B. Vercel Analytics) oder Google Analytics aktiviert werden, geschieht dies ausschließlich nach vorheriger Einholung Ihrer Einwilligung über ein Cookie-Consent-Banner, sofern die Nutzung nicht ohnehin ohne Cookies und ohne personenbezogene Daten erfolgt. Diese Datenschutzerklärung wird in diesem Fall entsprechend aktualisiert.",
+        "Diese Website nutzt Google Analytics, einen Webanalysedienst der Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland („Google“). Google Analytics verwendet Cookies und ähnliche Technologien, die eine Analyse der Benutzung unserer Website durch Sie ermöglichen (z. B. aufgerufene Seiten, Verweildauer, verwendetes Gerät).",
+        "Google Analytics wird bei Ihnen nur aktiviert, wenn Sie hierzu über das Cookie-Consent-Banner auf unserer Website ausdrücklich eingewilligt haben. Rechtsgrundlage für die Verarbeitung ist in diesem Fall Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO. Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, indem Sie über den Link „Cookie-Einstellungen“ im Footer unserer Website Ihre Auswahl ändern.",
+        "Die durch Google Analytics erzeugten Informationen über Ihre Benutzung dieser Website werden an Server von Google übertragen und dort verarbeitet. Google verwendet diese Informationen, um Ihre Nutzung der Website in unserem Auftrag auszuwerten, um Reports über die Websiteaktivitäten zusammenzustellen und um uns weitere mit der Websitenutzung verbundene Dienstleistungen zu erbringen. Ihre IP-Adresse wird dabei von Google nicht gespeichert und mit anderen Daten von Google nicht zusammengeführt.",
+        "Weitere Informationen zum Umgang mit Nutzerdaten bei Google Analytics finden Sie in der Datenschutzerklärung von Google unter https://policies.google.com/privacy?hl=de.",
       ],
     },
     {

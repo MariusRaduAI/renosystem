@@ -5,6 +5,8 @@ import { site } from "@/content/de";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import MobileActionBar from "@/components/MobileActionBar";
 import IntroOverlay from "@/components/IntroOverlay";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
+import CookieConsent from "@/components/CookieConsent";
 
 const archivo = Archivo({
   variable: "--font-archivo",
@@ -64,6 +66,8 @@ export default function RootLayout({
           {children}
           <MobileActionBar />
         </SmoothScrollProvider>
+        <CookieConsent />
+        <GoogleAnalytics />
       </body>
     </html>
   );
