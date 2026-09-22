@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { gsap, prefersReducedMotion } from "@/lib/gsap";
-import BeforeAfterSlider from "@/components/BeforeAfterSlider";
+import BeforeAfterPair from "@/components/BeforeAfterPair";
 
 export type PortfolioItem = {
   title: string;
@@ -18,13 +18,11 @@ export default function PortfolioGrid({
   placeholderNote,
   beforeLabel,
   afterLabel,
-  dragHint,
 }: {
   items: PortfolioItem[];
   placeholderNote: string;
   beforeLabel: string;
   afterLabel: string;
-  dragHint: string;
 }) {
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -59,7 +57,7 @@ export default function PortfolioGrid({
           className="portfolio-card group rounded-3xl border border-concrete-950/8 bg-white p-3 shadow-sm shadow-concrete-950/5 transition-shadow hover:shadow-lg hover:shadow-concrete-950/10 sm:p-4"
         >
           <div className="relative">
-            <BeforeAfterSlider
+            <BeforeAfterPair
               beforeSrc={item.beforeImageUrl}
               afterSrc={item.afterImageUrl}
               alt={item.alt}
@@ -72,14 +70,11 @@ export default function PortfolioGrid({
               </span>
             )}
           </div>
-          <div className="mt-4 flex items-baseline justify-between gap-3 px-1">
-            <div>
-              {item.category && (
-                <p className="text-xs font-semibold uppercase tracking-wide text-wood-500">{item.category}</p>
-              )}
-              <h3 className="mt-1 font-display text-lg font-bold text-concrete-950">{item.title}</h3>
-            </div>
-            <span className="hidden shrink-0 text-xs text-concrete-600 sm:inline">{dragHint} ↔</span>
+          <div className="mt-4 px-1">
+            {item.category && (
+              <p className="text-xs font-semibold uppercase tracking-wide text-wood-500">{item.category}</p>
+            )}
+            <h3 className="mt-1 font-display text-lg font-bold text-concrete-950">{item.title}</h3>
           </div>
         </div>
       ))}

@@ -57,7 +57,6 @@ export default async function Portfolio() {
             placeholderNote={portfolio.placeholderNote}
             beforeLabel={portfolio.beforeLabel}
             afterLabel={portfolio.afterLabel}
-            dragHint={portfolio.dragHint}
           />
         </div>
       </div>

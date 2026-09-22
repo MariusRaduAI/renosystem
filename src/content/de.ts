@@ -261,42 +261,17 @@ export const portfolio = {
   eyebrow: "Projekte",
   headline: "Echte Ergebnisse, keine Stockfotos.",
   intro:
-    "Ziehen Sie den Regler und sehen Sie selbst, was aus diesen Projekten geworden ist — echte Fotos aus unserer eigenen Baustellendokumentation.",
+    "Vorher und nachher, direkt nebeneinander — echte Fotos aus unserer eigenen Baustellendokumentation.",
   placeholderNote: "Platzhalterbild",
   beforeLabel: "Vorher",
   afterLabel: "Nachher",
-  dragHint: "Regler ziehen",
   projects: [
-    {
-      title: "Bad-Umbau mit neuer Fliesenverlegung",
-      category: "Fliesenverlegung",
-      beforeImageUrl: "/portfolio/fliesenverlegung-bad-umbau/before.jpg",
-      afterImageUrl: "/portfolio/fliesenverlegung-bad-umbau/after.jpg",
-      alt: "Bad-Umbau: Abdichtung und Fliesenverlegung im Rohzustand, danach der fertig verlegte Boden",
-      isPlaceholder: false,
-    },
-    {
-      title: "Kompletter Innenausbau mit Einbauküche",
-      category: "Innenausbau",
-      beforeImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/before.jpg",
-      afterImageUrl: "/portfolio/innenausbau-aniela-ludwigsburg/after.jpg",
-      alt: "Innenausbau: Rohbauraum mit verspachtelten Wänden, danach dieselbe Küche mit hochwertiger Einbauküche",
-      isPlaceholder: false,
-    },
     {
       title: "Trockenbau, Tapezierung & Malerarbeiten im Dachgeschoss",
       category: "Trockenbau & Malerarbeiten",
       beforeImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/before.jpg",
       afterImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/after.jpg",
       alt: "Dachschräge im Rohzustand mit offener Unterkonstruktion, danach fertig verkleidet und gestrichen",
-      isPlaceholder: false,
-    },
-    {
-      title: "Komplettsanierung eines Klinikgebäudes",
-      category: "Komplettsanierung",
-      beforeImageUrl: "/portfolio/selzer-klinikum-renovierung/before.jpg",
-      afterImageUrl: "/portfolio/selzer-klinikum-renovierung/after.jpg",
-      alt: "Entkernter Raum mit freiliegender Holzkonstruktion, danach der fertige Flur mit Fliesenboden und frischem Anstrich",
       isPlaceholder: false,
     },
     {
