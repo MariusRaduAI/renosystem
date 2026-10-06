@@ -266,11 +266,11 @@ export const portfolio = {
   afterLabel: "Nachher",
   projects: [
     {
-      title: "Trockenbau, Tapezierung & Malerarbeiten im Dachgeschoss",
-      category: "Trockenbau & Malerarbeiten",
+      title: "Trockenbau im Dachgeschoss",
+      category: "Trockenbau",
       beforeImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/before.jpg",
       afterImageUrl: "/portfolio/wiegelmann-trockenbau-malerarbeiten/after.jpg",
-      alt: "Dachschräge im Rohzustand mit offener Unterkonstruktion, danach fertig verkleidet und gestrichen",
+      alt: "Dachschräge im Rohzustand mit offener Unterkonstruktion, danach fertig verkleidet",
       isPlaceholder: false,
     },
     {
@@ -299,10 +299,10 @@ export const portfolio = {
     },
     {
       title: "Trockenbau, Trennwände und Bodenverlegung im Wohnbereich",
-      category: "Trockenbau & Malerarbeiten",
+      category: "Trockenbau",
       beforeImageUrl: "/portfolio/innenausbau-treppe-offener-wohnbereich/before.jpg",
       afterImageUrl: "/portfolio/innenausbau-treppe-offener-wohnbereich/after.jpg",
-      alt: "Offener Wohnbereich mit Treppe im Rohzustand vor Spachtel- und Malerarbeiten, danach derselbe Raum mit fertiger Treppenverkleidung, glatten Wänden und verlegtem Boden",
+      alt: "Offener Wohnbereich mit Treppe im Rohzustand vor Spachtelarbeiten, danach derselbe Raum mit fertiger Treppenverkleidung, glatten Wänden und verlegtem Boden",
       isPlaceholder: false,
     },
     {
@@ -318,7 +318,7 @@ export const portfolio = {
       category: "Komplettsanierung",
       beforeImageUrl: "/portfolio/akustikdecke-komplettsanierung/before.jpg",
       afterImageUrl: "/portfolio/akustikdecke-komplettsanierung/after.jpg",
-      alt: "Entkernter Raum mit freiliegender Deckenkonstruktion und Bauschutt, danach der fertige Raum mit akustischer Deckenverkleidung, Lichtvouten, neuem Boden und frischem Anstrich",
+      alt: "Entkernter Raum mit freiliegender Deckenkonstruktion und Bauschutt, danach der fertige Raum mit akustischer Deckenverkleidung, Lichtvouten und neuem Boden",
       isPlaceholder: false,
     },
   ],
