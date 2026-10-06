@@ -21,9 +21,9 @@ export const business = {
 
 export const site = {
   name: business.name,
-  tagline: "Ihr Partner für komplette Renovierungen",
+  tagline: "Renovierungsfirma in Bad Rappenau",
   metaDescription:
-    "RENOSYSTEM ALL-IN-ONE plant und realisiert Komplettsanierungen, Haussanierungen und Wohnungsrenovierungen in Bad Rappenau und im Umkreis von 60 km — mit verbindlichem Angebot nach persönlicher Besichtigung.",
+    "RENOSYSTEM ALL-IN-ONE: Renovierung, Innenausbau, Trockenbau, Bodenverlegung und Innentüren in Bad Rappenau, Heilbronn, Sinsheim, Mosbach und Umkreis von 60 km — mit verbindlichem Angebot nach persönlicher Besichtigung.",
 };
 
 export const nav = {
@@ -76,9 +76,9 @@ export type ServiceGroup = {
 
 export const servicesSection = {
   eyebrow: "Leistungen",
-  headline: "Ein Team. Alle Gewerke. Ein Plan.",
+  headline: "Renovierung, Innenausbau, Trockenbau, Boden, Türen.",
   intro:
-    "Von der Entkernung bis zur letzten Fliese: 14 Leistungen aus einer Hand, damit Sie nie selbst zwischen Handwerkern vermitteln müssen — und nie den Überblick verlieren, wer gerade wofür verantwortlich ist.",
+    "Unser Kerngeschäft in Bad Rappenau und Umgebung: Renovierung, Innenausbau, Trockenbau, Bodenverlegung und die Montage von Innentüren. Dazu ergänzende Leistungen aus einer Hand, damit Sie nie selbst zwischen Handwerkern vermitteln müssen.",
   allServicesLink: "Alle Leistungen im Detail",
   allServicesHref: "/leistungen",
 };
